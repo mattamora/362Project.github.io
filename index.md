@@ -14,7 +14,7 @@ My GitHub page is http://github.com/mattamora.
 
 * Lab 8
 
-    Lab 8 was also a good lab because it was the first lab that I really struggled with. This lab was also the lab I spent the most time onb. Working on these labs, parts one and two, really helped improve my coding skills. 
+    Lab 8 was also a lab I liked because it was the first lab that I really struggled with. This lab was also the lab I spent the most time on. Working on these labs, parts one and two, really helped improve my coding skills. 
 
 
 * Lab 10    
