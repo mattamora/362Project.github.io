@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>362_Project</title>
+
+    <!-- ALL CSS CODE -->
+    <style>
+        * {
+             box-sizing: border-box;  
+             /* border: 1px solid red;  */
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+
+        img {
+            height: 200px;
+            margin-bottom: 300px;
+            transition: transform 0.1s ease-in-out
+        }
+    
+        img:hover {
+            transform: scale(1.08);
+        }
+
+        .top_bar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: white;
+            z-index: 1000;
+            padding: 10px 0;
+            border-bottom: 1px solid rgb(158, 158, 158);
+            position: fixed;
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+            height: 65px;
+            box-shadow: 0 6px 6px -3px rgba(0, 0, 0, 0.2); 
+        }
+
+        nav {
+            font-family: sans-serif; 
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .name {
+            margin: 20px;
+            margin-right: 700px;
+            font-size: 30px;             
+            font-weight: 700;         
+        }
+
+        nav a {
+            color: inherit;
+            text-decoration: none; 
+            font-weight: 700;  
+        }
+
+        .menu {
+            font-size: 18px;
+        }
+
+        .menu:hover {
+            transform: scale(1.1); 
+        }
+
+        .locations {
+            display: inline-block;
+            margin-right: -4px;
+            font-size: 18px;
+        }
+
+        .locations:hover {
+            transform: scale(1.1); 
+        }
+
+        .sign_in {
+            display: inline-block;
+            font-size: 18px;
+        }
+
+        .sign_in:hover {
+            transform: scale(1.1); 
+        }
+
+        .order {
+            display: inline-block;
+            font-size: 18px;
+            border: 3px outset rgb(219, 5, 5);
+            background-color: rgb(219, 5, 5);
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+            height: 45px;
+            width: 100px;
+            cursor: pointer;
+            text-decoration: none;
+            position: relative;
+            padding-top: 8px;
+            top: -1px;
+            margin-right: 36px;
+        }
+
+        main {
+            margin-top: 70px;
+            text-align: center;
+            font-family: sans-serif;
+        }
+
+
+        /*  =======================================        FIRST ROW         =======================================================   */
+        .first {
+            margin-bottom: 20px;
+            height: 300px;
+        }
+
+        .first_items {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            position: relative;
+            z-index: 3;
+            margin-top: -130px;
+            background: none;
+            border: none;
+            height: 60px;
+            width: 100%; 
+        }
+
+        .first_items h4 {
+            width: 200px;
+            text-align: center;
+        }
+
+        .burger {
+            position: absolute;
+            left: 240px;
+        }
+
+        .first_items h4:nth-child(1) {
+            position: absolute;
+            left: 0;
+            margin-left: 240px;
+            font-size: 24px;
+        }
+
+        .first_items h4:nth-child(2) {
+             position: absolute;
+             left: 50%;
+             transform: translateX(-50%);
+             font-size: 24px;
+        }
+
+        .ramen {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%) scale(1.1);
+        }
+
+        .ramen:hover {
+            transform: translateX(-50%) scale(1.21);
+        }
+
+        .first_items h4:nth-child(3) {
+            position: absolute;
+            right: 0;
+            margin-right: 240px;
+            font-size: 24px;
+        }
+
+        .fries {
+            position: absolute;
+            right: 0;
+            margin-right: 210px;
+            transform: scale(.8);
+        }
+
+        .fries:hover {
+            transform: scale(.88);
+        }
+
+        /*  ========================================            SECOND ROW         ========================================   */
+        .second {
+            margin-top: 60px;
+            margin-bottom: 20px;
+            height: 300px;
+        }
+
+        .second_items {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            position: relative;
+            z-index: 3;
+            margin-top: -130px;
+            background: none;
+            border: none;
+            height: 60px;
+            width: 100%; 
+        }
+
+        .second_items h4 {
+            width: 200px;
+            text-align: center;
+        }
+
+        .pho {
+            position: absolute;
+            left: 240px;
+            transform: scale(1.2);
+        }
+
+        .pho:hover {
+            transform: scale(1.28);
+        }
+
+        .second_items h4:nth-child(1) {
+            position: absolute;
+            left: 0;
+            margin-left: 240px;
+            font-size: 24px;
+        }
+
+        .second_items h4:nth-child(2) {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+        }
+
+        .ribs {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .ribs:hover {
+            transform: translateX(-50%) scale(1.1);
+        }
+
+        .second_items h4:nth-child(3) {
+            position: absolute;
+            right: 0;
+            margin-right: 240px;
+            font-size: 24px;
+        }
+
+        .tacos {
+            position: absolute;
+            right: 0;
+            margin-right: 150px;
+        }
+
+
+        /*  ========================================            THIRD ROW        ========================================   */
+        .salad {
+            position: absolute;
+            left: 180px;
+            transform: scale(.9);
+        }
+
+        .salad:hover {
+            transform: scale(.98);
+        }
+
+        .third_items h4:nth-child(1) {
+             position: absolute;
+             left: 0;
+             margin-left: 240px;
+             font-size: 24px;
+        }
+
+        .third {
+            margin-top: 60px;
+            margin-bottom: 20px;
+            height: 300px; 
+        }
+
+        .third_items {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            position: relative;
+            z-index: 3;
+            margin-top: -130px;
+            background: none;
+            border: none;
+            height: 60px;
+            width: 100%; 
+        }
+
+        .third_items h4 {
+            width: 200px;
+            text-align: center;
+        }
+
+        .third_items h4:nth-child(2) {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+        }
+
+        .boba {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%) scale(1.1);
+        }
+
+        .boba:hover {
+            transform: translateX(-50%) scale(1.2);
+        }
+
+        .third_items h4:nth-child(3) {
+            position: absolute;
+            right: 0;
+            margin-right: 240px;
+            font-size: 24px;
+        }
+
+        .soda {
+            position: absolute;
+            right: 280px;
+            transform: scale(1.1);
+        }
+
+        .soda:hover {
+            transform: scale(1.2);
+        }
+    /*   =====================================================================================================*/
+
+        h1 {
+            font-size: 45px;
+            margin-bottom: 60px;
+            margin-top: 80px;
+        }
+
+        h4 {
+            text-transform: uppercase;
+        }
+       
+        .footer {
+            display: block;
+            padding: 10px;
+            color: black;
+            background-color: #828b92;
+            width: 100%;
+            height: 45px;
+            font-family: sans-serif;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+ 
+        }
+
+        footer .members {
+            text-align: right;
+        }
+
+        .footer .members span {
+            margin: 8px;
+        }
+
+        footer p{
+            display: inline;
+            word-spacing: 3px;
+            margin-left: 6px;
+            font-weight: 600;
+        }
+
+        #bottom_footer {
+            visibility: hidden;
+            border: 1px solid red;
+            text-align: center;
+            margin-top: 100px;
+            margin-bottom: 150px;
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!--  For top bar only  -->
+    <nav class="top_bar">
+        <span class="name"><a href="362PROJECT.html">Restaurant 362</a></span>
+        <span class="menu"><a href="menu.html">Menu</a></span>
+        <span class="locations"><a href="location.html">Location</a></span>
+        <span class="sign_in"><a href="sign_in.html">Sign In</a></span>
+        <span><a class="order" href="#">Order</a></span>
+    </nav>
+
+    
+    <!--   front page  -->
+    <main>
+        <h1>MENU</h1>   
+        <div class="first">
+            <img src="pics/doubledouble.jpg" alt="In n Out" class="burger">
+            <img src="pics/ramen.jpg" alt="ramen" class = "ramen">
+            <img src="pics/french.jpg" alt="fries" class="fries"> 
+        </div>
+        <div class="first_items">
+            <h4 class = "burger">Burgers</h4>
+            <h4>Ramen</h4>
+            <h4>Fries</h4>
+        </div>
+        <div class="second">
+            <img src="pics/pho.jpg" alt="pho" class="pho">
+            <img src="pics/ribs.jpg" alt="ribs" class="ribs">
+            <img src="pics/tacos.jpg" alt="Tacos" class="tacos">
+        </div>
+        <div class="second_items">
+            <h4>Phở</h4>
+            <h4>Ribs</h4>
+            <h4>Tacos</h4>
+        </div>
+        <div class="third">
+            <img src="pics/salad.jpg" alt="salad" class="salad">
+            <img src="pics/bobas.jpg" alt="boba" class="boba">
+            <img src="pics/soda.jpg" alt="Drinks" class="soda">
+        </div>
+        <div class="third_items">
+            <h4>Salad</h4>
+            <h4>boba</h4>
+            <h4>Soda</h4>
+        </div>
+       
+    </main>
+
+
+  
+    <!--  footer, bottom of the page  -->
+    <p id="bottom_footer"> TO KEEP FOOTER AT THE BOTTOM</p>
+    <footer class="footer">
+        <p>Summer 2024 362-02</p>
+        <div class="members">
+            <span>Group Members:</span>
+            <span>Matt Amora</span>
+            <span>Edgar Cardenas</span>
+            <span>Lawrence Cui</span>
+            <span>Manvir Dhillon</span>
+            <span>Windly Nguyen</span>
+        </div>
+    </footer>
+
+   
+
+
+
+
+
+    
+</body>
+</html>
