@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>362_Project</title>
+
+    <!-- ALL CSS CODE -->
+    <style>
+        * {
+            box-sizing: border-box;
+            /* border: 1px solid red;  */
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        img {
+            height: 200px;
+            margin-bottom: 300px;
+            transition: transform 0.1s ease-in-out;
+        }
+
+        .top_bar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: white;
+            z-index: 10;
+            padding: 10px 0;
+            border-bottom: 1px solid rgb(158, 158, 158);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 65px;
+            box-shadow: 0 6px 6px -3px rgba(0, 0, 0, 0.2);
+        }
+
+        nav {
+            font-family: sans-serif;
+            text-decoration: none;
+        }
+
+        .name {
+            margin: 20px;
+            margin-right: 600px;
+            font-size: 30px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        nav a {
+            color: inherit;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .menu {
+            font-size: 18px;
+            cursor: pointer;
+            margin-right: -10px;
+        }
+
+        .menu:hover {
+            transform: scale(1.1);
+        }
+
+        .locations {
+            display: inline-block;
+            font-size: 18px;
+            cursor: pointer;
+            margin-right: -10px;
+        }
+
+        .locations:hover {
+            transform: scale(1.1);
+        }
+
+        .sign_in {
+            display: inline-block;
+            font-size: 18px;
+            cursor: pointer;
+            margin-right: -15px;
+        }
+
+        .sign_in:hover {
+            transform: scale(1.1);
+        }
+
+        .order {
+            display: inline-block;
+            font-size: 18px;
+            border: 3px outset red;
+            background-color: red;
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+            height: 45px;
+            width: 100px;
+            cursor: pointer;
+            text-decoration: none;
+            position: relative;
+            padding-top: 8px;
+            top: -1px;
+            margin-right: 60px;
+        }
+
+        .order:hover {
+            background-color: rgb(219, 5, 5);
+            box-shadow: 0 0 0 2px rgb(223, 1, 1);
+        }
+
+        .order:active {
+            background-color: red;
+            box-shadow: 0 0 0 0px rgb(223, 1, 1);
+        }
+
+        .cart {
+            display: inline-block;
+            position: absolute;
+            right: 55px;
+            top: 15px;
+            height: 36px;
+            width: 36px;
+            z-index: 11;
+        }
+
+        .cartAmount {
+            position: absolute;
+            top: 10px;
+            right: 45px;
+            color: white;
+            background-color: rgb(206, 39, 39);
+            height: 22px;
+            width: 22px;
+            border-radius: 50%;
+            text-align: center;
+            z-index: 15;
+            padding-top: 1px;
+        }
+
+        main {
+            margin-top: 70px;
+            text-align: center;
+            font-family: sans-serif;
+        }
+
+        /*  =======================================        FIRST ROW         =======================================================   */
+        .first {
+            margin-bottom: 20px;
+            height: 300px;
+        }
+
+        .first_items {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            position: relative;
+            z-index: 3;
+            margin-top: -130px;
+            background: none;
+            border: none;
+            height: 60px;
+            width: 100%;
+        }
+
+        .first_items h4 {
+            width: 200px;
+            text-align: center;
+        }
+
+        .burger {
+            position: absolute;
+            left: 240px;
+        }
+
+        .burger:hover {
+            transform: scale(1.08);
+            cursor: pointer;
+        }
+
+        .first_items h4:nth-child(1) {
+            position: absolute;
+            left: 0;
+            margin-left: 240px;
+            font-size: 24px;
+        }
+
+        .first_items h4:nth-child(2) {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+        }
+
+        .ramen {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%) scale(1.1);
+        }
+
+        .ramen:hover {
+            transform: translateX(-50%) scale(1.21);
+            cursor: pointer;
+        }
+
+        .first_items h4:nth-child(3) {
+            position: absolute;
+            right: 0;
+            margin-right: 240px;
+            font-size: 24px;
+        }
+
+        .fries {
+            position: absolute;
+            right: 0;
+            margin-right: 210px;
+            transform: scale(.8);
+        }
+
+        .fries:hover {
+            transform: scale(.88);
+            cursor: pointer;
+        }
+
+        /* Second row styles */
+        .second {
+            margin-top: 60px;
+            margin-bottom: 20px;
+            height: 300px;
+        }
+
+        .second_items {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            position: relative;
+            z-index: 3;
+            margin-top: -130px;
+            background: none;
+            border: none;
+            height: 60px;
+            width: 100%;
+        }
+
+        .second_items h4 {
+            width: 200px;
+            text-align: center;
+        }
+
+        .pho {
+            position: absolute;
+            left: 240px;
+            transform: scale(1.2);
+        }
+
+        .pho:hover {
+            transform: scale(1.28);
+            cursor: pointer;
+        }
+
+        .second_items h4:nth-child(1) {
+            position: absolute;
+            left: 0;
+            margin-left: 240px;
+            font-size: 24px;
+        }
+
+        .second_items h4:nth-child(2) {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+        }
+
+        .ribs {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .ribs:hover {
+            transform: translateX(-50%) scale(1.1);
+            cursor: pointer;
+        }
+
+        .second_items h4:nth-child(3) {
+            position: absolute;
+            right: 0;
+            margin-right: 240px;
+            font-size: 24px;
+        }
+
+        .tacos {
+            position: absolute;
+            right: 0;
+            margin-right: 150px;
+        }
+
+        .tacos:hover {
+            transform: scale(1.08);
+            cursor: pointer;
+        }
+
+       /*  ========================================            THIRD ROW        ========================================   */
+        .salad {
+            position: absolute;
+            left: 180px;
+            transform: scale(.9);
+        }
+
+        .salad:hover {
+            transform: scale(.98);
+            cursor: pointer;
+        }
+
+        .third_items h4:nth-child(1) {
+            position: absolute;
+            left: 0;
+            margin-left: 240px;
+            font-size: 24px;
+        }
+
+        .third {
+            margin-top: 60px;
+            margin-bottom: 20px;
+            height: 300px;
+        }
+
+        .third_items {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            position: relative;
+            z-index: 3;
+            margin-top: -130px;
+            background: none;
+            border: none;
+            height: 60px;
+            width: 100%;
+        }
+
+        .third_items h4 {
+            width: 200px;
+            text-align: center;
+        }
+
+        .third_items h4:nth-child(2) {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+        }
+
+        .boba {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%) scale(1.1);
+        }
+
+        .boba:hover {
+            transform: translateX(-50%) scale(1.2);
+            cursor: pointer;
+        }
+
+        .third_items h4:nth-child(3) {
+            position: absolute;
+            right: 0;
+            margin-right: 240px;
+            font-size: 24px;
+        }
+
+        .soda {
+            position: absolute;
+            right: 280px;
+            transform: scale(1.1);
+        }
+
+        .soda:hover {
+            transform: scale(1.2);
+            cursor: pointer;
+        }
+        /* ==================== END OF ITEMS ================== */
+        h1 {
+            font-size: 45px;
+            margin-bottom: 60px;
+            margin-top: 80px;
+        }
+
+        h4 {
+            text-transform: uppercase;
+        }
+
+        .footer {
+            display: block;
+            padding: 10px;
+            color: black;
+            background-color: #828b92;
+            width: 100%;
+            height: 45px;
+            font-family: sans-serif;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        footer .members {
+            text-align: right;
+        }
+
+        .footer .members span {
+            margin: 8px;
+        }
+
+        footer p {
+            display: inline;
+            word-spacing: 3px;
+            margin-left: 6px;
+            font-weight: 600;
+        }
+
+        #bottom_footer {
+            visibility: hidden;
+            border: 1px solid red;
+            text-align: center;
+            margin-top: 100px;
+            margin-bottom: 150px;
+        }
+
+
+        /* =========================   POPUP SCREEN BASE  ========================= */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 12;
+            font-family: sans-serif;
+        }
+
+        .screenPop {
+            color: white;
+            background-color: white;
+            border-radius: 18px;
+            position: fixed;
+            height: 660px;
+            width: 900px;
+            top: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+        }
+
+        .close {
+            background-color: white;
+            border: 1px solid white;
+            position: fixed;
+            top: 5px;
+            left: 10px;
+            font-size: 33px;
+            z-index: 12;
+            height: 50px;
+            width: 50px;
+            color: black;
+            text-align: center;
+        }
+
+        .close:hover {
+            font-size: 34px;
+            color: rgb(61, 61, 61);
+            cursor: pointer;
+            border-radius: 50%;
+            background-color: rgb(243, 243, 243);
+        }
+
+        .itemName {
+            height: 50px;
+            width: 130px;
+            text-align: center;
+            position: fixed;
+            top: -51px;
+            left: 75%;
+            transform: translateX(-50%);
+            font-size: 36px;
+            z-index: 12;
+            color: black;
+        }
+
+        .addCart {
+            height: 50px;
+            width: 270px;
+            text-align: center;
+            position: fixed;
+            bottom: 60px;
+            left: 75%;
+            transform: translateX(-50%);
+            font-size: 27px;
+            font-weight: 700;
+            z-index: 12;
+            border-radius: 15px;
+            background-color: #d32c2c;
+            color: white;
+            border: 2px solid #b71c1c;
+        }
+
+        .addCart:hover {
+            background-color: #bb2727;
+            border: 6px solid #bb2727;
+            cursor: pointer;
+            box-shadow: 0 0 0 2px rgb(223, 1, 1);
+        }
+
+        .addCart:active {
+            background-color: #d32c2c;
+            border: 6px solid #d32c2c;
+            cursor: pointer;
+            box-shadow: 0 0 0 0px rgb(223, 1, 1);      
+        }
+
+        .imgPop {
+            transform: scale(2.1);
+            position: absolute;
+            top: 160px;
+            left: 120px;
+        }  
+
+        .price {
+            height: 50px;
+            width: 130px;
+            text-align: center;
+            position: fixed;
+            top: 48px;
+            left: 75%;
+            transform: translateX(-50%);
+            font-size: 21px;
+            z-index: 12;
+            color: black;
+        }
+        /* =========================   POPUP SCREEN BASE  ========================= */
+    </style>
+</head>
+
+<body>
+
+    <!-- For top bar only -->
+    <nav class="top_bar">
+        <span class="name"><a href="362PROJECT.html">Restaurant 362</a></span>
+        <span class="menu"><a href="menu.html">Menu</a></span>
+        <span class="locations"><a href="location.html">Location</a></span>
+        <span class="sign_in"><a href="sign_in.html">Sign In</a></span>
+        <span><a class="order" href="checkout.html">Checkout</a></span>
+        <span><a class="out" href="checkout.html"><img src="pics/cart.jpg" alt="cart" class="cart"></a></span>
+        <span class="cartAmount">0</span>
+    </nav>
+
+    <!-- Front page -->
+    <main>
+        <h1>ORDER</h1>
+        <div class="first">
+            <img src="pics/doubledouble.jpg" alt="In n Out" class="burger">
+            <img src="pics/ramen.jpg" alt="ramen" class="ramen">
+            <img src="pics/french.jpg" alt="fries" class="fries">
+        </div>
+        <div class="first_items">
+            <h4>Burgers</h4>
+            <h4>Ramen</h4>
+            <h4>Fries</h4>
+        </div>
+        <div class="second">
+            <img src="pics/pho.jpg" alt="pho" class="pho">
+            <img src="pics/ribs.jpg" alt="ribs" class="ribs">
+            <img src="pics/tacos.jpg" alt="Tacos" class="tacos">
+        </div>
+        <div class="second_items">
+            <h4>Phở</h4>
+            <h4>Ribs</h4>
+            <h4>Tacos</h4>
+        </div>
+        <div class="third">
+            <img src="pics/salad.jpg" alt="salad" class="salad">
+            <img src="pics/bobas.jpg" alt="boba" class="boba">
+            <img src="pics/soda.jpg" alt="Drinks" class="soda">
+        </div>
+        <div class="third_items">
+            <h4>Salad</h4>
+            <h4>boba</h4>
+            <h4>Soda</h4>
+        </div>
+    </main>
+
+    <!-- Popup Screen -->
+    <div class="popup">
+        <div class="screenPop">
+            <h2>PopScren</h2>
+            <button class="close">✕</button>
+            <h1 class="itemName">Burger</h1>
+            <button class="addCart">ADD TO CART</button>
+            <h4 class="price">$6.99</h4>
+            <img src="pics/doubledouble.jpg" alt="In n Out" class="imgPop">
+        </div>
+    </div>
+
+    <!-- Footer, bottom of the page -->
+    <p id="bottom_footer"> TO KEEP FOOTER AT THE BOTTOM</p>
+    <footer class="footer">
+        <p>Summer 2024 362-02</p>
+        <div class="members">
+            <span>Group Members:</span>
+            <span>Matt Amora</span>
+            <span>Edgar Cardenas</span>
+            <span>Lawrence Cui</span>
+            <span>Manvir Dhillon</span>
+            <span>Windly Nguyen</span>
+        </div>
+    </footer>
+
+    <!--   ================            JavaScript code            =================================-->
+    <script>
+        let cartAmount = 0; // cart top right to 0
+
+        // Get all the images and the popup element
+        const images = document.querySelectorAll('img'); // all images on the order page
+        const popup = document.querySelector('.popup'); // popup screen
+        const closeButton = document.querySelector('.close'); // close button
+        const cartAmountElement = document.querySelector('.cartAmount');
+
+        // Popup data
+        const popupData = {
+            burger: {
+                name: 'Burger',
+                price: '$6.99',
+                img: 'pics/doubledouble.jpg',
+                
+            },
+            ramen: {
+                name: 'Ramen',
+                price: '$8.99',
+                img: 'pics/ramen.jpg',
+                styles: {
+                    transform: 'scale(1.8)',
+                    marginLeft: '1px'
+                }
+            },
+            fries: {
+                name: 'Fries',
+                price: '$3.99',
+                img: 'pics/french.jpg',
+                styles: {
+                    transform: 'scale(1.6)',
+                    marginLeft: '1px'
+                }
+            },
+            pho: {
+                name: 'Phở',
+                price: '$9.99',
+                img: 'pics/pho.jpg',
+                styles: {
+                    transform: 'scale(2.1)',
+                    marginLeft: '40px'
+                }
+            },
+            ribs: {
+                name: 'Ribs',
+                price: '$12.99',
+                img: 'pics/ribs.jpg',
+                styles: {
+                    transform: 'scale(1.9)',
+                    marginLeft: '1px'
+                }
+            },
+            tacos: {
+                name: 'Tacos',
+                price: '$6.99',
+                img: 'pics/tacos.jpg',
+                styles: {
+                    transform: 'scale(1.6)',
+                    marginLeft: '-10px'
+                }
+            },
+            salad: {
+                name: 'Salad',
+                price: '$5.99',
+                img: 'pics/salad.jpg',
+                styles: {
+                    transform: 'scale(1.6)',
+                    marginLeft: '-10px'
+                }
+            },
+            boba: {
+                name: 'Boba',
+                price: '$4.99',
+                img: 'pics/bobas.jpg',
+                styles: {
+                    transform: 'scale(1.66)',
+                }
+            },
+            soda: {
+                name: 'Soda',
+                price: '$1.99',
+                img: 'pics/soda.jpg',
+                styles: {
+                    transform: 'scale(2.4)',
+                    marginLeft: '90px'
+                }
+            }
+        };
+
+        // Function to update popup content
+        function updatePopupContent(data) {
+            document.querySelector('.itemName').textContent = data.name;
+            document.querySelector('.price').textContent = data.price;
+
+            const imgPop = document.querySelector('.imgPop');
+            imgPop.src = data.img;
+
+            // Apply styles dynamically
+            Object.assign(imgPop.style, data.styles);
+        }
+
+          // Function to update cart amount
+        function updateCartAmount() {
+            cartAmount += 1;
+            cartAmountElement.textContent = cartAmount;
+        }
+
+        // Add click event listener to each image
+        images.forEach(image => {
+            image.addEventListener('click', () => {
+                const itemKey = image.className; // Use the class name as the key
+                if (popupData[itemKey]) {
+                    updatePopupContent(popupData[itemKey]);
+                    popup.style.display = 'flex'; // Show the popup
+                }
+            });
+        });
+
+        // Add click event listener to hide the popup when clicking outside the content
+        popup.addEventListener('click', (event) => {
+            if (event.target === popup) {
+                popup.style.display = 'none'; // Hide the popup
+            }
+        });
+
+        // Add click event listener to the close button
+        closeButton.addEventListener('click', () => {
+            popup.style.display = 'none'; // Hide the popup
+        });
+
+        // Add click event listener to the "ADD TO CART" button
+        document.querySelector('.addCart').addEventListener('click', () => {
+            updateCartAmount();
+        });
+    </script>
+</body>
+</html>
