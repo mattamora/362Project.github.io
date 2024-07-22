@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>362_Project</title>
 
-    <!-- ALL CSS CODE -->
+<head>
+    <title>Sign_In</title>
+    <meta name="viewport" content="width=device-width, inital-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
     <style>
+        /* switch this to its own file when you are done */
         * {
-             box-sizing: border-box;    
+            box-sizing: border-box; 
         }
 
         html, body {
@@ -14,62 +18,60 @@
             padding: 0;
             width: 100%;
             height: 100%;
+            min-width: 30%;
+            min-height: 30%;
+            font-family: lexend, sans-serif;
         }
 
-
+        /*      =================     TOP BAR ONLY    ==============   */
         .top_bar {
             position: fixed;
             top: 0;
-            width: 100%;
-            background-color: white;
-            z-index: 1000;
-            padding: 10px 0;
-            border-bottom: 1px solid rgb(158, 158, 158);
-            position: fixed;
-            display: flex; 
+            display: flex;
             justify-content: space-between; 
             align-items: center;
+            width: 100%;
             height: 65px;
+            z-index: 10;
+            padding: 10px 0;
+            border-bottom: 1px solid rgb(158, 158, 158);
             box-shadow: 0 6px 6px -3px rgba(0, 0, 0, 0.2); 
+            background-color: white;
         }
 
-        nav {
-            font-family: sans-serif; 
+        a:link, a:visited {
             text-decoration: none;
-            cursor: pointer;
+            color: inherit;
         }
 
         .name {
             margin: 20px;
-            margin-right: 700px;
             font-size: 30px;             
-            font-weight: 700;         
+            font-weight: 700;
+            cursor: pointer;
+            white-space: nowrap;         
         }
 
-        nav a {
-            color: inherit;
-            text-decoration: none; 
-            font-weight: 700;  
-        }
-
-        .menu {
+        .navTop {
+            position: fixed;
+            right: 12%;
+            height: 45px;
+            width: 330px;
+            margin-right: 50px;
+            display: inline-flex;
+            justify-content: space-between;
+            align-items: center;
             font-size: 18px;
+            font-weight: 600;
+            color: rgb(24, 78, 131);
         }
 
         .menu:hover {
+            transform: scale(1.1);
+        }
+
+        .locations:hover {
             transform: scale(1.1); 
-        }
-
-        .locations {
-            display: inline-block;
-            margin-right: -4px;
-            font-size: 21px;
-            text-decoration: underline;
-        }
-
-        .sign_in {
-            display: inline-block;
-            font-size: 18px;
         }
 
         .sign_in:hover {
@@ -77,163 +79,204 @@
         }
 
         .order {
-            display: inline-block;
-            font-size: 18px;
-            border: 3px outset red;
-            background-color: red;
-            color: white;
-            text-align: center;
-            border-radius: 5px;
+            display: flex;
             height: 45px;
-            width: 100px;
+            width: 180px;
+            margin-right: 20px;
+            border: 3px solid rgb(213, 27, 27);
+            border-radius: 20px;
+            color: rgb(213, 27, 27) !important;
+            justify-content: center;
+            align-items: center;
             cursor: pointer;
-            text-decoration: none;
-            position: relative;
-            padding-top: 8px;
-            top: -1px;
-            margin-right: 36px;
+            font-size: 21px;
+            font-weight: 700;
         }
 
         .order:hover {
-            background-color: rgb(219, 5, 5);
+            background-color: rgb(213, 27, 27);
             box-shadow: 0 0 0 2px rgb(223, 1, 1);
+            color: white !important;
         }
 
         .order:active {
-            background-color: red;
-            box-shadow: 0 0 0 0px rgb(223, 1, 1);
+            border: 1px outset rgb(213, 27, 27);
+            background-color: rgb(173, 26, 26);
+            box-shadow: 0 0 0 2px rgb(223, 1, 1);
         }
+         /*      =================     TOP BAR ONLY    ==============   */
 
-        main {
+
+
+        /*       =================    MAIN BODY   =================     */
+      
+        .headerPhotos {
+            display: inline-flex;
+            width: 100%;
             position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 2;
-            text-align: center;
-            font-family: sans-serif;
-            top: 0;
-        }
-  
-        h1 {
-            font-size: 45px;
-            margin-bottom: 60px;
-            margin-top: 80px;
+            top: 6%;
         }
 
-        .background {
-            margin-right: 10px;
-        }
-
-        h4 {
-            margin-top: 30px;
-        }
-
-        h3 {
-            margin-top: 100px;
-            font-size: 27px;
-            margin-bottom: 100px;
-            text-decoration: underline;
+        .headerPhotos img {
+            width: 50%;
         }
 
         .directions {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 10px 20px;
-            font-size: 16px;
-            color: white;
-            background-color: rgb(254, 47, 47);
-            text-decoration: none;
-            border-radius: 5px;
-        }
-
-        .directions:hover {
-            background-color: rgb(232, 45, 45);
-        }
-
-       
-        .footer {
-            position: absolute;
-            bottom: -100px;
-            display: block;
-            padding: 10px;
-            background-color: #828b92;
-            width: 100%;
-            height: 45px;
-            font-family: sans-serif;
             display: flex;
-            justify-content: space-between;
-            align-items: center; 
+            flex-direction: column;
+            position: absolute;
+            top: 75%;
+            width: 50%;
+            padding-left: 75px;
         }
 
-        footer .members {
-            text-align: right;
+        .directions h3:hover {
+            text-decoration: underline;
+            cursor: pointer;
         }
 
-        .footer .members span {
-            margin: 8px;
+        .directions img {
+            transform: scale(.3);
+            position: absolute;
+            left: 10%;
+            top: -220%;
+            transition: all 0.2s ease-in;
         }
 
-        #bottom_footer {
-            visibility: hidden;
-            border: 1px solid red;
-            text-align: center;
-            margin-top: 100px;
-            margin-bottom: 170px;
+        .directions img:hover {
+            transform: scale(.31);
         }
 
-        .locationdraft {  /* delete and remove when you figure out how to style location */
-            text-decoration: none;
-        }
 
-        .locationdraft:visited {
-            color: black;
+        /*       =================    MAIN BODY   ================     */
+
+
+
+         /*      =================     FOOTER ONLY    ==============   */
+        .footer {
+            position: relative;
+            top: 120%;
+            width: 100%;
+            display: inline-flex;
+            align-items: flex-start;
+         }
+
+        .footerInfo {
+            color: rgb(24, 78, 131);
+            width: 50%;
+            border-top: 40px solid rgb(213, 27, 27);
+            padding-left: 15px;
+            font-weight: 600;
         }
+                .footerInfo a {
+                    font-size: 18px;
+                }
+                .footerInfo h6 {
+                    margin-top: 45px;
+                    font-size: 12px;
+                    margin-bottom: 10px;
+                }
+                .footerInfo span {
+                    display: inline-block;
+                    margin-right: 12px;
+                    margin-bottom: 15px;
+                    font-size: 12px;
+                }
+        .bottomRight {
+            border-top: 40px solid rgb(213, 27, 27);
+            width: 50%;
+            height: 232px;
+            display: flex;
+            width: 50%;
+            justify-content: end;
+            color: rgb(24, 78, 131);
+        }
+                .bottomRight img {
+                    transform: scale(.5);
+                    position: relative;
+                    right: -95px;
+                    bottom: 30px;
+                }
+                .bottomRight a {
+                    position: relative;
+                    height: 20px;
+                    right: 243px;
+                    top: 120px;
+                    font-weight: 500;
+                }
+
+                .bottomRight a:hover {
+                    text-decoration: underline;
+                }
+ 
+         /*      =================     FOOTER ONLY    ==============   */
     </style>
 </head>
 
-
 <body>
-
-    <!--  For top bar only  -->
-    <nav class="top_bar">
+    <header class="top_bar">
         <span class="name"><a href="362PROJECT.html">Restaurant 362</a></span>
-        <span class="menu"><a href="menu.html">Menu</a></span>
-        <span class="locations"><a href="#">Location</a></span>
-        <span class="sign_in"><a href="sign_in.html">Sign In</a></span>
-        <span><a class="order" href="order.html">Order</a></span>
-    </nav>
+        <div class="navTop">
+            <span class="menu"><a href="menu.html">Menu</a></span>
+            <span class="locations"><a href="location.html">Location</a></span>
+            <span class="sign_in"><a href="sign_in.html">My 362 Account</a></span>
+        </div>
+        <span><a class="order" href="order.html">Order Now</a></span>
+    </header>
 
-    
-    <!--   front page  -->
     <main>
-        <a href="drafts.html" class="locationdraft"><h1>LOCATION</h1></a>
-        <h3> Restaurant 362</h3> 
-        <h4>800 N State College Blvd, Fullerton, CA 92831</h2>
-        <h4>Hours: 11:00 AM - 9:00 PM daily</h4>
-        <a class="directions" target="_blank" href="https://www.google.com/maps/place/California+State+University,+Fullerton/@33.8823475,-117.8897114,17z/data=!3m1!4b1!4m6!3m5!1s0x80dcd5ce8cc61391:0x2b9810bbb94af355!8m2!3d33.8823476!4d-117.8851033!16zL20vMDJydjF3?entry=ttu">Get Directions</a>
+       <div class="headerPhotos">
+         <img src="pics/location2.jpg">
+         <img src="pics/location1.jpg">
+       </div>
+       <div class="directions">
+         <h2>California State University, Fullerton</h2>
+         <h3><a target="_blank" href="https://www.google.com/maps/dir//csuf/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x80dcd5ce8cc61391:0x2b9810bbb94af355?sa=X&ved=1t:3061&ictx=111">800 N State College Blvd, Fullerton, CA 9283</a></h3>
+         <h4>Hours: 11:00 AM - 9:00 PM daily</h4>
+         <a target="_blank" href="https://www.google.com/maps/dir//csuf/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x80dcd5ce8cc61391:0x2b9810bbb94af355?sa=X&ved=1t:3061&ictx=111"><img src="pics/map2.jpg"></a>
+       </div>
     </main>
 
-
-  
-    <!--  footer, bottom of the page  -->
     <footer class="footer">
-        <p>Summer 2024 362-02</p>
-        <div class="members">
-            <span>Group Members:</span>
-            <span>Matt Amora</span>
-            <span>Edgar Cardenas</span>
-            <span>Lawrence Cui</span>
-            <span>Manvir Dhillon</span>
-            <span>Windly Nguyen</span>
+        <div class="footerInfo">
+            <a href="#"><h5>Our Story</h5></a>
+            <a href="#"><h5>Contact Us</h5></a>
+            <h6> CPSC 362 - SUMMER 2024</h6>
+            <span>MATTHEW AMORA</span> 
+            <span>EDGAR CARDENAS</span> 
+            <span>LAWRENCE CUI</span> 
+            <span>MANVIR DHILLON</span>
+            <span>WINDLY NGUYEN</span>
+        </div>
+        <div class="bottomRight">
+            <img src="pics/bottomLeft.jpg">
+            <a href="sign_up.html">Sign up for a 362 Account</a>
         </div>
     </footer>
 
-   
 
-
-
-
-
+    <!---  ==========      JAVASCIPT CODE      ========= -->
+    <script>
+        const showEye = document.getElementById('showEye');
+        const hideEye = document.getElementById('hideEye');
+        const password = document.getElementById('password');
     
+        showEye.addEventListener('click', function () 
+        {
+            password.setAttribute('type', 'text');
+            showEye.style.display = 'none';
+            hideEye.style.display = 'block';
+        }  );
+    
+        hideEye.addEventListener('click', function () 
+        {
+            password.setAttribute('type', 'password');
+            showEye.style.display = 'block';
+            hideEye.style.display = 'none';
+        }  );
+    </script>    
+
+
 </body>
+
 </html>
