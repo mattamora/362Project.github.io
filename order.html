@@ -49,6 +49,7 @@
             font-size: 30px;
             font-weight: 700;
             cursor: pointer;
+            white-space: nowrap; 
         }
 
         nav a {
@@ -430,120 +431,6 @@
         }
 
 
-        /* =========================   POPUP SCREEN BASE  ========================= */
-        .popup {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            justify-content: center;
-            align-items: center;
-            z-index: 12;
-            font-family: sans-serif;
-        }
-
-        .screenPop {
-            color: white;
-            background-color: white;
-            border-radius: 18px;
-            position: fixed;
-            height: 660px;
-            width: 900px;
-            top: 60px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 3;
-        }
-
-        .close {
-            background-color: white;
-            border: 1px solid white;
-            position: fixed;
-            top: 5px;
-            left: 10px;
-            font-size: 33px;
-            z-index: 12;
-            height: 50px;
-            width: 50px;
-            color: black;
-            text-align: center;
-        }
-
-        .close:hover {
-            font-size: 34px;
-            color: rgb(61, 61, 61);
-            cursor: pointer;
-            border-radius: 50%;
-            background-color: rgb(243, 243, 243);
-        }
-
-        .itemName {
-            height: 50px;
-            width: 130px;
-            text-align: center;
-            position: fixed;
-            top: -51px;
-            left: 75%;
-            transform: translateX(-50%);
-            font-size: 36px;
-            z-index: 12;
-            color: black;
-        }
-
-        .addCart {
-            height: 50px;
-            width: 270px;
-            text-align: center;
-            position: fixed;
-            bottom: 60px;
-            left: 75%;
-            transform: translateX(-50%);
-            font-size: 27px;
-            font-weight: 700;
-            z-index: 12;
-            border-radius: 15px;
-            background-color: #d32c2c;
-            color: white;
-            border: 2px solid #b71c1c;
-        }
-
-        .addCart:hover {
-            background-color: #bb2727;
-            border: 6px solid #bb2727;
-            cursor: pointer;
-            box-shadow: 0 0 0 2px rgb(223, 1, 1);
-        }
-
-        .addCart:active {
-            background-color: #d32c2c;
-            border: 6px solid #d32c2c;
-            cursor: pointer;
-            box-shadow: 0 0 0 0px rgb(223, 1, 1);      
-        }
-
-        .imgPop {
-            transform: scale(2.1);
-            position: absolute;
-            top: 160px;
-            left: 120px;
-        }  
-
-        .price {
-            height: 50px;
-            width: 130px;
-            text-align: center;
-            position: fixed;
-            top: 48px;
-            left: 75%;
-            transform: translateX(-50%);
-            font-size: 21px;
-            z-index: 12;
-            color: black;
-        }
-        /* =========================   POPUP SCREEN BASE  ========================= */
     </style>
 </head>
 
@@ -564,7 +451,7 @@
     <main>
         <h1>ORDER</h1>
         <div class="first">
-            <img src="pics/doubledouble.jpg" alt="In n Out" class="burger">
+            <a href="customizables/customBurger.html"><img src="pics/doubledouble.jpg" alt="In n Out" class="burger"></a>
             <img src="pics/ramen.jpg" alt="ramen" class="ramen">
             <img src="pics/french.jpg" alt="fries" class="fries">
         </div>
@@ -595,18 +482,6 @@
         </div>
     </main>
 
-    <!-- Popup Screen -->
-    <div class="popup">
-        <div class="screenPop">
-            <h2>PopScren</h2>
-            <button class="close">✕</button>
-            <h1 class="itemName">Burger</h1>
-            <button class="addCart">ADD TO CART</button>
-            <h4 class="price">$6.99</h4>
-            <img src="pics/doubledouble.jpg" alt="In n Out" class="imgPop">
-        </div>
-    </div>
-
     <!-- Footer, bottom of the page -->
     <p id="bottom_footer"> TO KEEP FOOTER AT THE BOTTOM</p>
     <footer class="footer">
@@ -621,142 +496,6 @@
         </div>
     </footer>
 
-    <!--   ================            JavaScript code            =================================-->
-    <script>
-        let cartAmount = 0; // cart top right to 0
 
-        // Get all the images and the popup element
-        const images = document.querySelectorAll('img'); // all images on the order page
-        const popup = document.querySelector('.popup'); // popup screen
-        const closeButton = document.querySelector('.close'); // close button
-        const cartAmountElement = document.querySelector('.cartAmount');
-
-        // Popup data
-        const popupData = {
-            burger: {
-                name: 'Burger',
-                price: '$6.99',
-                img: 'pics/doubledouble.jpg',
-                
-            },
-            ramen: {
-                name: 'Ramen',
-                price: '$8.99',
-                img: 'pics/ramen.jpg',
-                styles: {
-                    transform: 'scale(1.8)',
-                    marginLeft: '1px'
-                }
-            },
-            fries: {
-                name: 'Fries',
-                price: '$3.99',
-                img: 'pics/french.jpg',
-                styles: {
-                    transform: 'scale(1.6)',
-                    marginLeft: '1px'
-                }
-            },
-            pho: {
-                name: 'Phở',
-                price: '$9.99',
-                img: 'pics/pho.jpg',
-                styles: {
-                    transform: 'scale(2.1)',
-                    marginLeft: '40px'
-                }
-            },
-            ribs: {
-                name: 'Ribs',
-                price: '$12.99',
-                img: 'pics/ribs.jpg',
-                styles: {
-                    transform: 'scale(1.9)',
-                    marginLeft: '1px'
-                }
-            },
-            tacos: {
-                name: 'Tacos',
-                price: '$6.99',
-                img: 'pics/tacos.jpg',
-                styles: {
-                    transform: 'scale(1.6)',
-                    marginLeft: '-10px'
-                }
-            },
-            salad: {
-                name: 'Salad',
-                price: '$5.99',
-                img: 'pics/salad.jpg',
-                styles: {
-                    transform: 'scale(1.6)',
-                    marginLeft: '-10px'
-                }
-            },
-            boba: {
-                name: 'Boba',
-                price: '$4.99',
-                img: 'pics/bobas.jpg',
-                styles: {
-                    transform: 'scale(1.66)',
-                }
-            },
-            soda: {
-                name: 'Soda',
-                price: '$1.99',
-                img: 'pics/soda.jpg',
-                styles: {
-                    transform: 'scale(2.4)',
-                    marginLeft: '90px'
-                }
-            }
-        };
-
-        // Function to update popup content
-        function updatePopupContent(data) {
-            document.querySelector('.itemName').textContent = data.name;
-            document.querySelector('.price').textContent = data.price;
-
-            const imgPop = document.querySelector('.imgPop');
-            imgPop.src = data.img;
-
-            // Apply styles dynamically
-            Object.assign(imgPop.style, data.styles);
-        }
-
-          // Function to update cart amount
-        function updateCartAmount() {
-            cartAmount += 1;
-            cartAmountElement.textContent = cartAmount;
-        }
-
-        // Add click event listener to each image
-        images.forEach(image => {
-            image.addEventListener('click', () => {
-                const itemKey = image.className; // Use the class name as the key
-                if (popupData[itemKey]) {
-                    updatePopupContent(popupData[itemKey]);
-                    popup.style.display = 'flex'; // Show the popup
-                }
-            });
-        });
-
-        // Add click event listener to hide the popup when clicking outside the content
-        popup.addEventListener('click', (event) => {
-            if (event.target === popup) {
-                popup.style.display = 'none'; // Hide the popup
-            }
-        });
-
-        // Add click event listener to the close button
-        closeButton.addEventListener('click', () => {
-            popup.style.display = 'none'; // Hide the popup
-        });
-
-        // Add click event listener to the "ADD TO CART" button
-        document.querySelector('.addCart').addEventListener('click', () => {
-            updateCartAmount();
-        });
-    </script>
 </body>
 </html>
