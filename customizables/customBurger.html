@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Burger</title>
+    <meta name="viewport" content="width=device-width, inital-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        /* switch this to its own file when you are done */
+        * {
+            box-sizing: border-box; 
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            min-width: 30%;
+            min-height: 30%;
+            font-family: lexend, sans-serif;
+        }
+
+        /*      =================     TOP BAR ONLY    ==============   */
+        .top_bar {
+            position: fixed;
+            top: 0;
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;
+            width: 100%;
+            height: 65px;
+            z-index: 10;
+            padding: 10px 0;
+            border-bottom: 1px solid rgb(158, 158, 158);
+            box-shadow: 0 6px 6px -3px rgba(0, 0, 0, 0.2); 
+            background-color: white;
+        }
+
+        a:link, a:visited {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .name {
+            margin: 20px;
+            font-size: 30px;             
+            font-weight: 700;
+            cursor: pointer;
+            white-space: nowrap;         
+        }
+
+        .navTop {
+            position: fixed;
+            right: 12%;
+            height: 45px;
+            width: 330px;
+            display: inline-flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 18px;
+            font-weight: 600;
+            color: rgb(24, 78, 131);
+        }
+
+        .menu:hover {
+            transform: scale(1.1);
+        }
+
+        .locations:hover {
+            transform: scale(1.1); 
+        }
+
+        .sign_in:hover {
+            transform: scale(1.1); 
+        }
+
+        .cart {
+            display: flex;
+            height: 42px;
+            width: 42px;
+            margin-right: 84px;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .cart:hover {
+            transform: scale(1.1);
+            transition: all .1s ease-in;
+        }
+         /*      =================     TOP BAR ONLY    ==============   */
+
+
+        /*       =================    MAIN BODY   =================     */
+
+        .itemHeader {
+            display: flex;
+            position: relative;
+            justify-content: center;
+            top: 8%;
+            width: 100%;
+            height: 300px;
+            background-color: rgb(213, 27, 27);
+        }
+        .itemHeaderBody {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 20%;
+            color: white;
+            padding-top: 21px;
+        }
+                .itemHeaderBody h1 {
+                    font-size: 42px;
+                }
+                .itemHeaderBody h3 {
+                    margin-top: -12px;
+                    font-weight: 400;
+                }
+                .itemHeaderBody h5 {
+                    margin-top: 2px;
+                    font-weight: 200;
+                }
+                .itemHeaderBody h4 {
+                    margin-top: -5px;
+                    cursor: pointer;
+                }
+                .open {
+                    position: absolute;
+                    top: 74.3%;
+                    left: 32.4%;
+                    height: 32px;
+                    width: 32px;
+                    filter: brightness(0) invert(1);
+                    cursor: pointer;
+                }
+                .close {
+                    display: none;
+                    position: absolute;
+                    top: 74.3%;
+                    left: 32.4%;
+                    height: 32px;
+                    width: 32px;
+                    filter: brightness(0);
+                    cursor: pointer;
+                }
+
+
+        .itemHeader img {
+            transform: scale(.8);
+            border-radius: 21px;
+        }
+
+        main {
+            width: 75%;
+            height: 120%;
+            margin: 6% auto 0;
+            position: relative;
+        }
+
+        .customTitle {
+            border-bottom: 2px solid rgb(19, 62, 104);
+            height: 33px;
+            margin-bottom: 30px;
+            color: rgb(19, 62, 104);
+            font-size: 18px;
+            font-weight: 300;
+            letter-spacing: 1px;
+            padding-left: 10px;
+
+        }
+                .customTitle span {
+                    margin-right: 27px;
+                }
+                .customTitle span:hover {
+                    font-weight: 900;
+                    margin-right: 20px;
+                }
+
+
+        .customizeHeader {
+            background-color: rgb(19, 62, 104);
+            color: white;
+            height: 60px;
+            padding: 15px;
+            font-size: 24px;
+            font-weight: 400;
+            letter-spacing: 2px;
+        }
+
+        .toppings {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px; 
+            padding: 10px; 
+            border: 1px solid red;
+        }
+        .toppings span {
+            border: 1px solid red;
+            padding: 5px;
+            text-align: center;
+        }
+
+        .addOnImages {
+            display: flex; 
+            justify-content: space-between;
+            height: 180px;
+            overflow: hidden;
+        }
+   
+
+        #requests {
+            width: 100%;
+            height: 90px;
+        }
+        #requests:focus {
+            font-family: lexend, sans-serif;
+            font-size: 18px;
+        }
+        #requests::placeholder {
+            font-family: lexend, sans-serif;
+            font-size: 18px;
+        }
+
+        .addCart {
+            display: flex;
+            height: 90px;
+            width: 300px;
+            border: 3px solid rgb(213, 27, 27);
+            border-radius: 20px;
+            color: rgb(213, 27, 27) !important;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            font-size: 23px;
+            font-weight: 600;
+            position: absolute;
+            bottom: 75px;
+            right: 24px;
+        }
+        .addCart:hover {
+            background-color: rgb(213, 27, 27);
+            box-shadow: 0 0 0 2px rgb(223, 1, 1);
+            color: white !important;
+        }
+        .addCart:active {
+            border: 1px outset rgb(213, 27, 27);
+            background-color: rgb(173, 26, 26);
+            box-shadow: 0 0 0 2px rgb(223, 1, 1);
+        }
+    
+
+        /*       =================    MAIN BODY   ================     */
+
+
+         /*      =================     FOOTER ONLY    ==============   */
+        .footer {
+            position: relative;
+            top: 130%;
+            width: 100%;
+            display: inline-flex;
+            align-items: flex-start;
+         }
+
+        .footerInfo {
+            color: rgb(24, 78, 131);
+            width: 50%;
+            border-top: 40px solid rgb(213, 27, 27);
+            padding-left: 15px;
+            font-weight: 600;
+        }
+                .footerInfo a {
+                    font-size: 18px;
+                }
+                .footerInfo h6 {
+                    margin-top: 45px;
+                    font-size: 12px;
+                    margin-bottom: 10px;
+                }
+                .footerInfo span {
+                    display: inline-block;
+                    margin-right: 12px;
+                    margin-bottom: 15px;
+                    font-size: 12px;
+                }
+        .bottomRight {
+            border-top: 40px solid rgb(213, 27, 27);
+            width: 50%;
+            height: 232px;
+            display: flex;
+            width: 50%;
+            justify-content: end;
+            color: rgb(24, 78, 131);
+        }
+                .bottomRight img {
+                    transform: scale(.5);
+                    position: relative;
+                    right: -95px;
+                    bottom: 30px;
+                }
+                .bottomRight a {
+                    position: relative;
+                    height: 20px;
+                    right: 243px;
+                    top: 120px;
+                    font-weight: 500;
+                }
+
+                .bottomRight a:hover {
+                    text-decoration: underline;
+                }
+ 
+         /*      =================     FOOTER ONLY    ==============   */
+    </style>
+</head>
+
+<body>
+    <header class="top_bar">
+        <span class="name"><a href="../362PROJECT.html">Restaurant 362</a></span>
+        <div class="navTop">
+            <span class="menu"><a href="../menu.html">Menu</a></span>
+            <span class="locations"><a href="../location.html">Location</a></span>
+            <span class="sign_in"><a href="../sign_in.html">My 362 Account</a></span>
+        </div>
+        <span><a href="../checkout.html"><img src="../pics/cart.jpg" alt="cart" class="cart"></a></span>
+    </header>
+
+    <div class="itemHeader">
+        <div class="itemHeaderBody">
+            <h1>BURGER</h1>
+            <h3>$6.99 | 900 Cal</h3>
+            <h5>Juicy beef patty topped with melted cheddar cheese, our signature sauce, and your choice of toppings, served on a toasted brioche bun.</h5>
+            <h4 onclick="toggleStar()">Add To Favorites</h4>
+            <img class="open" src="../pics/closeStar.png" onclick="toggleStar()">
+            <img class="close" src="../pics/closeStar.png" onclick="toggleStar()">
+        </div>
+        <img src="../pics/doubledouble.jpg">
+    </div>
+
+    <main>
+        <div class="customTitle">
+            <a href="#customizeHeader1" id="customizeHeader1"><span>Customize</span></a>
+            <a href="#customizeHeader2"><span>Add-ons</span></a>
+            <a href="#customizeHeader3"><span>Special Requests</span></a>
+        </div>
+        <h3 class="customizeHeader">Customize</h3>
+        <div id="customizeHeader2" class="toppings">
+            <span>Onions</span>
+            <span>Tomatoes</span>
+            <span>Lettuce</span>
+            <span>Pickles</span>
+            <span>Ketchup</span>
+            <span>Mayo</span>
+            <span>Jalapenos</span>
+            <span>Extra Patty</span>
+        </div>
+        <h3 class="customizeHeader">Add-ons</h3>
+        <div class="addOnImages">
+            
+        </div>
+        <h3 id="customizeHeader3" class="customizeHeader">Special Requests (Optional)</h3>
+        <input id="requests" placeholder="Any Additonal Requests...">
+        <a class="addCart" href="#">ADD TO CART - $1000 </a>
+    </main>
+
+    <footer class="footer">
+        <div class="footerInfo">
+            <a href="#"><h5>Our Story</h5></a>
+            <a href="#"><h5>Contact Us</h5></a>
+            <h6> CPSC 362 - SUMMER 2024</h6>
+            <span>MATTHEW AMORA</span> 
+            <span>EDGAR CARDENAS</span> 
+            <span>LAWRENCE CUI</span> 
+            <span>MANVIR DHILLON</span>
+            <span>WINDLY NGUYEN</span>
+        </div>
+        <div class="bottomRight">
+            <img src="../pics/bottomLeft.jpg">
+            <a href="sign_up.html">Sign up for a 362 Account</a>
+        </div>
+    </footer>
+
+
+    <!---  ==========      JAVASCIPT CODE      ========= -->
+    <script>
+        function toggleStar() {
+            const openStar = document.querySelector(".open");
+            const closeStar = document.querySelector(".close");
+
+            if (openStar.style.display === 'none') {
+                openStar.style.display = 'block';
+                closeStar.style.display = 'none';
+            } else {
+                openStar.style.display = 'none';
+                closeStar.style.display = 'block';
+            }
+        }
+    </script>  
+
+
+</body>
+
+</html>
