@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>362_Project</title>
 
-    <!-- ALL CSS CODE -->
+<head>
+    <title>Menu</title>
+    <meta name="viewport" content="width=device-width, inital-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
     <style>
+        /* switch this to its own file when you are done */
         * {
-             box-sizing: border-box;  
-             /* border: 1px solid red;  */
+            box-sizing: border-box; 
         }
 
         html, body {
@@ -15,75 +18,68 @@
             padding: 0;
             width: 100%;
             height: 100%;
+            min-width: 30%;
+            min-height: 30%;
+            font-family: lexend, sans-serif;
         }
 
-
-        img {
-            height: 200px;
-            margin-bottom: 300px;
-            transition: transform 0.1s ease-in-out
-        }
-    
-        img:hover {
-            transform: scale(1.08);
-        }
-        /*  =================================    TOP BAR     =============================== */
+        /*      =================     TOP BAR ONLY    ==============   */
         .top_bar {
             position: fixed;
             top: 0;
-            width: 100%;
-            background-color: white;
-            z-index: 1000;
-            padding: 10px 0;
-            border-bottom: 1px solid rgb(158, 158, 158);
-            position: fixed;
-            display: flex; 
+            display: flex;
             justify-content: space-between; 
             align-items: center;
+            width: 100%;
             height: 65px;
+            z-index: 10;
+            padding: 10px 0;
+            border-bottom: 1px solid rgb(158, 158, 158);
             box-shadow: 0 6px 6px -3px rgba(0, 0, 0, 0.2); 
+            background-color: white;
         }
 
-        nav {
-            font-family: sans-serif; 
+        .logo {
+           transform: scale(.4);
+           position: relative;
+           left: 172%;
+           top: 1px;
+        }
+
+        a:link, a:visited {
             text-decoration: none;
+            color: inherit;
         }
 
         .name {
-            margin: 20px;
-            margin-right: 700px;
+            position: relative;
+            left: -38.4%;
             font-size: 30px;             
-            font-weight: 700;  
-            cursor: pointer;       
-        }
-
-        nav a {
-            color: inherit;
-            text-decoration: none; 
-            font-weight: 700;  
-        }
-
-        .menu {
-            font-size: 21px;
-            text-decoration: underline;
-
-        }
-
-        .locations {
-            display: inline-block;
-            margin-right: -4px;
-            font-size: 18px;
+            font-weight: 700;
             cursor: pointer;
+            white-space: nowrap;         
+        }
+
+        .navTop {
+            position: fixed;
+            right: 12%;
+            height: 45px;
+            width: 330px;
+            margin-right: 50px;
+            display: inline-flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 18px;
+            font-weight: 600;
+            color: rgb(24, 78, 131);
+        }
+
+        .menu:hover {
+            transform: scale(1.1);
         }
 
         .locations:hover {
             transform: scale(1.1); 
-        }
-
-        .sign_in {
-            display: inline-block;
-            font-size: 18px;
-            cursor: pointer;
         }
 
         .sign_in:hover {
@@ -91,383 +87,487 @@
         }
 
         .order {
-            display: inline-block;
-            font-size: 18px;
-            border: 3px outset red;
-            background-color: red;
-            color: white;
-            text-align: center;
-            border-radius: 5px;
+            display: flex;
             height: 45px;
-            width: 100px;
+            width: 180px;
+            margin-right: 20px;
+            border: 3px solid rgb(213, 27, 27);
+            border-radius: 20px;
+            color: rgb(213, 27, 27) !important;
+            justify-content: center;
+            align-items: center;
             cursor: pointer;
-            text-decoration: none;
-            position: relative;
-            padding-top: 8px;
-            top: -1px;
-            margin-right: 36px;
+            font-size: 21px;
+            font-weight: 700;
         }
 
         .order:hover {
-            background-color: rgb(219, 5, 5);
+            background-color: rgb(213, 27, 27);
             box-shadow: 0 0 0 2px rgb(223, 1, 1);
+            color: white !important;
         }
 
         .order:active {
-            background-color: red;
-            box-shadow: 0 0 0 0px rgb(223, 1, 1);
+            border: 1px outset rgb(213, 27, 27);
+            background-color: rgb(173, 26, 26);
+            box-shadow: 0 0 0 2px rgb(223, 1, 1);
         }
-
-         /*  =================================    END OF TOP BAR  CODE   =============================== */
-
-        main {
-            margin-top: 70px;
-            text-align: center;
-            font-family: sans-serif;
-        }
+         /*      =================     TOP BAR ONLY    ==============   */
 
 
-        /*  =======================================        FIRST ROW         =======================================================   */
-        .first {
-            margin-bottom: 20px;
-            height: 300px;
-        }
-
-        .first_items {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            position: relative;
-            z-index: 3;
-            margin-top: -130px;
-            background: none;
-            border: none;
-            height: 60px;
-            width: 100%; 
-        }
-
-        .first_items h4 {
-            width: 200px;
-            text-align: center;
-        }
-
-        .burger {
-            position: absolute;
-            left: 240px;
-        }
-
-        .first_items h4:nth-child(1) {
-            position: absolute;
-            left: 0;
-            margin-left: 240px;
-            font-size: 24px;
-        }
-
-        .first_items h4:nth-child(2) {
-             position: absolute;
-             left: 50%;
-             transform: translateX(-50%);
-             font-size: 24px;
-        }
-
-        .ramen {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%) scale(1.1);
-        }
-
-        .ramen:hover {
-            transform: translateX(-50%) scale(1.21);
-        }
-
-        .first_items h4:nth-child(3) {
-            position: absolute;
-            right: 0;
-            margin-right: 240px;
-            font-size: 24px;
-        }
-
-        .fries {
-            position: absolute;
-            right: 0;
-            margin-right: 210px;
-            transform: scale(.8);
-        }
-
-        .fries:hover {
-            transform: scale(.88);
-        }
-
-        /*  ========================================            SECOND ROW         ========================================   */
-        .second {
-            margin-top: 60px;
-            margin-bottom: 20px;
-            height: 300px;
-        }
-
-        .second_items {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            position: relative;
-            z-index: 3;
-            margin-top: -130px;
-            background: none;
-            border: none;
-            height: 60px;
-            width: 100%; 
-        }
-
-        .second_items h4 {
-            width: 200px;
-            text-align: center;
-        }
-
-        .pho {
-            position: absolute;
-            left: 240px;
-            transform: scale(1.2);
-        }
-
-        .pho:hover {
-            transform: scale(1.28);
-        }
-
-        .second_items h4:nth-child(1) {
-            position: absolute;
-            left: 0;
-            margin-left: 240px;
-            font-size: 24px;
-        }
-
-        .second_items h4:nth-child(2) {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 24px;
-        }
-
-        .ribs {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .ribs:hover {
-            transform: translateX(-50%) scale(1.1);
-        }
-
-        .second_items h4:nth-child(3) {
-            position: absolute;
-            right: 0;
-            margin-right: 240px;
-            font-size: 24px;
-        }
-
-        .tacos {
-            position: absolute;
-            right: 0;
-            margin-right: 150px;
-        }
-
-
-        /*  ========================================            THIRD ROW        ========================================   */
-        .salad {
-            position: absolute;
-            left: 180px;
-            transform: scale(.9);
-        }
-
-        .salad:hover {
-            transform: scale(.98);
-        }
-
-        .third_items h4:nth-child(1) {
-             position: absolute;
-             left: 0;
-             margin-left: 240px;
-             font-size: 24px;
-        }
-
-        .third {
-            margin-top: 60px;
-            margin-bottom: 20px;
-            height: 300px; 
-        }
-
-        .third_items {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            position: relative;
-            z-index: 3;
-            margin-top: -130px;
-            background: none;
-            border: none;
-            height: 60px;
-            width: 100%; 
-        }
-
-        .third_items h4 {
-            width: 200px;
-            text-align: center;
-        }
-
-        .third_items h4:nth-child(2) {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 24px;
-        }
-
-        .boba {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%) scale(1.1);
-        }
-
-        .boba:hover {
-            transform: translateX(-50%) scale(1.2);
-        }
-
-        .third_items h4:nth-child(3) {
-            position: absolute;
-            right: 0;
-            margin-right: 240px;
-            font-size: 24px;
-        }
-
-        .soda {
-            position: absolute;
-            right: 280px;
-            transform: scale(1.1);
-        }
-
-        .soda:hover {
-            transform: scale(1.2);
-        }
-    /*   =====================================================================================================*/
-
+        /*       =================    MAIN BODY   =================     */
         h1 {
+            position: absolute;
+            top: 9%;
+            left: 50%;
+            transform: translateX(-50%);
             font-size: 45px;
-            margin-bottom: 60px;
-            margin-top: 80px;
+            color: rgb(24, 78, 131);
         }
 
-        h4 {
-            text-transform: uppercase;
-        }
-       
-        .footer {
-            display: block;
-            padding: 10px;
-            color: black;
-            background-color: #828b92;
-            width: 100%;
-            height: 45px;
-            font-family: sans-serif;
-            display: flex;
-            justify-content: space-between;
+        .itemTabs {
+            position: absolute;
+            top: 25%;
+            display: inline-flex;
+            justify-content: center;
             align-items: center;
- 
+            width: 100%;
+            height: 40px;
+            background-color: rgb(213, 27, 27);
+            color: white;
+            font-size: 18px;
+        }
+                .itemTabs a:not(:first-child){
+                    margin-left: 70px;
+                }
+
+                .itemTabs a:hover {
+                    text-decoration: underline;
+                }
+             
+        main {
+            display: flex;
+            flex-direction: column;
+            width: 60%;
+            margin: 0 auto;
+            margin-top: 270px;
+            /*
+            border: 3px solid red;
+            border-radius: 12px; */
+        }
+                            main h6 {  /*  in page links  */
+                                color: white;
+                            }
+
+        .american {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+           
         }
 
-        footer .members {
-            text-align: right;
-        }
+            .american h2 {
+                text-align: center;
+                width: 100%;
+                margin-bottom: 40px;
+                font-size: 30px;
+            }
 
-        .footer .members span {
-            margin: 8px;
-        }
+            .american span {
+                text-align: center;
+                width: 45%; 
+                font-size: 27px;
+                font-weight: 600;
+                text-decoration: underline;
+            }
 
-        footer p{
-            display: inline;
-            word-spacing: 3px;
-            margin-left: 6px;
+            .american p {
+                text-align: center;
+                width: 48%; 
+                font-size: 18px;
+            }
+
+            .ribsDes {
+                transform: translateY(-11px);
+            }
+
+            img[src*="double"]{
+                transform: translateX(-40px);
+                width: 270px;
+                height: auto;
+            }
+
+            img[src*="rib"] {
+                transform: translateX(60px);
+                width: 320px;
+                height: auto;
+            }
+
+        .asian {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+            .asian h2 {
+                text-align: center;
+                width: 100%;
+                margin-bottom: 40px;
+                font-size: 30px;
+            }
+
+            .asian span {
+                text-align: center;
+                width: 45%; 
+                font-size: 27px;
+                font-weight: 600;
+                text-decoration: underline;
+            }
+
+            .ramenDes {
+                transform: translateY(-40px);
+                text-align: center;
+                width: 45%; 
+                font-size: 18px;
+                margin-right: 5px;
+            }
+
+            .phoDes {
+                transform: translateY(-29px);
+                text-align: center;
+                width: 45%; 
+                font-size: 18px;
+                margin-left: 5px;
+            }
+
+            img[src*="ramen"]{
+                margin-right: 80px;
+                transform: translateY(-15px);
+                width: 410px;
+                height: auto;
+                z-index: -1;
+            }
+
+            img[src*="pho"] {
+                transform: translateX(-40px) translateY(-30px);
+                width: 300px;
+                height: auto;
+                z-index: -1;
+            }
+
+        .mexican {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+           
+        }
+            .mexican h2 {
+                text-align: center;
+                width: 100%;
+                margin-bottom: 40px;
+                font-size: 30px;
+            }
+
+            .mexican span {
+                text-align: center;
+                width: 45%; 
+                font-size: 27px;
+                font-weight: 600;
+                text-decoration: underline;
+            }
+
+            .tacoDes {
+                transform: translateY(-146px);
+                text-align: center;
+                width: 45%; 
+                font-size: 18px;
+                margin-right: 10px;
+            }
+
+            .burritoDes {
+                transform: translateY(-135px);
+                text-align: center;
+                width: 45%; 
+                font-size: 18px;
+                margin-left: 10px;
+            }
+
+            img[src*="taco"]{
+                transform: translateX(-50px) translateY(-70px);
+                width: 420px;
+                height: auto;
+            }
+
+            img[src*="burrito"] {
+                transform: translateX(-10px) translateY(-100px);
+                width: 300px;
+                height: auto;
+            }
+
+        .sides {    
+            margin-top: -130px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+            .sides h2 {
+                text-align: center;
+                width: 100%;
+                margin-bottom: 40px;
+                font-size: 30px;
+            }
+
+            .sides span {
+                text-align: center;
+                width: 45%; 
+                font-size: 27px;
+                font-weight: 600;
+                text-decoration: underline;
+            }
+
+            .friesDes {
+                text-align: center;
+                width: 45%; 
+                font-size: 18px;
+                margin-right: 10px;
+            }
+
+            .saladDes {
+                text-align: center;
+                width: 45%; 
+                font-size: 18px;
+                margin-left: 10px;
+            }
+
+            img[src*="french"]{
+                transform: scaleX(-1);
+                width: 300px;
+                height: auto;
+                margin-top: 30px;
+                margin-right: 50px;
+            }
+
+            img[src*="salad"] {
+                transform: translateX(15px) translateY(10px);
+                width: 320px;
+                height: auto;
+            }
+
+        .drinks {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+            .drinks h2 {
+                text-align: center;
+                width: 100%;
+                margin-bottom: 40px;
+                font-size: 30px;
+            }
+
+            .drinks span {
+                text-align: center;
+                width: 45%; 
+                font-size: 27px;
+                font-weight: 600;
+                text-decoration: underline;    
+            }
+
+            .drinks p {
+                text-align: center;
+                width: 45%; 
+                font-size: 18px;
+            }
+
+            img[src*="boba"]{
+                transform: translateX(-100px) translateY(0px);
+                width: 420px;
+                height: auto;
+                z-index: -1;
+            }
+
+            img[src*="soda"] {
+                transform: translateX(-10px);
+                width: 190px;
+                height: auto;
+            }
+
+
+
+            
+
+
+        /*       =================    MAIN BODY   ================     */
+
+
+         /*      =================     FOOTER ONLY    ==============   */
+         .footer {
+            position: relative;
+            top: 15%;
+            width: 100%;
+            display: inline-flex;
+            align-items: flex-start;
+         }
+
+        .bottomLeft {
+            color: rgb(24, 78, 131);
+            width: 50%;
+            border-top: 40px solid rgb(213, 27, 27);
+            padding-left: 15px;
             font-weight: 600;
         }
-
-        #bottom_footer {
-            visibility: hidden;
-            border: 1px solid red;
-            text-align: center;
-            margin-top: 100px;
-            margin-bottom: 150px;
+                .bottomLeft a {
+                    font-size: 18px;
+                }
+                .bottomLeft h6 {
+                    margin-top: 45px;
+                    font-size: 12px;
+                    margin-bottom: 10px;
+                }
+                .bottomLeft span {
+                    display: inline-block;
+                    margin-right: 12px;
+                    margin-bottom: 15px;
+                    font-size: 12px;
+                }
+        .bottomRight {
+            border-top: 40px solid rgb(213, 27, 27);
+            width: 50%;
+            height: 193px;
+            display: flex;
+            width: 50%;
+            justify-content: end;
+            color: rgb(24, 78, 131);
         }
+                .family{
+                    transform: scale(.3);
+                    position: absolute;
+                    bottom: -30px;
+                    right: -70px;
+                    
+                }
+                .signUp {
+                    position: absolute;
+                    font-weight: 500;
+                    right: 225px;
+                    bottom: 50px;
+                }
+
+                .bottomRight a:hover {
+                    text-decoration: underline;
+                }
+
+                .logo2 {
+                    position: absolute;
+                    transform: scale(1.2);
+                    right: 40px;
+                    bottom: 35px;
+                }
+ 
+         /*      =================     FOOTER ONLY    ==============   */
     </style>
 </head>
 
-
 <body>
-
-    <!--  For top bar only  -->
-    <nav class="top_bar">
+    <header class="top_bar">
+        <span><a href="../home.html"><img src="../pics/logo2.png" class="logo"></a></span>
         <span class="name"><a href="362PROJECT.html">Restaurant 362</a></span>
-        <span class="menu"><a href="#">Menu</a></span>
-        <span class="locations"><a href="location.html">Location</a></span>
-        <span class="sign_in"><a href="sign_in.html">Sign In</a></span>
-        <span><a class="order" href="order.html">Order</a></span>
-    </nav>
+        <div class="navTop">
+            <span class="menu"><a href="menu.html">Menu</a></span>
+            <span class="locations"><a href="location.html">Location</a></span>
+            <span class="sign_in"><a href="sign_in.html">My 362 Account</a></span>
+        </div>
+        <span><a class="order" href="order.html">Order Now</a></span>
+    </header>
 
-    
-    <!--   front page  -->
+    <h1>MENU</h1>
+    <div class="itemTabs">
+        <a href="#"><span>AMERICAN</span></a>
+        <a href="#asian"><span>ASIAN</span></a>
+        <a href="#mexican"><span>MEXICAN</span></a>
+        <a href="#sides"><span>SIDES</span></a>
+        <a href="#drinks"><span>DRINKS</span></a>
+    </div>
+
     <main>
-        <h1>MENU</h1>   
-        <div class="first">
-            <img src="pics/doubledouble.jpg" alt="In n Out" class="burger">
-            <img src="pics/ramen.jpg" alt="ramen" class = "ramen">
-            <img src="pics/french.jpg" alt="fries" class="fries"> 
+        <div class="american" id="#american">  
+            <h2>AMERICAN</h2>
+            <span>Burger</span>
+            <span>Ribs</span>
+            <img src="pics/doubledouble.jpg">
+            <img src="pics/ribs.jpg">
+            <p>Juicy beef patty topped with melted cheddar cheese, our signature sauce, and your choice of toppings, served on a toasted brioche bun</p>
+            <p class ="ribsDes">Tender, slow-cooked ribs slathered in our signature smoky barbecue sauce</p>
         </div>
-        <div class="first_items">
-            <h4 class = "burger">Burgers</h4>
-            <h4>Ramen</h4>
-            <h4>Fries</h4>
+        <h6 id="asian">.</h6>
+        <div class="asian" >  
+            <h2>ASIAN</h2>
+            <span>Ramen</span>
+            <span>Pho</span>
+            <img src="pics/ramen.jpg">
+            <img src="pics/pho.jpg">
+            <p class="ramenDes">Our signature tonkotsu ramen with a creamy, umami-rich broth, tender noodles, and your choice of meat and toppings</p>
+            <p class="phoDes">Authentic pho with a rich, aromatic broth, served with delicate rice noodles, customizable meat options, and an assortment of fresh herbs and vegetables</p>
         </div>
-        <div class="second">
-            <img src="pics/pho.jpg" alt="pho" class="pho">
-            <img src="pics/ribs.jpg" alt="ribs" class="ribs">
-            <img src="pics/tacos.jpg" alt="Tacos" class="tacos">
+        <h6 id="mexican">.</h6>
+        <div class="mexican">  
+            <h2>MEXICAN</h2>
+            <span>Tacos</span>
+            <span>Burritos</span>
+            <img src="pics/tacos.jpg">
+            <img src="pics/burrito3.png">
+            <p class="tacoDes">Three flavorful tacos with your choice of meat and toppings, nestled in warm tortillas</p>
+            <p class="burritoDes">Savory burritos filled with your selected meats, fries, and beans, topped with fresh guacamole and shredded cheese</p>
         </div>
-        <div class="second_items">
-            <h4>Phở</h4>
-            <h4>Ribs</h4>
-            <h4>Tacos</h4>
+        <h6 id="sides">.</h6>
+        <div class="sides">  
+            <h2>SIDES</h2>
+            <span>Fries</span>
+            <span>Salad</span>
+            <img src="pics/french.jpg">
+            <img src="pics/salad.jpg">
+            <p class="friesDes">Crispy, golden fries with your choice of seasoning and toppings, such as melted cheese or bacon bits</p>
+            <p class="saladDes">Caesar salad featuring crunchy romaine, rich Caesar dressing, and Parmesan cheese, with customizable toppings</p>
         </div>
-        <div class="third">
-            <img src="pics/salad.jpg" alt="salad" class="salad">
-            <img src="pics/bobas.jpg" alt="boba" class="boba">
-            <img src="pics/soda.jpg" alt="Drinks" class="soda">
+        <h6 id="drinks">.</h6>
+        <div class="drinks">  
+            <h2>DRINKS</h2>
+            <span>Boba</span>
+            <span>Soda</span>
+            <img src="pics/bobas.jpg">
+            <img src="pics/soda.jpg">
+            <p>Our homemade milk teas</p>
+            <p>Sodas and Juices</p>
         </div>
-        <div class="third_items">
-            <h4>Salad</h4>
-            <h4>boba</h4>
-            <h4>Soda</h4>
-        </div>
-       
     </main>
 
 
-  
-    <!--  footer, bottom of the page  -->
-    <p id="bottom_footer"> TO KEEP FOOTER AT THE BOTTOM</p>
     <footer class="footer">
-        <p>Summer 2024 362-02</p>
-        <div class="members">
-            <span>Group Members:</span>
-            <span>Matt Amora</span>
-            <span>Edgar Cardenas</span>
-            <span>Lawrence Cui</span>
-            <span>Manvir Dhillon</span>
-            <span>Windly Nguyen</span>
+        <div class="bottomLeft">
+            <a href="#"><h5>Our Story</h5></a>
+            <a href="#"><h5>Contact Us</h5></a>
+            <h6> CPSC 362 - SUMMER 2024</h6>
+            <span>MATTHEW AMORA</span> 
+            <span>EDGAR CARDENAS</span> 
+            <span>LAWRENCE CUI</span> 
+            <span>MANVIR DHILLON</span>
+            <span>WINDLY NGUYEN</span>
+        </div>
+        <div class="bottomRight">
+            <img src="../pics/bottomLeft.jpg" class="family">
+            <a href="../sign_up.html" class="signUp">Sign up for a 362 Account</a>
+            <a href="../home.html"><img src="../pics/logo2.png" class="logo2"></a>
         </div>
     </footer>
 
-   
+
+    <!---  ==========      JAVASCIPT CODE      ========= -->  
 
 
-
-
-
-    
 </body>
+
 </html>
