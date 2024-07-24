@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Sign_In</title>
+    <title>Sign_Up</title>
     <meta name="viewport" content="width=device-width, inital-scale=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -289,23 +289,24 @@
     <main>
         <h1><a class="h1" href="362PROJECT.html">MY 362 ACCOUNT</a></h1>
         <h2>SIGN UP</h2>
-        <input type="text" placeholder="First Name" class="firstName">
-        <input type="text" placeholder="Last Name" class="LastName">
+        <input type="text" placeholder="First Name" class="firstName" id="first-name">
+        <input type="text" placeholder="Last Name" class="LastName" id="last-name">
         <input id="username" type="text" placeholder="Email" class="email">
         <input id="password" type="password" placeholder="Password">
         <img src="pics/eye.jpg" class ="eye" id="showEye">
         <img src="pics/closeEye.jpg" class ="closeEye" id="hideEye">
-        <input type="text" placeholder="Phone Number" class="number">
-
+        <input type="text" placeholder="Phone Number" class="number" id="phone-number">
+    
         <h5>Payment Details</h5>
-        <input type="text" placeholder="Card Number" class="cardNumber">
-        <input type="text" placeholder="Name On Card" class="cardName">
+        <input type="text" placeholder="Card Number" class="cardNumber" id="card-number">
+        <input type="text" placeholder="Name On Card" class="cardName" id="card-name">
         <div class="cardInfo">
-            <input type="text" placeholder="MM / YY" class="expiration">
-            <input type="text" placeholder="CVV" class="CVV">
+            <input type="text" placeholder="MM / YY" class="expiration" id="expiration-date">
+            <input type="text" placeholder="CVV" class="CVV" id="cvv">
          </div>
-        <button>Sign Up</button>
+        <button id="signup-button">Sign Up</button>
     </main>
+    
 
     <footer class="footer">
         <div class="footerInfo">
@@ -346,6 +347,17 @@
         }  );
     </script>    
 
+<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+
+<!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+
+<!-- Add Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+<script type="module" src="signup.js"></script>
 
 </body>
 
