@@ -2,6 +2,10 @@
 <html>
 <head>
     <title>362_Project</title>
+    <meta name="viewport" content="width=device-width, inital-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
 
     <!-- ALL CSS CODE -->
     <style>
@@ -10,72 +14,81 @@
         }
 
         html, body {
+            
+            width: 100;
+            height: 100%;
             margin: 0;
             padding: 0;
-            width: 100%;
-            height: 100%;
+            min-width: 30%;
+            min-height: 30%;
+            font-family: lexend, sans-serif;
         }
-           /*  =================================    TOP BAR     =============================== */
-        .top_bar {
+           /*  =================================    TOP BAR START    =============================== */
+           .top_bar {
             position: fixed;
             top: 0;
-            width: 100%;
-            background-color: white;
-            z-index: 1000;
-            padding: 10px 0;
-            border-bottom: 1px solid rgb(158, 158, 158);
-            position: fixed;
-            display: flex; 
+            display: flex;
             justify-content: space-between; 
             align-items: center;
+            width: 100%;
             height: 65px;
+            z-index: 10;
+            padding: 10px 0px;
+            border-bottom: 1px solid rgb(158, 158, 158);
             box-shadow: 0 6px 6px -3px rgba(0, 0, 0, 0.2); 
+            background-color: white;
         }
 
-        nav {
-            font-family: sans-serif; 
+        .logo {
+           /*transform: scale(.4);
+           position: relative;
+           left: 172%;
+           top: 1px;*/
+           width: 45px;
+           height: 45px;
+           position: relative;
+           left: 5px;
+           top: 10px;
+        }
+
+        a:link, a:visited {
             text-decoration: none;
+            color: inherit;
         }
 
         .name {
-            margin: 20px;
-            margin-right: 700px;
+            /*position: relative;
+            left: -38.4%;
             font-size: 30px;             
             font-weight: 700;
-            cursor: pointer;         
-        }
-
-        nav a {
-            color: inherit;
-            text-decoration: none; 
-            font-weight: 700;  
-        }
-
-        .menu {
-            display: inline-block;
-            font-size: 19px;
             cursor: pointer;
+            white-space: nowrap;*/
+            font-weight: bold;
+            font-size: 35px;
+            position: relative;
+            bottom: 5px;
+            left: 1vh;
+        }
+
+        .navTop {
+            position: fixed;
+            right: 13%;
+            height: 45px;
+            width: 330px;
+            display: inline-flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 18px;
+            font-weight: 600;
+            color: rgb(0, 58, 93);
         }
 
         .menu:hover {
             transform: scale(1.1);
         }
 
-        .locations {
-            display: inline-block;
-            margin-right: -4px;
-            font-size: 18px;
-            cursor: pointer;
-        }
-
         .locations:hover {
             transform: scale(1.1); 
-        }
-
-        .sign_in {
-            display: inline-block;
-            font-size: 18px;
-            cursor: pointer;
         }
 
         .sign_in:hover {
@@ -83,80 +96,195 @@
         }
 
         .order {
-            display: inline-block;
-            font-size: 18px;
-            border: 3px outset red;
-            background-color: red;
-            color: white;
-            text-align: center;
-            border-radius: 5px;
+            display: flex;
             height: 45px;
-            width: 100px;
+            width: 180px;
+            margin-right: 20px;
+            border: 3px solid rgb(213, 27, 27);
+            border-radius: 20px;
+            color: rgb(213, 27, 27) !important;
+            justify-content: center;
+            align-items: center;
             cursor: pointer;
-            text-decoration: none;
-            position: relative;
-            padding-top: 8px;
-            top: -1px;
-            margin-right: 36px;
+            font-size: 21px;
+            font-weight: 700;
         }
 
         .order:hover {
-            background-color: rgb(219, 5, 5);
+            background-color: rgb(213, 27, 27);
             box-shadow: 0 0 0 2px rgb(223, 1, 1);
+            color: white !important;
         }
 
         .order:active {
-            background-color: red;
-            box-shadow: 0 0 0 0px rgb(223, 1, 1);
+            border: 1px outset rgb(213, 27, 27);
+            background-color: rgb(173, 26, 26);
+            box-shadow: 0 0 0 2px rgb(223, 1, 1);
         }
 
+        /*      =================     TOP BAR END    ==============   */
 
-        main {
-            margin-top: 75px;
-            text-align: center;
-            font-family: sans-serif;          
-        }
-
-        h1 {
-            font-size: 45px;
-            height: 100px;
-        }
-       
-        .footer {
-            display: block;
-            padding: 10px;
-            color: black;
-            background-color: #828b92;
-            width: 100%;
-            height: 45px;
-            font-family: sans-serif;
+        .hp_container {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            position: relative;
+            top: 5vh;
+            height: 57vh;
         }
 
-        footer .members {
-            text-align: right;
+        .hp_food {
+            /*width: 500px;
+            height: 600px;*/
+            width: 30%;
+            height: 120%;
         }
 
-        .footer .members span {
-            margin: 8px;
+        .hp_food img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
-        footer p{
-            display: inline;
-            word-spacing: 3px;
-            margin-left: 6px;
-            font-weight: 600;
+        .hp_text {
+            /*width: 900px;
+            height: 600px;*/
+            width: 55%;
+            height: 120%;
+            box-sizing: border-box;
+            padding: 5px 50px 0px 30px;
         }
 
-        #bottom_footer {
-            visibility: hidden;
-            border: 1px solid red;
+         h1 {
+            padding-top: 4%;
+            font-size: 50px;
+        }
+
+        h3 {
+            padding-top: 5%;
+            font-size: larger;
+            font-weight: 350;
+            line-height: 1.5;
+        }
+
+        .hp_buttons {
+            display: flex;
+            position: relative;
+            top: 5vh;
+        }
+
+        .left {
+            background-color: #fff397ff;
+            width: 20vh;
+            height: 15vh;
+            border-radius: 25px;
+            border: 2px solid  #ffef76;
+        }
+
+        .right {
+            background-color: #fff397ff;
+            width: 20vh;
+            height: 15vh;
+            margin-left: 5vh;
+            border-radius: 25px;
+            border: 2px solid  #ffef76;
+        }
+
+        #button_text {
             text-align: center;
-            margin-top: 300px;
-            margin-bottom: 150px;
+            font-weight: bold;
         }
+
+        #button_icons {
+            width: 40%;
+            height: 50%;
+            margin: 5% 5% -8% 30%;
+        }
+
+        .hp_people {
+            /*width: 1000px;
+            height: 600px;*/
+            width: 100vh;
+            height: 120%;
+        }
+
+        .hp_people img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+        /*main {
+            width: 500px;
+            height: 500px;
+            border: 3px solid rgb(213, 27, 27);
+            position: relative;
+            top: 7%;
+            left: 20%;
+            padding: 0;
+            margin: 0;
+        }*/
+
+       /*      =================     FOOTER START    ==============   */
+         .footer {
+            position: relative;
+            top: 15%;
+            width: 100%;
+            display: inline-flex;
+            align-items: flex-start;
+         }
+
+        .bottomLeft {
+            color: rgb(0, 58, 93);
+            width: 50%;
+            border-top: 40px solid rgb(213, 27, 27);
+            padding-left: 15px;
+        }
+                .bottomLeft a {
+                    font-size: 20px;
+                    font-weight: 600;
+                }
+                .bottomLeft h6 {
+                    margin-top: 45px;
+                    font-size: 12px;
+                    margin-bottom: 10px;
+                    font-weight: 500;
+                }
+                .bottomLeft span {
+                    display: inline-block;
+                    margin-right: 12px;
+                    margin-bottom: 10px;
+                    font-size: 12px;
+                    font-weight: 500;
+                }
+        .bottomRight {
+            border-top: 40px solid rgb(213, 27, 27);
+            width: 50%;
+            height: 193px;
+            display: flex;
+            width: 50%;
+            justify-content: end;
+            color: rgb(0, 58, 93);
+            padding-top: 12.5%;
+        }
+                .family{
+                    transform: scale(.3);
+                    position: absolute;
+                    bottom: -43px;
+                    right: -70px;
+                    
+                }
+
+                .bottomRight a:hover {
+                    text-decoration: underline;
+                }
+
+                .logo2 {
+                    position: absolute;
+                    transform: scale(1);
+                    right: 40px;
+                    bottom: 35px;
+                }
+         /*      =================     FOOTER END    ==============   */
     </style>
 </head>
 
@@ -164,44 +292,78 @@
 <body>
 
     <!--  For top bar only  -->
+
     <nav class="top_bar">
-        <span class="name"><a href="362PROJECT.html">Restaurant 362</a></span>
-        <span class="menu"><a href="menu.html">Menu</a></span>
-        <span class="locations"><a href="location.html">Location</a></span>
-        <span class="sign_in"><a href="sign_in.html">Sign In</a></span>
+        <span class="name"><a href="362PROJECT.html"><img src="../pics/logo2.png" class="logo"> Restaurant 362</a></span>
+        <div class="navTop">
+            <span class="menu"><a href="menu.html">Menu</a></span>
+            <span class="locations"><a href="location.html">Location</a></span>
+            <span class="sign_in"><a href="sign_in.html">My 362 Account</a></span>
+        </div>
         <span><a class="order" href="order.html">Order</a></span>
     </nav>
 
-    
     <!--   front page  -->
+
     <main>
-        <h1>Home Page</h1>
-        <h1>Title Header</h1>
-        <h1>Words ............................. words </h3>
-        <h1>Description..........................description</h3>
+
+    <div class="hp_container">
+        <div class="hp_food">
+            <img src="../pics/hp_tacos_burritos.jpg" class="hp_img1">
+        </div>
+
+        <div class="hp_text">
+            <h1> Global Bites,<br>Local Delights.</br></h1>
+            <h3>
+                Welcome to Restaurant 362, where we're passionate about bridging cultures and bringing people together
+                with the power of food. Explore our menu and discover the flavors of Mexico, Asia, and America.
+            </h3>
+            
+            <div class="hp_buttons">
+                <a href="../menu.html">
+                    <div class="left">
+                        <img src="/pics/menu_icon.png" id="button_icons">
+                        <p id="button_text">Browse<br>Full Menu</br></p>
+                    </div>
+                </a>
+                <a href="../order.html">
+                    <div class="right">
+                        <img src="/pics/food_pickup.png" id="button_icons">
+                        <p id="button_text">Order<br>Pickup</br></p>
+                    </div>
+                </a>
+            </div>
+        
+        </div>
+
+        <div class="hp_people">
+            <img src="../pics/people_burger.jpg" class="hp_img2">
+        </div>
+    </div>
+ 
     </main>
 
-
     <!--  footer, bottom of the page  -->
-    <p id="bottom_footer"> TO KEEP FOOTER AT THE BOTTOM</p>
+    
     <footer class="footer">
-        <p>Summer 2024 362-02</p>
-        <div class="members">
-            <span>Group Members:</span>
-            <span>Matt Amora</span>
-            <span>Edgar Cardenas</span>
-            <span>Lawrence Cui</span>
-            <span>Manvir Dhillon</span>
-            <span>Windly Nguyen</span>
+        <div class="bottomLeft">
+            <a href="#"><h5>Contact Us</h5></a>
+            <br></br>
+            <h6> CPSC 362 - SUMMER 2024</h6>
+            <span>MATTHEW AMORA</span> 
+            <span>EDGAR CARDENAS</span> 
+            <span>LAWRENCE CUI</span> 
+            <span>MANVIR DHILLON</span>
+            <span>WINDLY NGUYEN</span>
+        </div>
+        <div class="bottomRight">
+            
+            <a href="../sign_up.html"><img src="../pics/bottomLeft.jpg" class="family"></a>
+            <a href="../home.html"><img src="../pics/logo2.png" class="logo2"></a>
         </div>
     </footer>
 
    
-
-
-
-
-
     
 </body>
 </html>
