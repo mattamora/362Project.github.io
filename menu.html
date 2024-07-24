@@ -7,544 +7,193 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
-    <style>
-        /* switch this to its own file when you are done */
-        * {
-            box-sizing: border-box; 
-        }
-
-        html, body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            min-width: 30%;
-            min-height: 30%;
-            font-family: lexend, sans-serif;
-        }
-
-        /*      =================     TOP BAR ONLY    ==============   */
-        .top_bar {
-            position: fixed;
-            top: 0;
-            display: flex;
-            justify-content: space-between; 
-            align-items: center;
-            width: 100%;
-            height: 65px;
-            z-index: 10;
-            padding: 10px 0;
-            border-bottom: 1px solid rgb(158, 158, 158);
-            box-shadow: 0 6px 6px -3px rgba(0, 0, 0, 0.2); 
-            background-color: white;
-        }
-
-        .logo {
-           transform: scale(.4);
-           position: relative;
-           left: 172%;
-           top: 1px;
-        }
-
-        a:link, a:visited {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .name {
-            position: relative;
-            left: -38.4%;
-            font-size: 30px;             
-            font-weight: 700;
-            cursor: pointer;
-            white-space: nowrap;         
-        }
-
-        .navTop {
-            position: fixed;
-            right: 12%;
-            height: 45px;
-            width: 330px;
-            margin-right: 50px;
-            display: inline-flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 18px;
-            font-weight: 600;
-            color: rgb(24, 78, 131);
-        }
-
-        .menu:hover {
-            transform: scale(1.1);
-        }
-
-        .locations:hover {
-            transform: scale(1.1); 
-        }
-
-        .sign_in:hover {
-            transform: scale(1.1); 
-        }
-
-        .order {
-            display: flex;
-            height: 45px;
-            width: 180px;
-            margin-right: 20px;
-            border: 3px solid rgb(213, 27, 27);
-            border-radius: 20px;
-            color: rgb(213, 27, 27) !important;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            font-size: 21px;
-            font-weight: 700;
-        }
-
-        .order:hover {
-            background-color: rgb(213, 27, 27);
-            box-shadow: 0 0 0 2px rgb(223, 1, 1);
-            color: white !important;
-        }
-
-        .order:active {
-            border: 1px outset rgb(213, 27, 27);
-            background-color: rgb(173, 26, 26);
-            box-shadow: 0 0 0 2px rgb(223, 1, 1);
-        }
-         /*      =================     TOP BAR ONLY    ==============   */
-
-
-        /*       =================    MAIN BODY   =================     */
-        h1 {
-            position: absolute;
-            top: 9%;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 45px;
-            color: rgb(24, 78, 131);
-        }
-
-        .itemTabs {
-            position: absolute;
-            top: 25%;
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            height: 40px;
-            background-color: rgb(213, 27, 27);
-            color: white;
-            font-size: 18px;
-        }
-                .itemTabs a:not(:first-child){
-                    margin-left: 70px;
-                }
-
-                .itemTabs a:hover {
-                    text-decoration: underline;
-                }
-             
-        main {
-            display: flex;
-            flex-direction: column;
-            width: 60%;
-            margin: 0 auto;
-            margin-top: 270px;
-            /*
-            border: 3px solid red;
-            border-radius: 12px; */
-        }
-                            main h6 {  /*  in page links  */
-                                color: white;
-                            }
-
-        .american {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-           
-        }
-
-            .american h2 {
-                text-align: center;
-                width: 100%;
-                margin-bottom: 40px;
-                font-size: 30px;
-            }
-
-            .american span {
-                text-align: center;
-                width: 45%; 
-                font-size: 27px;
-                font-weight: 600;
-                text-decoration: underline;
-            }
-
-            .american p {
-                text-align: center;
-                width: 48%; 
-                font-size: 18px;
-            }
-
-            .ribsDes {
-                transform: translateY(-11px);
-            }
-
-            img[src*="double"]{
-                transform: translateX(-40px);
-                width: 270px;
-                height: auto;
-            }
-
-            img[src*="rib"] {
-                transform: translateX(60px);
-                width: 320px;
-                height: auto;
-            }
-
-        .asian {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-            .asian h2 {
-                text-align: center;
-                width: 100%;
-                margin-bottom: 40px;
-                font-size: 30px;
-            }
-
-            .asian span {
-                text-align: center;
-                width: 45%; 
-                font-size: 27px;
-                font-weight: 600;
-                text-decoration: underline;
-            }
-
-            .ramenDes {
-                transform: translateY(-40px);
-                text-align: center;
-                width: 45%; 
-                font-size: 18px;
-                margin-right: 5px;
-            }
-
-            .phoDes {
-                transform: translateY(-29px);
-                text-align: center;
-                width: 45%; 
-                font-size: 18px;
-                margin-left: 5px;
-            }
-
-            img[src*="ramen"]{
-                margin-right: 80px;
-                transform: translateY(-15px);
-                width: 410px;
-                height: auto;
-                z-index: -1;
-            }
-
-            img[src*="pho"] {
-                transform: translateX(-40px) translateY(-30px);
-                width: 300px;
-                height: auto;
-                z-index: -1;
-            }
-
-        .mexican {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-           
-        }
-            .mexican h2 {
-                text-align: center;
-                width: 100%;
-                margin-bottom: 40px;
-                font-size: 30px;
-            }
-
-            .mexican span {
-                text-align: center;
-                width: 45%; 
-                font-size: 27px;
-                font-weight: 600;
-                text-decoration: underline;
-            }
-
-            .tacoDes {
-                transform: translateY(-146px);
-                text-align: center;
-                width: 45%; 
-                font-size: 18px;
-                margin-right: 10px;
-            }
-
-            .burritoDes {
-                transform: translateY(-135px);
-                text-align: center;
-                width: 45%; 
-                font-size: 18px;
-                margin-left: 10px;
-            }
-
-            img[src*="taco"]{
-                transform: translateX(-50px) translateY(-70px);
-                width: 420px;
-                height: auto;
-            }
-
-            img[src*="burrito"] {
-                transform: translateX(-10px) translateY(-100px);
-                width: 300px;
-                height: auto;
-            }
-
-        .sides {    
-            margin-top: -130px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-            .sides h2 {
-                text-align: center;
-                width: 100%;
-                margin-bottom: 40px;
-                font-size: 30px;
-            }
-
-            .sides span {
-                text-align: center;
-                width: 45%; 
-                font-size: 27px;
-                font-weight: 600;
-                text-decoration: underline;
-            }
-
-            .friesDes {
-                text-align: center;
-                width: 45%; 
-                font-size: 18px;
-                margin-right: 10px;
-            }
-
-            .saladDes {
-                text-align: center;
-                width: 45%; 
-                font-size: 18px;
-                margin-left: 10px;
-            }
-
-            img[src*="french"]{
-                transform: scaleX(-1);
-                width: 300px;
-                height: auto;
-                margin-top: 30px;
-                margin-right: 50px;
-            }
-
-            img[src*="salad"] {
-                transform: translateX(15px) translateY(10px);
-                width: 320px;
-                height: auto;
-            }
-
-        .drinks {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-            .drinks h2 {
-                text-align: center;
-                width: 100%;
-                margin-bottom: 40px;
-                font-size: 30px;
-            }
-
-            .drinks span {
-                text-align: center;
-                width: 45%; 
-                font-size: 27px;
-                font-weight: 600;
-                text-decoration: underline;    
-            }
-
-            .drinks p {
-                text-align: center;
-                width: 45%; 
-                font-size: 18px;
-            }
-
-            img[src*="boba"]{
-                transform: translateX(-100px) translateY(0px);
-                width: 420px;
-                height: auto;
-                z-index: -1;
-            }
-
-            img[src*="soda"] {
-                transform: translateX(-10px);
-                width: 190px;
-                height: auto;
-            }
-
-
-
-            
-
-
-        /*       =================    MAIN BODY   ================     */
-
-
-         /*      =================     FOOTER ONLY    ==============   */
-         .footer {
-            position: relative;
-            top: 15%;
-            width: 100%;
-            display: inline-flex;
-            align-items: flex-start;
-         }
-
-        .bottomLeft {
-            color: rgb(24, 78, 131);
-            width: 50%;
-            border-top: 40px solid rgb(213, 27, 27);
-            padding-left: 15px;
-            font-weight: 600;
-        }
-                .bottomLeft a {
-                    font-size: 18px;
-                }
-                .bottomLeft h6 {
-                    margin-top: 45px;
-                    font-size: 12px;
-                    margin-bottom: 10px;
-                }
-                .bottomLeft span {
-                    display: inline-block;
-                    margin-right: 12px;
-                    margin-bottom: 15px;
-                    font-size: 12px;
-                }
-        .bottomRight {
-            border-top: 40px solid rgb(213, 27, 27);
-            width: 50%;
-            height: 193px;
-            display: flex;
-            width: 50%;
-            justify-content: end;
-            color: rgb(24, 78, 131);
-        }
-                .family{
-                    transform: scale(.3);
-                    position: absolute;
-                    bottom: -30px;
-                    right: -70px;
-                    
-                }
-                .signUp {
-                    position: absolute;
-                    font-weight: 500;
-                    right: 225px;
-                    bottom: 50px;
-                }
-
-                .bottomRight a:hover {
-                    text-decoration: underline;
-                }
-
-                .logo2 {
-                    position: absolute;
-                    transform: scale(1.2);
-                    right: 40px;
-                    bottom: 35px;
-                }
- 
-         /*      =================     FOOTER ONLY    ==============   */
-    </style>
+    <link rel="stylesheet" href="CSS files/menuSTYLE.css">
 </head>
 
 <body>
     <header class="top_bar">
-        <span><a href="../home.html"><img src="../pics/logo2.png" class="logo"></a></span>
-        <span class="name"><a href="362PROJECT.html">Restaurant 362</a></span>
+        <span><a href="home.html"><img src="pics/logo2.png" class="logo"></a></span>
+        <span class="name"><a href="home.html">Restaurant 362</a></span>
         <div class="navTop">
             <span class="menu"><a href="menu.html">Menu</a></span>
             <span class="locations"><a href="location.html">Location</a></span>
             <span class="sign_in"><a href="sign_in.html">My 362 Account</a></span>
         </div>
-        <span><a class="order" href="order.html">Order Now</a></span>
+        <span><a href="checkout.html"><img src="pics/cart.jpg" alt="cart" class="cart"></a></span>
+        <span class="cartAmount">0</span>
     </header>
 
     <h1>MENU</h1>
     <div class="itemTabs">
-        <a href="#"><span>AMERICAN</span></a>
+        <a href="order.html"><span>AMERICAN</span></a>
         <a href="#asian"><span>ASIAN</span></a>
         <a href="#mexican"><span>MEXICAN</span></a>
         <a href="#sides"><span>SIDES</span></a>
         <a href="#drinks"><span>DRINKS</span></a>
     </div>
-
+2
     <main>
         <div class="american" id="#american">  
             <h2>AMERICAN</h2>
-            <span>Burger</span>
-            <span>Ribs</span>
-            <img src="pics/doubledouble.jpg">
-            <img src="pics/ribs.jpg">
-            <p>Juicy beef patty topped with melted cheddar cheese, our signature sauce, and your choice of toppings, served on a toasted brioche bun</p>
-            <p class ="ribsDes">Tender, slow-cooked ribs slathered in our signature smoky barbecue sauce</p>
+            <div class="burgerOrder">
+                <img src="pics/doubledouble.jpg" >
+                <span >Burger</span>
+                <p>Juicy beef patty topped with melted cheddar cheese, our signature sauce, and your choice of toppings, served on a toasted brioche bun</p>
+                <h5 class="popupOrder" onclick="burgerPopup()">ORDER</h5>
+            </div>
+            <div class="ribsOrder">
+                <img src="pics/ribs.jpg">
+                <span>Ribs</span>
+                <p>Tender, slow-cooked ribs slathered in our signature smoky barbecue sauce</p>
+                <h5 class="popupOrder" onclick="ribsPopup()">ORDER</h5>
+            </div>
         </div>
+
         <h6 id="asian">.</h6>
-        <div class="asian" >  
+        <div class="asian">  
             <h2>ASIAN</h2>
-            <span>Ramen</span>
-            <span>Pho</span>
-            <img src="pics/ramen.jpg">
-            <img src="pics/pho.jpg">
-            <p class="ramenDes">Our signature tonkotsu ramen with a creamy, umami-rich broth, tender noodles, and your choice of meat and toppings</p>
-            <p class="phoDes">Authentic pho with a rich, aromatic broth, served with delicate rice noodles, customizable meat options, and an assortment of fresh herbs and vegetables</p>
+            <div class="ramenOrder">
+                <img src="pics/ramen.jpg">
+                <span>Ramen</span>
+                <p>Our signature tonkotsu ramen with a creamy, umami-rich broth, tender noodles, and your choice of meat and toppings</p>
+                <h5 class="popupOrder">ORDER</h5>
+            </div>
+            <div class="phoOrder">
+                <img src="pics/pho.jpg">
+                <span>Pho</span>
+                <p>Authentic pho with a rich, aromatic broth, served with delicate rice noodles, customizable meat options, and an assortment of fresh herbs and vegetables</p>
+                <h5 class="popupOrder">ORDER</h5>
+            </div>
         </div>
+
         <h6 id="mexican">.</h6>
         <div class="mexican">  
             <h2>MEXICAN</h2>
-            <span>Tacos</span>
-            <span>Burritos</span>
-            <img src="pics/tacos.jpg">
-            <img src="pics/burrito3.png">
-            <p class="tacoDes">Three flavorful tacos with your choice of meat and toppings, nestled in warm tortillas</p>
-            <p class="burritoDes">Savory burritos filled with your selected meats, fries, and beans, topped with fresh guacamole and shredded cheese</p>
+            <div class="tacosOrder">
+                <img src="pics/tacos.jpg">
+                <span>Tacos</span>
+                <p>Three flavorful tacos with your choice of meat and toppings, nestled in warm tortillas</p>
+                <h5 class="popupOrder">ORDER</h5>
+            </div>
+            <div class="burritoOrder">
+                <img src="pics/burrito3.png">
+                <span>Burritos</span>
+                <p>Savory burritos filled with your selected meats, fries, and beans, topped with fresh guacamole and shredded cheese</p>
+                <h5 class="popupOrder">ORDER</h5>
+            </div>
         </div>
+
         <h6 id="sides">.</h6>
-        <div class="sides">  
+        <div class="sides">
             <h2>SIDES</h2>
-            <span>Fries</span>
-            <span>Salad</span>
-            <img src="pics/french.jpg">
-            <img src="pics/salad.jpg">
-            <p class="friesDes">Crispy, golden fries with your choice of seasoning and toppings, such as melted cheese or bacon bits</p>
-            <p class="saladDes">Caesar salad featuring crunchy romaine, rich Caesar dressing, and Parmesan cheese, with customizable toppings</p>
+            <div class="friesOrder">
+                <img src="pics/french.jpg">
+                <span>Fries</span>
+                <p>Crispy, golden fries with your choice of seasoning and toppings, such as melted cheese or bacon bits</p>
+                <h5 class="popupOrder">ORDER</h5>
+            </div>
+            <div class="saladOrder">
+                <img src="pics/salad.jpg">
+                <span>Salad</span>
+                <p>Caesar salad featuring crunchy romaine, rich Caesar dressing, and Parmesan cheese, with customizable toppings</p>
+                <h5 class="popupOrder">ORDER</h5>
+            </div>  
         </div>
+
         <h6 id="drinks">.</h6>
         <div class="drinks">  
             <h2>DRINKS</h2>
-            <span>Boba</span>
-            <span>Soda</span>
-            <img src="pics/bobas.jpg">
-            <img src="pics/soda.jpg">
-            <p>Our homemade milk teas</p>
-            <p>Sodas and Juices</p>
+            <div class="bobaOrder">
+                <img src="pics/bobas.jpg">
+                <span>Boba</span>
+                <p>Our homemade milk teas</p>
+                <h5 class="popupOrder">ORDER</h5>
+            </div>
+            <div class="sodaOrder">
+                <img src="pics/soda.jpg">
+                <span>Soda</span>
+                <p>Sodas, Juices, and Other Drinks</p>
+                <h5 class="popupOrder">ORDER</h5>
+            </div>
         </div>
-    </main>
 
+        <!--  ===============   POPUPS   =================  -->
+        <div class="popup">
+            <div class="popupBase">
+                <button class="closePop" onclick="closePopup()">✕</button>
+
+                <div class="burgerScreen">
+                    <div class="itemHeader">
+                        <h2>BURGER</h2>
+                        <h3>$6.99 | 900 Cal</h3>
+                        <h4 onclick="toggleStar()">Add To Favorites</h4>
+                        <img class="open" src="pics/openStar.png" onclick="toggleStar()">
+                        <img class="close" src="pics/closeStar.png" onclick="toggleStar()">
+
+                        <button class="closePop" onclick="closePopup()">✕</button>
+                        <!--
+                        <h5>Juicy beef patty topped with melted cheddar cheese, our signature sauce, and your choice of toppings, served on a toasted brioche bun.</h5>
+                        
+                         <img src="pics/doubledouble.jpg"> -->
+                    </div>
+                        <button class="addCart">Add To cart Placeholder</button>
+                </div>
+    
+                <div class="ribsScreen">
+                    <div class="itemHeader">
+                        <h2>RIBS</h2>
+                        <h3>$12.99 | 600 Cal</h3>
+                        <h4 onclick="toggleStar()">Add To Favorites</h4>
+                        <img class="open" src="pics/openStar.png" onclick="toggleStar()">
+                        <img class="close" src="pics/closeStar.png" onclick="toggleStar()">
+                        <!--
+                        <h5>Juicy beef patty topped with melted cheddar cheese, our signature sauce, and your choice of toppings, served on a toasted brioche bun.</h5>
+                        
+                         <img src="pics/doubledouble.jpg"> -->
+                    </div>
+                        <button class="addCart">Add To cart Placeholder</button>
+                </div>
+<!-- 
+                <div class="ramenScreen">
+                    <h2>RIBS</h2>
+                </div>
+
+                <div class="phoScreen">
+                    <h2>RIBS</h2>
+                </div>
+
+                <div class="tacosScreen">
+                    <h2>RIBS</h2>
+                </div>
+
+                <div class="burritosScreen">
+                    <h2>RIBS</h2>
+                </div>
+
+                <div class="friesScreen">
+                    <h2>RIBS</h2>
+                </div>
+
+                <div class="saladScreen">
+                    <h2>RIBS</h2>
+                </div>
+ -->
+
+            </div>
+        </div>
+
+     
+
+
+        <!--     <h2>PopScren</h2>
+                <button class="close">✕</button>
+                <h1 class="itemName">Burger</h1>
+                <button class="addCart">ADD TO CART</button>
+                <h4 class="price">$6.99</h4>
+                <img src="pics/doubledouble.jpg" alt="In n Out" class="imgPop">
+        -->
+
+    </main>
 
     <footer class="footer">
         <div class="bottomLeft">
@@ -560,12 +209,68 @@
         <div class="bottomRight">
             <img src="../pics/bottomLeft.jpg" class="family">
             <a href="../sign_up.html" class="signUp">Sign up for a 362 Account</a>
-            <a href="../home.html"><img src="../pics/logo2.png" class="logo2"></a>
+            <a href="../home.html"><img src="pics/logo2.png" class="logo2"></a>
         </div>
     </footer>
 
 
-    <!---  ==========      JAVASCIPT CODE      ========= -->  
+    <!---  ==========      JAVASCIPT CODE      ========= -->
+    <script>
+        // CODE TO UPDATE CART AMOUNT (ADDING ITEMS TO CART)
+        let cartAmount = 0; // cart top right to 0, default (no items in cart)
+        const cartAmountElement = document.querySelector('.cartAmount'); // cartAmount element (number top right)
+        document.querySelector('.addCart').addEventListener('click', () => { // click event listener with the add to cart button in the popup
+            cartAmountElement.style.display = 'flex';  // shows cart amount in the top right when clicked
+            cartAmount += 1;  // adds one per click
+            cartAmountElement.textContent = cartAmount; // changes text number of the cart amount element (changes html code)
+        });
+
+        // CODE FOR CLOSING THE POPUPS
+        const popup = document.querySelector('.popup'); // popup screen
+        function closePopup() { // function to close popup screen
+            const screens = document.querySelectorAll('.popupBase > div'); // Select all popup screens
+            screens.forEach(screen => {
+                screen.style.display = 'none'; // Set all popup screens display to none when closing the popup
+            });
+            popup.style.display = 'none'; // Hide the popup container
+        } 
+        popup.addEventListener('click', (event) => { // close the popup when clicking on the background
+            if (event.target === popup) { // when the background is clicked
+                closePopup(); // Hide the popup screen
+            }
+        });
+
+        // CODE FOR ADDING ITEM TO FAVORITES
+        function toggleStar() {   //  changes color of star when clicked   
+            const openStar = document.querySelector(".open");
+            const closeStar = document.querySelector(".close");
+
+            if (openStar.style.display === 'none') {
+                openStar.style.display = 'block';
+                closeStar.style.display = 'none';
+            } else {
+                openStar.style.display = 'none';
+                closeStar.style.display = 'block';
+            }
+        }
+
+        // CODE FOR SHOWING POPUP SCREENS FOR ITEMS
+        function burgerPopup() {
+            const popup = document.querySelector(".popup");
+            const item = document.querySelector(".burgerScreen");
+            popup.style.display = 'flex';
+            item.style.display = 'flex';
+        }
+
+        function ribsPopup() {
+            const popup = document.querySelector(".popup");
+            const item = document.querySelector(".ribsScreen");
+            popup.style.display = 'flex';
+            item.style.display = 'flex';
+        }
+        
+
+    </script>  
 
 
 </body>

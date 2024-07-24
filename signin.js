@@ -9,7 +9,7 @@ const firebaseConfig = {
      measurementId: "G-MWFWB49H04"
   };
   
-  // Initialize Firebase
+// Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 const database = firebase.database();
 const auth = firebase.auth();
@@ -33,16 +33,18 @@ signInForm.addEventListener('click', (e) => {
       return;
     }
 
-  auth.signInWithEmailAndPassword(email, password)
+  console.log(email, password);
+
+ auth.signInWithEmailAndPassword(email, password)
   .then((userCredential) => {
 
     // Signed in
     const user = userCredential.user;
-    console.log = ('User Signed in: ', user);
+    console.log('User Signed in: ', user);
   })
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
-    console.log = ('Error: ', errorCode, errorMessage);
+    console.log('Error: ', errorCode, errorMessage);
   })
 });
