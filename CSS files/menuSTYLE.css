@@ -1,0 +1,1381 @@
+/* MENU TAB CSS CODE*/
+* {
+    box-sizing: border-box; 
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    min-width: 30%;
+    min-height: 30%;
+    font-family: lexend, sans-serif;
+}
+
+/*      =================     TOP BAR ONLY    ==============   */
+.top_bar {
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    width: 100%;
+    height: 65px;
+    z-index: 10;
+    padding: 10px 0;
+    border-bottom: 1px solid rgb(158, 158, 158);
+    box-shadow: 0 6px 6px -3px rgba(0, 0, 0, 0.2); 
+    background-color: white;
+}
+
+.logo {
+    transform: scale(.4);
+    position: relative;
+    left: -18px;
+    top: 1px;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+.name {
+    position: relative;
+    left: -34.85%;
+    font-size: 36px;             
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;         
+}
+
+.navTop {
+    position: fixed;
+    right: 12%;
+    height: 45px;
+    width: 330px;
+    margin-right: 20px;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: rgb(0, 58, 93); /* blue rgb(24, 78, 131) */
+}
+
+.menu:hover {
+    transform: scale(1.1);
+}
+
+.locations:hover {
+    transform: scale(1.1); 
+}
+
+.sign_in:hover {
+    transform: scale(1.1); 
+}
+
+.cart {
+    display: flex;
+    height: 48px;
+    width: 48px;
+    margin-right: 84px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.cart:hover {
+    transform: scale(1.1);
+    transition: all .1s ease-in;
+}
+
+.cartAmount {
+    position: absolute;
+    right: 5.2%;
+    top: 3%;
+    color: white;
+    background-color: rgb(206, 39, 39);
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    z-index: 20;
+    padding-top: 2px;
+    padding-left: 7px;
+    display: none;
+}
+ /*      =================     TOP BAR ONLY    ==============   */
+
+
+
+/*       =================    MAIN BODY   =================     */
+h1 {
+    position: absolute;
+    top: 9%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 45px;
+    color: rgb(213, 27, 27); /* blue rgb(24, 78, 131) */
+}
+
+.itemTabs {
+    position: absolute;
+    top: 25%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    background-color: rgb(213, 27, 27);
+    color: white;
+    font-size: 18px;
+}
+        .itemTabs a:not(:first-child){
+            margin-left: 70px;
+        }
+
+        .itemTabs a:hover {
+            text-decoration: underline;
+        }
+     
+main {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    height: 385%;
+    margin: 0 auto;
+    margin-top: 250px;
+    border-radius: 12px; 
+    border: 4px solid rgb(213, 27, 27);
+}
+                    
+.popupOrder {
+    display: flex;
+    height: 54px;
+    width: 190px;
+    border: 3px solid rgb(213, 27, 27);
+    border-radius: 20px;
+    background-color: rgb(213, 27, 27);
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 21px;
+    font-weight: 700;
+    color: white;
+    opacity: 0;
+}
+
+.popupOrder:hover {
+    border: 3px solid rgb(173, 26, 26);
+    background-color: rgb(173, 26, 26);
+}
+
+.american {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+    .american h2 {
+        text-align: center;
+        width: 100%;
+        margin-bottom: 40px;
+        font-size: 30px;
+        z-index: 2;
+    }
+    .burgerOrder {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transition: all .2s ease-out;
+        margin-top: -30px;
+    }
+    .burgerOrder:hover {
+        transform: scale(1.1);
+    }
+    .burgerOrder:hover .popupOrder{
+        transform: translateY(-40px);
+        opacity: 1;
+    }
+    .burgerOrder span {
+        text-align: center;
+        width: 45%; 
+        font-size: 27px;
+        font-weight: 600;
+        text-decoration: underline;
+        transform: translateY(-20px);
+    }
+    .burgerOrder p {
+        text-align: center;
+        width: 80%; 
+        font-size: 18px;
+        transform: translateY(-20px);
+    }         
+    .ribsOrder {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        margin-top: -90px;
+        transition: all .2s ease-out;
+    }
+    .ribsOrder:hover {
+        transform: scale(1.1);
+    }
+    .ribsOrder:hover .popupOrder{
+        transform: translateY(-20px);
+        opacity: 1;
+    }
+    .ribsOrder span {
+        text-align: center;
+        width: 45%; 
+        font-size: 27px;
+        font-weight: 600;
+        text-decoration: underline;
+    }
+    .ribsOrder p {
+        text-align: center;
+        width: 80%; 
+        font-size: 18px;
+    }
+    .burgerOrder img {
+        width: 270px;
+        height: auto;
+    }
+    img[src*="rib"] {
+        width: 320px;
+        height: auto;
+    }
+                                                        #asian {  /*  in page asian link  */
+                                                            color: white;
+                                                            font-size: 42px;
+                                                            position: absolute;
+                                                            top: 87%;
+                                                        }
+.asian {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    transform: translateY(-50px);
+}
+    .asian h2 {
+        text-align: center;
+        width: 100%;
+        margin-bottom: 60px;
+        font-size: 30px;
+        z-index: 2;
+    }
+    .ramenOrder {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transition: all .2s ease-out;
+        margin-top: -60px;
+    }
+    .ramenOrder:hover {
+        transform: scale(1.1);
+    }
+    .ramenOrder:hover .popupOrder{
+        transform: translateY(-40px);
+        opacity: 1;
+    }
+    .ramenOrder span {
+        text-align: center;
+        width: 45%; 
+        font-size: 27px;
+        font-weight: 600;
+        text-decoration: underline;
+       
+    }
+    .ramenOrder p {
+        text-align: center;
+        width: 80%; 
+        font-size: 18px;
+        transform: translateY(-20px);
+        margin-top: 40px;
+    }
+    .phoOrder {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transition: all .2s ease-out;
+        margin-top: -65px;
+    }
+    .phoOrder:hover {
+        transform: scale(1.1);
+    }
+    .phoOrder:hover .popupOrder{
+        transform: translateY(-40px);
+        opacity: 1;
+    }
+    .phoOrder span {
+        text-align: center;
+        width: 45%; 
+        font-size: 27px;
+        font-weight: 600;
+        text-decoration: underline;
+        margin-top: -10px;
+    }
+    .phoOrder p {
+        text-align: center;
+        width: 80%; 
+        font-size: 18px;
+        transform: translateY(-20px);
+        margin-top: 40px;
+    }
+    img[src*="ramen"]{
+        width: 430px;
+        height: auto;  
+        clip-path: inset(10% 10% 10% 10%);            
+    }
+    img[src*="pho"] {
+        width: 320px;
+        height: auto;
+    }
+                                                        #mexican {  /*  in page mexican link  */
+                                                            color: white;
+                                                            font-size: 42px;
+                                                            position: absolute;
+                                                            top: 170%;
+                                                        }
+.mexican {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    transform: translateY(-90px);
+}
+    .mexican h2 {
+        text-align: center;
+        width: 100%;
+        font-size: 30px;
+        z-index: 2;
+    }
+    .tacosOrder {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transition: all .2s ease-out;
+        margin-top: -60px;
+    }
+    .tacosOrder:hover {
+        transform: scale(1.1);
+    }
+    .tacosOrder:hover .popupOrder{
+        transform: translateY(-40px);
+        opacity: 1;
+    }
+    .tacosOrder span {
+        text-align: center;
+        width: 45%; 
+        font-size: 27px;
+        font-weight: 600;
+        text-decoration: underline;
+       margin-top: 30px;
+    }
+    .tacosOrder p {
+        text-align: center;
+        width: 80%; 
+        font-size: 18px;
+        transform: translateY(-20px);
+        margin-top: 40px;
+    }
+    .burritoOrder {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transition: all .2s ease-out;
+        margin-top: -80px;
+    }
+    .burritoOrder:hover {
+        transform: scale(1.1);
+    }
+    .burritoOrder:hover .popupOrder{
+        transform: translateY(-40px);
+        opacity: 1;
+    }
+    .burritoOrder span {
+        text-align: center;
+        width: 45%; 
+        font-size: 27px;
+        font-weight: 600;
+        text-decoration: underline;
+        margin-top: -36px;
+    }
+    .burritoOrder p {
+        text-align: center;
+        width: 80%; 
+        font-size: 18px;
+        transform: translateY(-20px);
+        margin-top: 35px;
+    }
+    img[src*="taco"]{
+        width: 420px;
+        height: auto;
+        transform: translateX(15px);
+    }
+    img[src*="burrito"] {
+        width: 260px;
+        height: auto;
+        margin-top: -48px;
+        transform: translateX(-10px);
+        clip-path: inset(30% 0 0 0);
+    }
+                                                        #sides {  /*  in page sides link  */
+                                                            color: white;
+                                                            font-size: 42px;
+                                                            position: absolute;
+                                                            top: 240%;
+                                                        }
+.sides {    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    transform: translateY(-150px);
+}
+    .sides h2 {
+        text-align: center;
+        width: 100%;
+        margin-bottom: 40px;
+        font-size: 30px;
+    }
+    .friesOrder {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transition: all .2s ease-out;
+
+    }
+    .friesOrder:hover {
+        transform: scale(1.1);
+    }
+    .friesOrder:hover .popupOrder{
+        transform: translateY(-40px);
+        opacity: 1;
+    }
+    .friesOrder span {
+        text-align: center;
+        width: 45%; 
+        font-size: 27px;
+        font-weight: 600;
+        text-decoration: underline;
+       margin-top: 30px;
+    }
+    .friesOrder p {
+        text-align: center;
+        width: 80%; 
+        font-size: 18px;
+        transform: translateY(-20px);
+        margin-top: 40px;
+    }
+    .saladOrder {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transition: all .2s ease-out;       
+    }
+    .saladOrder:hover {
+        transform: scale(1.1);
+    }
+    .saladOrder:hover .popupOrder{
+        transform: translateY(-40px);
+        opacity: 1;
+    }
+    .saladOrder span {
+        text-align: center;
+        width: 45%; 
+        font-size: 27px;
+        font-weight: 600;
+        text-decoration: underline;
+        transform: translateY(22px);
+    }
+    .saladOrder p {
+        text-align: center;
+        width: 80%; 
+        font-size: 18px;
+        transform: translateY(-20px);
+        margin-top: 60px;
+    }
+    img[src*="french"]{
+        transform: scaleX(-1);
+        width: 300px;
+        height: auto;
+        margin-left: 30px;
+    }
+    img[src*="salad"] {
+        width: 345px;
+        height: auto;
+        transform: translateX(-15px) translateY(-10px);
+    }
+                                                        #drinks {  /*  in page drinks link  */
+                                                            color: white;
+                                                            font-size: 42px;
+                                                            position: absolute;
+                                                            top: 320%;
+                                                        }
+.drinks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    transform: translateY(-180px);
+}
+    .drinks h2 {
+        text-align: center;
+        width: 100%;
+        margin-bottom: 40px;
+        font-size: 30px;
+        z-index: 2;
+    }
+    .bobaOrder {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transition: all .2s ease-out;
+        margin-top: -50px;
+    }
+    .bobaOrder:hover {
+        transform: scale(1.1);
+    }
+    .bobaOrder:hover .popupOrder{
+        transform: translateY(-40px);
+        opacity: 1;
+    }
+    .bobaOrder span {
+        text-align: center;
+        width: 45%; 
+        font-size: 27px;
+        font-weight: 600;
+        text-decoration: underline;
+       margin-top: 30px;
+    }
+    .bobaOrder p {
+        text-align: center;
+        width: 80%; 
+        font-size: 18px;
+        transform: translateY(-20px);
+        margin-top: 40px;
+    }
+    .sodaOrder {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transition: all .2s ease-out;
+    }
+    .sodaOrder:hover {
+        transform: scale(1.1);
+    }
+    .sodaOrder:hover .popupOrder{
+        transform: translateY(-40px);
+        opacity: 1;
+    }
+    .sodaOrder span {
+        text-align: center;
+        width: 45%; 
+        font-size: 27px;
+        font-weight: 600;
+        text-decoration: underline;
+        margin-top: -42px;
+    }
+    .sodaOrder p {
+        text-align: center;
+        width: 80%; 
+        font-size: 18px;
+        transform: translateY(-20px);
+        margin-top: 42px;
+    }
+    img[src*="boba"]{
+        width: 400px;
+        height: auto;
+        transform: translateX(10px) translateY(10px);
+    }
+    img[src*="soda"] {
+        width: 190px;
+        height: 270px;
+        transform: translateY(-40px);
+    }
+
+/*       =================    MAIN BODY   ================     */
+
+
+/*   ===================================        ITEM POPUP SCREENS        ==============================    */
+.popup {   /* entire popup screen, hidden until order is pressed */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    font-family: lexend, sans-serif;
+    display: none;  
+}
+
+.popupBase {   /* the item box popup screen */
+    background-color: white;
+    border-radius: 18px;
+    position: fixed;
+    height: 630px;
+    width: 800px;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 4;
+    overflow: scroll;
+}
+
+.closePop {
+    background-color: white;
+    border: 2px solid white;
+    position: fixed;
+    top: 5px;
+    left: 10px;
+    font-size: 33px;
+    z-index: 12;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.closePop:hover {
+    font-size: 34px;
+    color: rgb(61, 61, 61);
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: rgb(243, 243, 243);
+}
+.itemHeader .itemInfo {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 35%;
+}
+.open {    /* star favorites */
+    position: absolute;
+    top: 19.1%;
+    left: 28%;
+    height: 27px;
+    width: 27px;
+    z-index: 2;
+    cursor: pointer;
+}
+.close {   /* star favorites */
+    display: none;
+    position: absolute;
+    top: 19%;
+    left: 28%;
+    height: 30px;
+    width: 30px;
+    z-index: 2;
+    /* red color, filter: invert(26%) sepia(87%) saturate(5270%) hue-rotate(337deg) brightness(92%) contrast(104%); */
+    filter: invert(54%) sepia(89%) saturate(749%) hue-rotate(1deg) brightness(140%) contrast(104%);
+    cursor: pointer;
+}
+.itemHeader {   /* all elements above the red line  */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 200px;
+}
+.itemInfo h2 {  /* Item Name */
+    height: 48px;
+    font-size: 42px;
+    margin-top: 8px;
+}
+.itemInfo h3 { /* Price and Calories */
+    margin-top: -22px;
+    font-weight: 400;
+}
+.itemInfo h4 { /* Add to Favorites  */
+    transform: translateY(-20px);
+    cursor: pointer;
+}
+.redLine {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 30px;
+    color: rgb(213, 27, 27);
+    background-color: rgb(213, 27, 27);
+    border: 1px solid rgb(213, 27, 27);
+}
+.customizeHeader {   /*  customize header  */
+    position: absolute;
+    top: 34%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 88%;
+    height: 35px;
+    border: 2px solid rgb(0, 58, 93);
+    color: rgb(0, 58, 93);
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px; 
+}
+.customOptions {  /* box model/container for customizable add-ons or options */
+    position: absolute;
+    top: 44%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px; 
+    padding: 10px;
+}
+.customOptions span {  /* each individual add on items */
+    border: 1px solid rgb(0, 58, 93);
+    border-radius: 6px;
+    padding: 5px;
+    text-align: center;
+    display: flex;          
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center; 
+}
+.customOptions span.active { /* effects on add on items */
+    background-color: rgb(0, 58, 93);
+    color: white;
+}
+.customOptions span:hover { /* effects on add on items */
+    cursor: pointer;
+}
+.sizeOptions span {  /* each individual sizes */
+    border: 1px solid rgb(0, 58, 93);
+    border-radius: 6px;
+    padding: 5px;
+    text-align: center;
+    display: flex;          
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center; 
+}
+.sizeOptions span.active { /* effects on size of items */
+    background-color: rgb(0, 58, 93);
+    color: white;
+}
+.sizeOptions span.hover { /* effects on size of items */
+    cursor: pointer;
+}
+.calories {  /* price and calories text for each add on */
+    border: none !important;
+    font-size: 13px;
+    pointer-events: none;
+}
+.requests h3 {   /*  Special Requests header */
+    height: 35px;
+    border: 2px solid rgb(0, 58, 93);
+    color: rgb(0, 58, 93);
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px; 
+}
+.requests input {  /* any additional requests text box */
+    width: 100%;
+    height: 90px;
+}
+.requests input:focus { /* effects on additional requests input box */
+    font-family: lexend, sans-serif;
+    font-size: 18px;
+}
+.requests input::placeholder {  /* effects on additional requests input box */
+    font-family: lexend, sans-serif;
+    font-size: 15px;
+}
+.addCart:hover {  /* cart effects */
+    background-color: rgb(213, 27, 27) !important;
+    box-shadow: 0 0 0 2px rgb(223, 1, 1) !important; 
+    color: white !important;
+}
+.addCart:active { /* cart effects */
+    border: 1px outset rgb(213, 27, 27) !important;
+    background-color: rgb(173, 26, 26) !important;
+    box-shadow: 0 0 0 2px rgb(223, 1, 1) !important;
+}
+.popupBase p {    /* bottom spacing, lengthen the popup screen to scroll*/
+    margin-top: 800px;
+    display: block;
+    color: white;
+}
+/*   ========================   BURGER POPUP SCREEN   =====================  */
+.burgerScreen {
+    display: none;
+}
+.burgerScreen .burgerPic {
+    transform: translateX(-10px) translateY(-15px) scale(1.05);
+    height: auto;
+    width: 180px;
+}
+.burgerScreen .requests {  /* requests box model, special requests header and additonal input box  */
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 88%;
+}
+.burgerScreen .addCart { 
+    position: absolute;
+    right: 50px;
+    bottom: -140px;
+    display: flex;
+    height: 55px;
+    width: 210px;
+    border: 3px solid rgb(213, 27, 27);
+    border-radius: 20px;
+    color: rgb(213, 27, 27);
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 700; 
+}
+
+
+/*   ========================   RIBS POPUP SCREEN   =====================  */
+.ribsScreen {
+    display: none;
+}
+.ribsScreen .ribsPic {
+    transform: translateX(-10px) translateY(-10px) scale(1.2);
+    height: auto;
+    width: 180px;
+}
+.ribsScreen .requests {  /* requests box model, special requests header and additonal input box  */
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 88%;
+}
+.ribsScreen .addCart { 
+    position: absolute;
+    right: 50px;
+    bottom: -110px;
+    display: flex;
+    height: 55px;
+    width: 220px;
+    border: 3px solid rgb(213, 27, 27);
+    border-radius: 20px;
+    color: rgb(213, 27, 27);
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 700; 
+}
+
+
+/*   ========================   RAMEN POPUP SCREEN   =====================  */
+.ramenScreen {
+    display: none;
+}
+.ramenScreen .ramenPic {
+    transform: translateX(-10px) translateY(-13px) scale(1.6);
+    height: auto;
+    width: 180px;
+}
+.ramenScreen h6 { /* size header */
+    position: absolute;
+    top: 79%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 88%;
+    height: 35px;
+    border: 2px solid rgb(0, 58, 93);
+    color: rgb(0, 58, 93);
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px; 
+}
+.ramenScreen .sizeOptions {  /* box model of size options */
+    position: absolute;
+    top: 93%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px; 
+    padding: 10px;
+}
+.ramenScreen .requests {  /* requests box model, special requests header and additonal input box  */
+    position: absolute;
+    top: 109%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 88%;
+}
+.ramenScreen .addCart { 
+    position: absolute;
+    right: 50px;
+    bottom: -290px;
+    display: flex;
+    height: 55px;
+    width: 210px;
+    border: 3px solid rgb(213, 27, 27);
+    border-radius: 20px;
+    color: rgb(213, 27, 27);
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 700; 
+}
+
+
+
+/*   ========================   PHO POPUP SCREEN   =====================  */
+.phoScreen {
+    display: none;
+}
+.phoScreen .phoPic {
+    transform: translateX(-10px) translateY(-13px) scale(1.1);
+    height: auto;
+    width: 180px;
+    clip-path: inset(0 0 5% 0); 
+}
+.phoScreen h6 { /* size header */
+    position: absolute;
+    top: 76%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 88%;
+    height: 35px;
+    border: 2px solid rgb(0, 58, 93);
+    color: rgb(0, 58, 93);
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px; 
+}
+.phoScreen .sizeOptions {  /* box model of size options */
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px; 
+    padding: 10px;
+}
+.phoScreen .requests {  /* requests box model, special requests header and additonal input box  */
+    position: absolute;
+    top: 107%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 88%;
+}
+.phoScreen .addCart { 
+    position: absolute;
+    right: 50px;
+    bottom: -280px;
+    display: flex;
+    height: 55px;
+    width: 210px;
+    border: 3px solid rgb(213, 27, 27);
+    border-radius: 20px;
+    color: rgb(213, 27, 27);
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 700; 
+}
+
+
+
+/*   ========================   TACOS POPUP SCREEN   =====================  */
+.tacosScreen {
+    display: none;
+}
+.tacosScreen .tacosPic {
+    transform: translateX(-10px) translateY(-13px) scale(1.4);
+    height: auto;
+    width: 180px;
+}
+.tacosScreen .requests {  /* requests box model, special requests header and additonal input box  */
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 88%;
+}
+.tacosScreen .addCart { 
+    position: absolute;
+    right: 50px;
+    bottom: -140px;
+    display: flex;
+    height: 55px;
+    width: 210px;
+    border: 3px solid rgb(213, 27, 27);
+    border-radius: 20px;
+    color: rgb(213, 27, 27);
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 700; 
+}
+
+
+/*   ========================   BURRITO POPUP SCREEN   =====================  */
+.burritoScreen {
+    display: none;
+}
+.burritoScreen .burritoPic {
+    transform: translateX(-10px) translateY(-13px) scale(1.1);
+    height: auto;
+    width: 180px;
+}
+.burritoScreen .requests {  /* requests box model, special requests header and additonal input box  */
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 88%;
+}
+.burritoScreen .addCart { 
+    position: absolute;
+    right: 50px;
+    bottom: -140px;
+    display: flex;
+    height: 55px;
+    width: 210px;
+    border: 3px solid rgb(213, 27, 27);
+    border-radius: 20px;
+    color: rgb(213, 27, 27);
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 700; 
+}
+
+
+/*   ========================   FRIES POPUP SCREEN   =====================  */
+.friesScreen {
+    display: none;
+}
+.friesScreen .friesPic {
+    transform: translateX(-10px) translateY(-13px) scale(1.4);
+    height: auto;
+    width: 150px;
+}
+.friesScreen h6 { /* size header */
+    position: absolute;
+    top: 64%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 88%;
+    height: 35px;
+    border: 2px solid rgb(0, 58, 93);
+    color: rgb(0, 58, 93);
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px; 
+}
+.friesScreen .sizeOptions {  /* box model of size options */
+    position: absolute;
+    top: 78%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px; 
+    padding: 10px;
+}
+.friesScreen .requests {  /* requests box model, special requests header and additonal input box  */
+    position: absolute;
+    top: 94%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 88%;
+}
+.friesScreen .addCart { 
+    position: absolute;
+    right: 50px;
+    bottom: -195px;
+    display: flex;
+    height: 55px;
+    width: 210px;
+    border: 3px solid rgb(213, 27, 27);
+    border-radius: 20px;
+    color: rgb(213, 27, 27);
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 700; 
+}
+
+
+/*   ========================   SALAD POPUP SCREEN   =====================  */
+.saladScreen {
+    display: none;
+}
+.saladScreen .saladPic {
+    transform: translateX(-10px) translateY(-13px) scale(1.4);
+    height: auto;
+    width: 180px;
+}
+.saladScreen .requests {  /* requests box model, special requests header and additonal input box  */
+    position: absolute;
+    top: 72%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 88%;
+}
+.saladScreen .addCart { 
+    position: absolute;
+    right: 50px;
+    bottom: -60px;
+    display: flex;
+    height: 55px;
+    width: 210px;
+    border: 3px solid rgb(213, 27, 27);
+    border-radius: 20px;
+    color: rgb(213, 27, 27);
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 700; 
+}
+
+
+/*   ========================   BOBA POPUP SCREEN   =====================  */
+.bobaScreen {
+    display: none;
+}
+.bobaScreen .bobaPic {
+    transform: translateX(-10px) translateY(-13px) scale(1.4);
+    height: auto;
+    width: 180px;
+}
+.bobaScreen h6 { /* size header */
+    position: absolute;
+    top: 58%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 88%;
+    height: 35px;
+    border: 2px solid rgb(0, 58, 93);
+    color: rgb(0, 58, 93);
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px; 
+}
+.bobaScreen .sizeOptions {  /* box model of size options */
+    position: absolute;
+    top: 72%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px; 
+    padding: 10px;
+}
+.bobaScreen .requests {  /* requests box model, special requests header and additonal input box  */
+    position: absolute;
+    top: 88%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 88%;
+}
+.bobaScreen .addCart { 
+    position: absolute;
+    right: 50px;
+    bottom: -160px;
+    display: flex;
+    height: 55px;
+    width: 210px;
+    border: 3px solid rgb(213, 27, 27);
+    border-radius: 20px;
+    color: rgb(213, 27, 27);
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 700; 
+}
+
+
+/*   ========================   SODA POPUP SCREEN   =====================  */
+.sodaScreen {
+    display: none;
+}
+.sodaScreen .sodaPic {
+    transform: translateX(-30px) translateY(-13px) scale(.7);
+    height: auto;
+    width: 180px;
+    clip-path: inset(0 0 5% 0); 
+}
+.sodaScreen h6 { /* size header */
+    position: absolute;
+    top: 58%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 88%;
+    height: 35px;
+    border: 2px solid rgb(0, 58, 93);
+    color: rgb(0, 58, 93);
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px; 
+}
+.sodaScreen .sizeOptions {  /* box model of size options */
+    position: absolute;
+    top: 72%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px; 
+    padding: 10px;
+}
+.sodaScreen .requests {  /* requests box model, special requests header and additonal input box  */
+    position: absolute;
+    top: 88%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 88%;
+}
+.sodaScreen .addCart { 
+    position: absolute;
+    right: 50px;
+    bottom: -160px;
+    display: flex;
+    height: 55px;
+    width: 210px;
+    border: 3px solid rgb(213, 27, 27);
+    border-radius: 20px;
+    color: rgb(213, 27, 27);
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 700; 
+}
+
+/*   ===================================        ITEM POPUP SCREENS        ==============================    */
+
+
+
+
+
+ /*      =================     FOOTER ONLY    ==============   */
+ .footer {
+    position: relative;
+    top: 15%;
+    width: 100%;
+    display: inline-flex;
+    align-items: flex-start;
+ }
+
+ .bottomLeft {
+    color: rgb(0, 58, 93);
+    width: 50%;
+    border-top: 40px solid rgb(213, 27, 27);
+    padding-left: 15px;
+    font-weight: 600;
+}
+        .bottomLeft h5 {
+            font-size: 20px;
+            font-weight: 600;   
+        }
+        .bottomLeft h6 {
+            margin-top: 45px;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+        .bottomLeft span {
+            display: inline-block;
+            margin-right: 12px;
+            margin-bottom: 15px;
+            font-size: 12px;
+        }
+.bottomRight {
+    border-top: 40px solid rgb(213, 27, 27);
+    width: 50%;
+    height: 193px;
+    display: flex;
+    width: 50%;
+    justify-content: end;
+    color: rgb(24, 78, 131);
+}
+        .family{
+            transform: scale(.3);
+            position: absolute;
+            bottom: -30px;
+            right: -70px;
+            
+        }
+        .signUp {
+            position: absolute;
+            font-weight: 500;
+            right: 225px;
+            bottom: 50px;
+        }
+
+        .bottomLeft h5:hover {
+            text-decoration: underline;
+        }
+
+        .logo2 {
+            position: absolute;
+            transform: scale(1.2);
+            right: 40px;
+            bottom: 35px;
+        }
