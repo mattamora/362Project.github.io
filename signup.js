@@ -59,7 +59,6 @@ signUpForm.addEventListener('click', (e) => {
           mmYY: mmYYValue,
           cVV: cVVValue
 
-
         }
         
       });
