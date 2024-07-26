@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>account</title>
+    <meta name="viewport" content="width=device-width, inital-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS files/accountSTYLE.css">
+</head>
+
+<body>
+    <header class="top_bar">
+        <span><a href="home.html"><img src="pics/logo2.png" class="logo"></a></span>
+        <span class="name"><a href="home.html">Restaurant 362</a></span>
+        <div class="navTop">
+            <span class="menu"><a href="menu.html">Menu</a></span>
+            <span class="locations"><a href="location.html">Location</a></span>
+            <span class="sign_in"><a href="sign_in.html">My 362 Account</a></span>
+        </div>
+        <span><a class="order" href="menu.html">Order Now</a></span>
+    </header>
+
+    <h1>MY 362 ACCOUNT</h1>
+    <p>Red Line</p>
+
+    <main>
+        <div class="customTitle"> 
+            <span onclick="showInfo()">Account Info</span>
+            <span onclick="showFavorites()">Favorite Items</span>
+            <span onclick="showHistory()">Order History</span>
+        </div>
+       
+        <!-- ACCOUNT INFORMATION PAGE -->
+        <div class="account"> 
+
+            <!-- UPDATE ACCOUNT INFO SECTION -->
+            <h3 class="infoHeader">Update Account Info</h3>
+            <div class="infoUpdate">
+                <input type="text" placeholder="First Name" class="firstName">
+                <input type="text" placeholder="Last Name" class="LastName">
+                <input id="username" type="text" placeholder="Email" class="email">
+                <input id="password" type="password" placeholder="Password">
+                <img src="pics/eye.jpg" class ="eye" id="showEye">
+                <img src="pics/closeEye.jpg" class ="closeEye" id="hideEye">
+                <input type="text" placeholder="Phone Number" class="number">
+                <button>UPDATE INFO</button>
+             </div>
+
+             <!-- UPDATE PAYMENT METHOD SECTION -->
+             <h3 class="paymentHeader">Update Payment Info</h3>
+             <div class="paymentUpdate">
+                <h2>Card Details</h2>
+                <input type="text" placeholder="Card Number" class="cardNumber">
+                <input type="text" placeholder="Name On Card" class="cardName">
+                <div class="cardInfo">
+                    <input type="text" placeholder="MM / YY" class="expiration">
+                    <input type="text" placeholder="CVV" class="CVV">
+                </div>
+                <h2>Billing Address</h2>
+                <input type="text" placeholder="Address" class="address">
+                <input type="text" placeholder="City" class="city">
+                <input type="text" placeholder="State" class="state">
+                <input type="text" placeholder="ZIP Code" class="zip">
+                <button>UPDATE PAYMENT</button>
+             </div>
+
+             <!-- DELETE ACCOUNT SECTION-->
+             <h3 class="deleteHeader">Delete Account</h3>
+             <div class="delete">
+                <button onclick="hideDelete()">DELETE ACCOUNT</button>
+             </div>
+             <div class="sure">
+                <h6>ARE YOU SURE?</h6>
+                <h4>YES</h4>
+                <h5 onclick="showDelete()">NO</h5>
+            </div>
+             
+        </div>
+
+        <!-- FAVORITE ITEMS PAGE -->
+        <div class="favorites">
+            <h3 class="faveItemsHeader">Favorite Menu Items</h3>
+
+            <!-- GRID TO POSITION ANY FAVORITED ITEMS -->
+            <div class="faveItems"> 
+                <div class="item">
+                    <img src="pics/pho.jpg">
+                    <h4>Sample Item 1</h4>
+                    <div class="buttons">
+                        <span><a href="menu.html#asian">Order</a></span>
+                        <span onclick="removeItem(event)">Remove</span>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="pics/pho.jpg">
+                    <h4>Sample Item 2</h4>
+                    <div class="buttons">
+                        <span><a href="menu.html#asian">Order</a></span>
+                        <span onclick="removeItem(event)">Remove</span>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="pics/pho.jpg">
+                    <h4>Sample Item 3</h4>
+                    <div class="buttons">
+                        <span><a href="menu.html#asian">Order</a></span>
+                        <span onclick="removeItem(event)">Remove</span>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="pics/pho.jpg">
+                    <h4>Sample Item 4 </h4>
+                    <div class="buttons">
+                        <span><a href="menu.html#asian">Order</a></span>
+                        <span onclick="removeItem(event)">Remove</span>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="pics/pho.jpg">
+                    <h4>Sample Item 5</h4>
+                    <div class="buttons">
+                        <span><a href="menu.html#asian">Order</a></span>
+                        <span onclick="removeItem(event)">Remove</span>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+
+        <!-- ORDER HISTORY PAGE -->
+        <div class="history">
+            <h3 class="orderHistory">Order History</h3>
+
+            <!-- GRID TO POSITION PAST ORDERS -->
+            <div class="pastOrders">
+                <div class="orderItem">
+                    <h2>Order #1</h2>
+                    <h3>7/28/2024</h3>
+                </div>
+                <div class="orderItem">
+                    <h2>Order #2</h2>
+                    <h3>7/29/2024</h3>
+                </div>
+                <div class="orderItem">
+                    <h2>Order #3</h2>
+                    <h3>7/30/2024</h3>
+                </div>
+                <div class="orderItem">
+                    <h2>Order #4</h2>
+                    <h3>7/31/2024</h3>
+                </div>
+                <div class="orderItem">
+                    <h2>Order #5</h2>
+                    <h3>8/01/2024</h3>
+                </div>
+                <div class="orderItem">
+                    <h2>Order #6</h2>
+                    <h3>8/02/2024</h3>
+                </div>
+            </div>
+            
+
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <div class="bottomLeft">
+            <a href="location.html"><h5>Contact Us</h5></a>
+            <br></br>
+            <h6> CPSC 362 - SUMMER 2024</h6>
+            <span>MATTHEW AMORA</span> 
+            <span>EDGAR CARDENAS</span> 
+            <span>LAWRENCE CUI</span> 
+            <span>MANVIR DHILLON</span>
+            <span>WINDLY NGUYEN</span>
+        </div>
+        <div class="bottomRight">
+            
+            <a href="sign_up.html"><img src="pics/bottomLeft.jpg" class="family"></a>
+            <a href="home.html"><img src="pics/logo2.png" class="logo2"></a>
+        </div>
+    </footer>
+
+
+    <!---  ==========      JAVASCIPT CODE      ========= -->
+    <script>
+
+        // CODE FOR EYE ICON IN PASSWORD INPUT
+        const showEye = document.getElementById('showEye');
+        const hideEye = document.getElementById('hideEye');
+        const password = document.getElementById('password');
+        showEye.addEventListener('click', function () 
+        {
+            password.setAttribute('type', 'text');
+            showEye.style.display = 'none';
+            hideEye.style.display = 'block';
+        }  );   
+        hideEye.addEventListener('click', function () 
+        {
+            password.setAttribute('type', 'password');
+            showEye.style.display = 'block';
+            hideEye.style.display = 'none';
+        }  );
+
+        // CODE FOR HIDING THE DELETE ACCOUNT BUTTON
+        function hideDelete() {
+            const deleteButton = document.querySelector(".delete button");
+            const areYouSure = document.querySelector(".sure");
+            deleteButton.style.display = 'none';
+            areYouSure.style.display= 'flex';
+        }
+        function showDelete() {
+            const deleteButton = document.querySelector(".delete button");
+            const areYouSure = document.querySelector(".sure");
+            deleteButton.style.display = 'block';
+            areYouSure.style.display= 'none';
+        }
+    
+        // CODE FOR SHOWING EACH PAGE
+        function showFavorites() {
+            const hideInfo = document.querySelector(".account");
+            const hideHistory = document.querySelector(".history");
+            const showFavorites = document.querySelector(".favorites");
+            hideInfo.style.display = 'none';
+            hideHistory.style.display= 'none';
+            showFavorites.style.display = 'flex';
+        }
+        function showInfo() {
+            const showInfo = document.querySelector(".account");
+            const hideHistory = document.querySelector(".history");
+            const hideFavorites = document.querySelector(".favorites");
+            showInfo.style.display = 'flex';
+            hideHistory.style.display= 'none';
+            hideFavorites.style.display = 'none';
+        }
+        function showHistory() {
+            const hideInfo = document.querySelector(".account");
+            const showHistory = document.querySelector(".history");
+            const hideFavorites = document.querySelector(".favorites");
+            hideInfo.style.display = 'none';
+            showHistory.style.display= 'flex';
+            hideFavorites.style.display = 'none';
+        }
+    
+        // CODE TO REMOVE/HIDE A FAVORITED ITEM
+        function removeItem(event) {
+            const item = event.target.closest('.item');
+            item.style.display = 'none';
+        }
+
+    </script>  
+
+
+</body>
+
+</html>

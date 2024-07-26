@@ -7,216 +7,23 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
-    <style>
-        /* switch this to its own file when you are done */
-        * {
-            box-sizing: border-box; 
-        }
-
-        html, body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            min-width: 30%;
-            min-height: 30%;
-            font-family: lexend, sans-serif;
-        }
-
-        /*      =================     TOP BAR ONLY    ==============   */
-        .top_bar {
-            position: fixed;
-            top: 0;
-            display: flex;
-            justify-content: space-between; 
-            align-items: center;
-            width: 100%;
-            height: 65px;
-            z-index: 10;
-            padding: 10px 0;
-            border-bottom: 1px solid rgb(158, 158, 158);
-            box-shadow: 0 6px 6px -3px rgba(0, 0, 0, 0.2); 
-            background-color: white;
-        }
-
-        a:link, a:visited {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .name {
-            margin: 20px;
-            font-size: 30px;             
-            font-weight: 700;
-            cursor: pointer;
-            white-space: nowrap;         
-        }
-
-        .navTop {
-            position: fixed;
-            right: 12%;
-            height: 45px;
-            width: 330px;
-            margin-right: 50px;
-            display: inline-flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 18px;
-            font-weight: 600;
-            color: rgb(24, 78, 131);
-        }
-
-        .menu:hover {
-            transform: scale(1.1);
-        }
-
-        .locations:hover {
-            transform: scale(1.1); 
-        }
-
-        .sign_in:hover {
-            transform: scale(1.1); 
-        }
-
-        .order {
-            display: flex;
-            height: 45px;
-            width: 180px;
-            margin-right: 20px;
-            border: 3px solid rgb(213, 27, 27);
-            border-radius: 20px;
-            color: rgb(213, 27, 27) !important;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            font-size: 21px;
-            font-weight: 700;
-        }
-
-        .order:hover {
-            background-color: rgb(213, 27, 27);
-            box-shadow: 0 0 0 2px rgb(223, 1, 1);
-            color: white !important;
-        }
-
-        .order:active {
-            border: 1px outset rgb(213, 27, 27);
-            background-color: rgb(173, 26, 26);
-            box-shadow: 0 0 0 2px rgb(223, 1, 1);
-        }
-         /*      =================     TOP BAR ONLY    ==============   */
-
-
-
-        /*       =================    MAIN BODY   =================     */
-      
-        .headerPhotos {
-            display: inline-flex;
-            width: 100%;
-            position: absolute;
-            top: 6%;
-        }
-
-        .headerPhotos img {
-            width: 50%;
-        }
-
-        .directions {
-            display: flex;
-            flex-direction: column;
-            position: absolute;
-            top: 75%;
-            width: 50%;
-            padding-left: 90px;
-        }
-
-        .directions h3:hover {
-            text-decoration: underline;
-            cursor: pointer;
-        }
-
-        .directions iframe  {
-            transform: scale(.9);
-            width: 100%;
-            position: absolute;
-            left: 90%;
-            top: -24%;
-        }
-
-        /*       =================    MAIN BODY   ================     */
-
-
-
-         /*      =================     FOOTER ONLY    ==============   */
-        .footer {
-            position: relative;
-            top: 130%;
-            width: 100%;
-            display: inline-flex;
-            align-items: flex-start;
-         }
-
-        .footerInfo {
-            color: rgb(24, 78, 131);
-            width: 50%;
-            border-top: 40px solid rgb(213, 27, 27);
-            padding-left: 15px;
-            font-weight: 600;
-        }
-                .footerInfo a {
-                    font-size: 18px;
-                }
-                .footerInfo h6 {
-                    margin-top: 45px;
-                    font-size: 12px;
-                    margin-bottom: 10px;
-                }
-                .footerInfo span {
-                    display: inline-block;
-                    margin-right: 12px;
-                    margin-bottom: 15px;
-                    font-size: 12px;
-                }
-        .bottomRight {
-            border-top: 40px solid rgb(213, 27, 27);
-            width: 50%;
-            height: 232px;
-            display: flex;
-            width: 50%;
-            justify-content: end;
-            color: rgb(24, 78, 131);
-        }
-                .bottomRight img {
-                    transform: scale(.5);
-                    position: relative;
-                    right: -95px;
-                    bottom: 30px;
-                }
-                .bottomRight a {
-                    position: relative;
-                    height: 20px;
-                    right: 243px;
-                    top: 120px;
-                    font-weight: 500;
-                }
-
-                .bottomRight a:hover {
-                    text-decoration: underline;
-                }
- 
-         /*      =================     FOOTER ONLY    ==============   */
-    </style>
+    <link rel="stylesheet" href="CSS files/locationSTYLE.css">
 </head>
 
 <body>
     <header class="top_bar">
+<<<<<<< HEAD
         <span class="name"><a href="../home.html">Restaurant 362</a></span>
+=======
+        <span><a href="home.html"><img src="pics/logo2.png" class="logo"></a></span>
+        <span class="name"><a href="home.html">Restaurant 362</a></span>
+>>>>>>> origin/main
         <div class="navTop">
             <span class="menu"><a href="menu.html">Menu</a></span>
             <span class="locations"><a href="location.html">Location</a></span>
             <span class="sign_in"><a href="sign_in.html">My 362 Account</a></span>
         </div>
-        <span><a class="order" href="order.html">Order Now</a></span>
+        <span><a class="order" href="menu.html">Order Now</a></span>
     </header>
 
     <main>
@@ -233,9 +40,9 @@
     </main>
 
     <footer class="footer">
-        <div class="footerInfo">
-            <a href="#"><h5>Our Story</h5></a>
-            <a href="#"><h5>Contact Us</h5></a>
+        <div class="bottomLeft">
+            <a href="location.html"><h5>Contact Us</h5></a>
+            <br></br>
             <h6> CPSC 362 - SUMMER 2024</h6>
             <span>MATTHEW AMORA</span> 
             <span>EDGAR CARDENAS</span> 
@@ -244,31 +51,16 @@
             <span>WINDLY NGUYEN</span>
         </div>
         <div class="bottomRight">
-            <img src="pics/bottomLeft.jpg">
-            <a href="sign_up.html">Sign up for a 362 Account</a>
+            
+            <a href="sign_up.html"><img src="pics/bottomLeft.jpg" class="family"></a>
+            <a href="home.html"><img src="pics/logo2.png" class="logo2"></a>
         </div>
     </footer>
 
 
     <!---  ==========      JAVASCIPT CODE      ========= -->
     <script>
-        const showEye = document.getElementById('showEye');
-        const hideEye = document.getElementById('hideEye');
-        const password = document.getElementById('password');
-    
-        showEye.addEventListener('click', function () 
-        {
-            password.setAttribute('type', 'text');
-            showEye.style.display = 'none';
-            hideEye.style.display = 'block';
-        }  );
-    
-        hideEye.addEventListener('click', function () 
-        {
-            password.setAttribute('type', 'password');
-            showEye.style.display = 'block';
-            hideEye.style.display = 'none';
-        }  );
+      
     </script>    
 
 
