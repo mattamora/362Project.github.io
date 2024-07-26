@@ -12,7 +12,7 @@
 
 <body>
     <header class="top_bar">
-        <span><a href="home.html"><img src="pics/logo2.png" class="logo"></a></span>
+        <span><a href="home.html"><img src="../pics/logo2.png" class="logo"></a></span>
         <span class="name"><a href="home.html">Restaurant 362</a></span>
         <div class="navTop">
             <span class="menu"><a href="menu.html">Menu</a></span>
@@ -25,7 +25,7 @@
 
     <h1>MENU</h1>
     <div class="itemTabs">
-        <a href="order.html"><span>AMERICAN</span></a>
+        <a href="account.html"><span>AMERICAN</span></a>
         <a href="#asian"><span>ASIAN</span></a>
         <a href="#mexican"><span>MEXICAN</span></a>
         <a href="#sides"><span>SIDES</span></a>
@@ -56,13 +56,13 @@
                 <img src="pics/ramen.jpg">
                 <span>Ramen</span>
                 <p>Our signature tonkotsu ramen with a creamy, umami-rich broth, tender noodles, and your choice of meat and toppings</p>
-                <h5 class="popupOrder">ORDER</h5>
+                <h5 class="popupOrder" onclick="ramenPopup()">ORDER</h5>
             </div>
             <div class="phoOrder">
                 <img src="pics/pho.jpg">
                 <span>Pho</span>
                 <p>Authentic pho with a rich, aromatic broth, served with delicate rice noodles, customizable meat options, and an assortment of fresh herbs and vegetables</p>
-                <h5 class="popupOrder">ORDER</h5>
+                <h5 class="popupOrder" onclick="phoPopup()">ORDER</h5>
             </div>
         </div>
 
@@ -73,30 +73,30 @@
                 <img src="pics/tacos.jpg">
                 <span>Tacos</span>
                 <p>Three flavorful tacos with your choice of meat and toppings, nestled in warm tortillas</p>
-                <h5 class="popupOrder">ORDER</h5>
+                <h5 class="popupOrder" onclick="tacosPopup()">ORDER</h5>
             </div>
             <div class="burritoOrder">
                 <img src="pics/burrito3.png">
                 <span>Burritos</span>
                 <p>Savory burritos filled with your selected meats, fries, and beans, topped with fresh guacamole and shredded cheese</p>
-                <h5 class="popupOrder">ORDER</h5>
+                <h5 class="popupOrder" onclick="burritoPopup()">ORDER</h5>
             </div>
         </div>
 
         <h6 id="sides">.</h6>
-        <div class="sides">
+        <div class="sides" >
             <h2>SIDES</h2>
             <div class="friesOrder">
                 <img src="pics/french.jpg">
                 <span>Fries</span>
                 <p>Crispy, golden fries with your choice of seasoning and toppings, such as melted cheese or bacon bits</p>
-                <h5 class="popupOrder">ORDER</h5>
+                <h5 class="popupOrder" onclick="friesPopup()">ORDER</h5>
             </div>
             <div class="saladOrder">
                 <img src="pics/salad.jpg">
                 <span>Salad</span>
                 <p>Caesar salad featuring crunchy romaine, rich Caesar dressing, and Parmesan cheese, with customizable toppings</p>
-                <h5 class="popupOrder">ORDER</h5>
+                <h5 class="popupOrder" onclick="saladPopup()">ORDER</h5>
             </div>  
         </div>
 
@@ -107,13 +107,13 @@
                 <img src="pics/bobas.jpg">
                 <span>Boba</span>
                 <p>Our homemade milk teas</p>
-                <h5 class="popupOrder">ORDER</h5>
+                <h5 class="popupOrder" onclick="bobaPopup()">ORDER</h5>
             </div>
             <div class="sodaOrder">
                 <img src="pics/soda.jpg">
                 <span>Soda</span>
                 <p>Sodas, Juices, and Other Drinks</p>
-                <h5 class="popupOrder">ORDER</h5>
+                <h5 class="popupOrder" onclick="sodaPopup()">ORDER</h5>
             </div>
         </div>
 
@@ -121,84 +121,316 @@
         <div class="popup">
             <div class="popupBase">
                 <button class="closePop" onclick="closePopup()">✕</button>
+                <img class="open" src="pics/openStar.png" onclick="toggleStar()">
+                <img class="close" src="pics/closeStar.png" onclick="toggleStar()">
+                <h6 class="redLine">Red line</h6>
+                <h3 class="customizeHeader">Customize</h3>
 
                 <div class="burgerScreen">
                     <div class="itemHeader">
-                        <h2>BURGER</h2>
-                        <h3>$6.99 | 900 Cal</h3>
-                        <h4 onclick="toggleStar()">Add To Favorites</h4>
-                        <img class="open" src="pics/openStar.png" onclick="toggleStar()">
-                        <img class="close" src="pics/closeStar.png" onclick="toggleStar()">
-
-                        <button class="closePop" onclick="closePopup()">✕</button>
-                        <!--
-                        <h5>Juicy beef patty topped with melted cheddar cheese, our signature sauce, and your choice of toppings, served on a toasted brioche bun.</h5>
-                        
-                         <img src="pics/doubledouble.jpg"> -->
+                        <div class="itemInfo">
+                            <h2>BURGER</h2>
+                            <h3>$6.99 | 900 Cal</h3>
+                            <h4 onclick="toggleStar()">&nbsp;-&nbsp;&nbsp; Add To Favorites</h4>
+                        </div>
+                        <img src="pics/doubledouble.jpg" class="burgerPic"> 
                     </div>
-                        <button class="addCart">Add To cart Placeholder</button>
+                    <div class="customOptions">
+                        <span onclick="select(event)" class="active">Onions<span class="calories">+0 Cal</span></span>
+                        <span onclick="select(event)" class="active">Tomatoes<span class="calories">+5 Cal</span></span>
+                        <span onclick="select(event)" class="active">Lettuce<span class="calories">+0 Cal</span></span>
+                        <span onclick="select(event)" class="active">Pickles<span class="calories">+5 Cal</span></span>
+                        <span onclick="select(event)">Ketchup<span class="calories">+5 Cal</span></span>
+                        <span onclick="select(event)">Mayo<span class="calories">+5 Cal</span></span>
+                        <span onclick="select(event)">Jalapenos<span class="calories">+5 Cal</span></span>
+                        <span onclick="select(event)" class="active">Cheese<span class="calories">+15 Cal</span></span>
+                        <span onclick="select(event)">Bacon<span class="calories">+$1.99</span></span>
+                        <span onclick="select(event)">Extra patty<span class="calories">+$1.99</span></span>
+                    </div>
+                    <div class="requests">
+                        <h3>Special Requests (Optional)</h3>
+                        <input placeholder="Any Additonal Requests...">
+                    </div>
+                    <button class="addCart" onclick="addToCart(); closePopup();">ADD TO CART - $<span class="price">6.99</span></button>
                 </div>
     
                 <div class="ribsScreen">
                     <div class="itemHeader">
-                        <h2>RIBS</h2>
-                        <h3>$12.99 | 600 Cal</h3>
-                        <h4 onclick="toggleStar()">Add To Favorites</h4>
-                        <img class="open" src="pics/openStar.png" onclick="toggleStar()">
-                        <img class="close" src="pics/closeStar.png" onclick="toggleStar()">
-                        <!--
-                        <h5>Juicy beef patty topped with melted cheddar cheese, our signature sauce, and your choice of toppings, served on a toasted brioche bun.</h5>
-                        
-                         <img src="pics/doubledouble.jpg"> -->
+                        <div class="itemInfo">
+                            <h2>RIBS</h2>
+                            <h3>$12.99 | 600 Cal</h3>
+                            <h4 onclick="toggleStar()">&nbsp;-&nbsp;&nbsp; Add To Favorites</h4>
+                        </div>
+                        <img src="pics/ribs.jpg" class="ribsPic"> 
                     </div>
-                        <button class="addCart">Add To cart Placeholder</button>
-                </div>
-<!-- 
-                <div class="ramenScreen">
-                    <h2>RIBS</h2>
+                    <div class="customOptions">
+                        <span onclick="select(event)" class="exclusive active">Half Rack<span class="calories">$12.99</span></span>
+                        <span onclick="select(event)" class="exclusive">Full Rack<span class="calories">$24.99</span></span>
+                        <span onclick="select(event)" class="exclusive2 active">Original Barbecue Sauce <span class="calories">+120 Cal</span></span>
+                        <span onclick="select(event)" class="exclusive2">Spicy Barbecue Sauce<span class="calories">+130 Cal</span></span>
+                        <span onclick="select(event)" class="exclusive2">Sweet Barbecue Sauce <span class="calories">+150 Cal</span></span>
+                        <span onclick="select(event)" class="exclusive2">No Sauce</span>
+                    </div>
+                    <div class="requests">
+                        <h3>Special Requests (Optional)</h3>
+                        <input placeholder="Any Additonal Requests...">
+                    </div>
+                    <button class="addCart" onclick="addToCart(); closePopup();">ADD TO CART - $<span class="price">12.99</span></button>
                 </div>
 
+                <div class="ramenScreen">
+                    <div class="itemHeader">
+                        <div class="itemInfo">
+                            <h2>RAMEN</h2>
+                            <h3>$8.99 | 700 Cal</h3>
+                            <h4 onclick="toggleStar()">&nbsp;-&nbsp;&nbsp; Add To Favorites</h4>
+                        </div>
+                        <img src="pics/ramen.jpg" class="ramenPic"> 
+                    </div>
+                    <div class="customOptions">
+                        <span onclick="select(event)" class="exclusive active">Chasu<span class="calories">+$1.99</span></span>
+                        <span onclick="select(event)" class="exclusive">Chicken<span class="calories">+$1.99</span></span>
+                        <span onclick="select(event)" class="exclusive">Tofu<span class="calories">+$0.99</span></span>
+                        <span onclick="select(event)" class="exclusive">No Meat</span>
+                        <span onclick="select(event)">Egg<span class="calories">+$0.99</span></span>
+                        <span onclick="select(event)">Shitake Mushrooms<span class="calories">+5 Cal</span></span>
+                        <span onclick="select(event)">Bean Sprouts<span class="calories">+0 Cal</span></span>
+                        <span onclick="select(event)">Seaweed<span class="calories">+0 Cal</span></span>
+                        <span onclick="select(event)">Bamboo Shoots<span class="calories">+0 Cal</span></span>
+                        <span onclick="select(event)">Green Onions<span class="calories">+0 Cal</span></span>
+                        <span onclick="select(event)">Red Ginger<span class="calories">+0 Cal</span></span>
+                    </div>
+                    <h6>Size</h6>
+                    <div class="sizeOptions">
+                        <span onclick="selectSize(event)" class="active">Regular</span>
+                        <span onclick="selectSize(event)">Large<span class="calories">+$3.99</span></span>
+                    </div>
+                    <div class="requests">
+                        <h3>Special Requests (Optional)</h3>
+                        <input placeholder="Any Additonal Requests...">
+                    </div>
+                    <button class="addCart" onclick="addToCart(); closePopup();">ADD TO CART - $<span class="price">8.99</span></button>
+                </div>
+    
+
                 <div class="phoScreen">
-                    <h2>RIBS</h2>
+                    <div class="itemHeader">
+                        <div class="itemInfo">
+                            <h2>PHO</h2>
+                            <h3>$9.99 | 650 Cal</h3>
+                            <h4 onclick="toggleStar()">&nbsp;-&nbsp;&nbsp; Add To Favorites</h4>
+                        </div>
+                        <img src="pics/pho.jpg" class="phoPic"> 
+                    </div>
+                    <div class="customOptions">
+                        <span onclick="select(event)" class="exclusive">Ribeye<span class="calories">+$4.99</span></span>
+                        <span onclick="select(event)" class="exclusive">Brisket<span class="calories">+$3.99</span></span>
+                        <span onclick="select(event)" class="exclusive">Chicken<span class="calories">+$2.99</span></span>
+                        <span onclick="select(event)" class="exclusive active">Rare Steak<span class="calories">+$2.99</span></span>
+                        <span onclick="select(event)" class="exclusive">Oxtail<span class="calories">+$1.99</span></span>
+                        <span onclick="select(event)">Cilantro<span class="calories">+0 Cal</span></span>
+                        <span onclick="select(event)">Jalapenos<span class="calories">+0 Cal</span></span>
+                        <span onclick="select(event)">Bean Sprouts<span class="calories">+0 Cal</span></span>
+                        <span onclick="select(event)">Basil<span class="calories">+0 Cal</span></span>
+                        <span onclick="select(event)">Green Onions<span class="calories">+0 Cal</span></span>
+                        <span onclick="select(event)">White Onions<span class="calories">+0 Cal</span></span>
+                    </div>
+                    <h6>Size</h6>
+                    <div class="sizeOptions">
+                        <span onclick="selectSize(event)" class="active">Regular</span>
+                        <span onclick="selectSize(event)">Large<span class="calories">+$3.99</span></span>
+                    </div>
+                    <div class="requests">
+                        <h3>Special Requests (Optional)</h3>
+                        <input placeholder="Any Additonal Requests...">
+                    </div>
+                    <button class="addCart" onclick="addToCart(); closePopup();">ADD TO CART - $<span class="price">9.99</span></button>
                 </div>
 
                 <div class="tacosScreen">
-                    <h2>RIBS</h2>
+                    <div class="itemHeader">
+                        <div class="itemInfo">
+                            <h2>TACOS</h2>
+                            <h3>$5.99 | 420 Cal</h3>
+                            <h4 onclick="toggleStar()">&nbsp;-&nbsp;&nbsp; Add To Favorites</h4>
+                        </div>
+                        <img src="pics/tacos.jpg" class="tacosPic"> 
+                    </div>
+                    <div class="customOptions">
+                        <span onclick="select(event)" class="exclusive active">Asada<span class="calories">+120 Cal</span></span>
+                        <span onclick="select(event)" class="exclusive">Pastor<span class="calories">+140 Cal</span></span>
+                        <span onclick="select(event)" class="exclusive">Pollo<span class="calories">+90 Cal</span></span>
+                        <span onclick="select(event)" class="exclusive">Birria<span class="calories">+160 Cal</span></span>
+                        <span onclick="select(event)" class="exclusive">Chorizo<span class="calories">+130 Cal</span></span>
+                        <span onclick="select(event)" class="exclusive">Pescado<span class="calories">+$2.99</span></span>
+                        <span onclick="select(event)">Guacamole<span class="calories">+$1.99</span></span>
+                        <span onclick="select(event)">Cilantro<span class="calories">+0 Cal</span></span>
+                        <span onclick="select(event)">Onions<span class="calories">+0 Cal</span></span>
+                        <span onclick="select(event)">Salsa Verde<span class="calories">+5 Cal</span></span>
+                        <span onclick="select(event)">Slasa Rojo<span class="calories">+5 Cal</span></span>
+                    </div>
+                    <div class="requests">
+                        <h3>Special Requests (Optional)</h3>
+                        <input placeholder="Any Additonal Requests...">
+                    </div>
+                    <button class="addCart" onclick="addToCart(); closePopup();">ADD TO CART - $<span class="price">5.99</span></button>
                 </div>
 
-                <div class="burritosScreen">
-                    <h2>RIBS</h2>
+                <div class="burritoScreen">
+                    <div class="itemHeader">
+                        <div class="itemInfo">
+                            <h2>BURRITO</h2>
+                            <h3>$7.99 | 620 Cal</h3>
+                            <h4 onclick="toggleStar()">&nbsp;-&nbsp;&nbsp; Add To Favorites</h4>
+                        </div>
+                        <img src="pics/burrito3.png" class="burritoPic"> 
+                    </div>
+                    <div class="customOptions">
+                        <span onclick="select(event)" class="exclusive active">Asada<span class="calories">+120 Cal</span></span>
+                        <span onclick="select(event)" class="exclusive">Pastor<span class="calories">+140 Cal</span></span>
+                        <span onclick="select(event)" class="exclusive">California<span class="calories">+160 Cal</span></span>
+                        <span onclick="select(event)">Guacamole<span class="calories">+$1.99</span></span>
+                        <span onclick="select(event)">Sour Cream<span class="calories">+30 Cal</span></span>
+                        <span onclick="select(event)">Rice<span class="calories">+50 Cal</span></span>
+                        <span onclick="select(event)">Beans<span class="calories">+40 Cal</span></span>
+                        <span onclick="select(event)">Cheese<span class="calories">+60 Cal</span></span>
+                        <span onclick="select(event)">Salsa Verde<span class="calories">+5 Cal</span></span>
+                        <span onclick="select(event)">Slasa Rojo<span class="calories">+5 Cal</span></span>
+                    </div>
+                    <div class="requests">
+                        <h3>Special Requests (Optional)</h3>
+                        <input placeholder="Any Additonal Requests...">
+                    </div>
+                    <button class="addCart" onclick="addToCart(); closePopup();">ADD TO CART - $<span class="price">7.99</span></button>
                 </div>
 
                 <div class="friesScreen">
-                    <h2>RIBS</h2>
+                    <div class="itemHeader">
+                        <div class="itemInfo">
+                            <h2>FRIES</h2>
+                            <h3>$2.99 | 500 Cal</h3>
+                            <h4 onclick="toggleStar()">&nbsp;-&nbsp;&nbsp; Add To Favorites</h4>
+                        </div>
+                        <img src="pics/french.jpg" class="friesPic"> 
+                    </div>
+                    <div class="customOptions">
+                        <span onclick="select(event)">Cheese<span class="calories">+$1.99</span></span>
+                        <span onclick="select(event)">Bacon Bits<span class="calories">+$0.99</span></span>
+                        <span onclick="select(event)" class="exclusive">Truffle Fries<span class="calories">+$2.99</span></span>
+                        <span onclick="select(event)" class="exclusive">Sweet Potato Fries<span class="calories">+$.099</span></span>
+                        <span onclick="select(event)" class="exclusive active">Regular Fries</span>
+                    </div>
+                    <h6>Size</h6>
+                    <div class="sizeOptions">
+                        <span onclick="selectSize(event)" class="active">Small</span>
+                        <span onclick="selectSize(event)">Medium<span class="calories">+$1.99</span></span>
+                        <span onclick="selectSize(event)">Large<span class="calories">+$2.99</span></span>
+                    </div>
+                    <div class="requests">
+                        <h3>Special Requests (Optional)</h3>
+                        <input placeholder="Any Additonal Requests...">
+                    </div>
+                    <button class="addCart" onclick="addToCart(); closePopup();">ADD TO CART - $<span class="price">2.99</span></button>
                 </div>
 
                 <div class="saladScreen">
-                    <h2>RIBS</h2>
+                    <div class="itemHeader">
+                        <div class="itemInfo">
+                            <h2>SALAD</h2>
+                            <h3>$6.99 | 300 Cal</h3>
+                            <h4 onclick="toggleStar()">&nbsp;-&nbsp;&nbsp; Add To Favorites</h4>
+                        </div>
+                        <img src="pics/salad.jpg" class="saladPic"> 
+                    </div>
+                    <div class="customOptions">
+                        <span onclick="select(event)" class="active">Croutons<span class="calories">+60 Cal</span></span>
+                        <span onclick="select(event)">Chicken<span class="calories">+$1.99</span></span>
+                        <span onclick="select(event)" class="active">Parmesan Cheese<span class="calories">+120 Cal</span></span>
+                        <span onclick="select(event)">Bleu Cheese<span class="calories">+270 Cal</span></span>
+                        <span onclick="select(event)">Vinaigrette<span class="calories">+300 Cal</span></span>
+                        <span onclick="select(event)">Dressing On Side</span>
+                    </div>
+                    <div class="requests">
+                        <h3>Special Requests (Optional)</h3>
+                        <input placeholder="Any Additonal Requests...">
+                    </div>
+                    <button class="addCart" onclick="addToCart(); closePopup();">ADD TO CART - $<span class="price">6.99</span></button>
                 </div>
- -->
 
+                <div class="bobaScreen">
+                    <div class="itemHeader">
+                        <div class="itemInfo">
+                            <h2>BOBA</h2>
+                            <h3>$4.99 | 900 Cal</h3>
+                            <h4 onclick="toggleStar()">&nbsp;-&nbsp;&nbsp; Add To Favorites</h4>
+                        </div>
+                        <img src="pics/bobas.jpg" class="bobaPic"> 
+                    </div>
+                    <div class="customOptions">
+                        <span onclick="select(event)" class="exclusive active">Taro</span>
+                        <span onclick="select(event)" class="exclusive">Thai Tea</span>
+                        <span onclick="select(event)" class="exclusive">Matcha</span>
+                        <span onclick="select(event)" class="exclusive">Tiger</span>
+                        <span onclick="select(event)" class="exclusive">Almond</span>
+                        <span onclick="select(event)" class="exclusive">Horchata</span>
+                        <span onclick="select(event)" class="exclusive">Strawberry</span>
+                        <span onclick="select(event)">No Boba</span>
+                    </div>
+                    <h6>Size</h6>
+                    <div class="sizeOptions">
+                        <span onclick="selectSize(event)" class="active">Small</span>
+                        <span onclick="selectSize(event)">Medium<span class="calories">+$1.99</span></span>
+                        <span onclick="selectSize(event)">Large<span class="calories">+$2.99</span></span>
+                    </div>
+                    <div class="requests">
+                        <h3>Special Requests (Optional)</h3>
+                        <input placeholder="Any Additonal Requests...">
+                    </div>
+                    <button class="addCart" onclick="addToCart(); closePopup();">ADD TO CART - $<span class="price">4.99</span></button>
+                </div>
+
+                <div class="sodaScreen">
+                    <div class="itemHeader">
+                        <div class="itemInfo">
+                            <h2>SODA</h2>
+                            <h3>$1.99 | 800 Cal</h3>
+                            <h4 onclick="toggleStar()">&nbsp;-&nbsp;&nbsp; Add To Favorites</h4>
+                        </div>
+                        <img src="pics/soda.jpg" class="sodaPic"> 
+                    </div>
+                    <div class="customOptions">
+                        <span onclick="select(event)" class="exclusive active">Coke</span>
+                        <span onclick="select(event)" class="exclusive">Sprite</span>
+                        <span onclick="select(event)" class="exclusive">Fanta</span>
+                        <span onclick="select(event)" class="exclusive">Mug Root Beer</span>
+                        <span onclick="select(event)" class="exclusive">Dr. Pepper</span>
+                        <span onclick="select(event)" class="exclusive">Iced Tea</span>
+                        <span onclick="select(event)" class="exclusive">Lemonade</span>
+                        <span onclick="select(event)" class="exclusive">Orange Juice</span>
+                    </div>
+                    <h6>Size</h6>
+                    <div class="sizeOptions">
+                        <span onclick="selectSize(event)" class="active">Small</span>
+                        <span onclick="selectSize(event)">Medium<span class="calories">+$1</span></span>
+                        <span onclick="selectSize(event)">Large<span class="calories">+$2</span></span>
+                    </div>
+                    <div class="requests">
+                        <h3>Special Requests (Optional)</h3>
+                        <input placeholder="Any Additonal Requests...">
+                    </div>
+                    <button class="addCart" onclick="addToCart(); closePopup();">ADD TO CART - $<span class="price">1.99</span></button>
+                </div>
+
+                <p>__________________</p>
             </div>
         </div>
-
-     
-
-
-        <!--     <h2>PopScren</h2>
-                <button class="close">✕</button>
-                <h1 class="itemName">Burger</h1>
-                <button class="addCart">ADD TO CART</button>
-                <h4 class="price">$6.99</h4>
-                <img src="pics/doubledouble.jpg" alt="In n Out" class="imgPop">
-        -->
 
     </main>
 
     <footer class="footer">
         <div class="bottomLeft">
-            <a href="#"><h5>Our Story</h5></a>
-            <a href="#"><h5>Contact Us</h5></a>
+            <a href="location.html"><h5>Contact Us</h5></a>
+            <br></br>
             <h6> CPSC 362 - SUMMER 2024</h6>
             <span>MATTHEW AMORA</span> 
             <span>EDGAR CARDENAS</span> 
@@ -207,9 +439,8 @@
             <span>WINDLY NGUYEN</span>
         </div>
         <div class="bottomRight">
-            <img src="../pics/bottomLeft.jpg" class="family">
-            <a href="../sign_up.html" class="signUp">Sign up for a 362 Account</a>
-            <a href="../home.html"><img src="pics/logo2.png" class="logo2"></a>
+            <a href="sign_up.html"><img src="pics/bottomLeft.jpg" class="family"></a>
+            <a href="home.html"><img src="pics/logo2.png" class="logo2"></a>
         </div>
     </footer>
 
@@ -219,11 +450,11 @@
         // CODE TO UPDATE CART AMOUNT (ADDING ITEMS TO CART)
         let cartAmount = 0; // cart top right to 0, default (no items in cart)
         const cartAmountElement = document.querySelector('.cartAmount'); // cartAmount element (number top right)
-        document.querySelector('.addCart').addEventListener('click', () => { // click event listener with the add to cart button in the popup
+        function addToCart() { // onclick function when pressing add to cart button
             cartAmountElement.style.display = 'flex';  // shows cart amount in the top right when clicked
             cartAmount += 1;  // adds one per click
             cartAmountElement.textContent = cartAmount; // changes text number of the cart amount element (changes html code)
-        });
+        };
 
         // CODE FOR CLOSING THE POPUPS
         const popup = document.querySelector('.popup'); // popup screen
@@ -233,6 +464,11 @@
                 screen.style.display = 'none'; // Set all popup screens display to none when closing the popup
             });
             popup.style.display = 'none'; // Hide the popup container
+            /*
+            screens.forEach(screen => {   // loop/function to unclick any add ons upon closing
+                const spans = screen.querySelectorAll('.customOptions span');
+                spans.forEach(span => span.classList.remove('active'));
+            });  */
         } 
         popup.addEventListener('click', (event) => { // close the popup when clicking on the background
             if (event.target === popup) { // when the background is clicked
@@ -261,15 +497,90 @@
             popup.style.display = 'flex';
             item.style.display = 'flex';
         }
-
         function ribsPopup() {
             const popup = document.querySelector(".popup");
             const item = document.querySelector(".ribsScreen");
             popup.style.display = 'flex';
             item.style.display = 'flex';
         }
-        
+        function ramenPopup() {
+            const popup = document.querySelector(".popup");
+            const item = document.querySelector(".ramenScreen");
+            popup.style.display = 'flex';
+            item.style.display = 'flex';
+        }
+        function phoPopup() {
+            const popup = document.querySelector(".popup");
+            const item = document.querySelector(".phoScreen");
+            popup.style.display = 'flex';
+            item.style.display = 'flex';
+        }
+        function tacosPopup() {
+            const popup = document.querySelector(".popup");
+            const item = document.querySelector(".tacosScreen");
+            popup.style.display = 'flex';
+            item.style.display = 'flex';
+        }
+        function burritoPopup() {
+            const popup = document.querySelector(".popup");
+            const item = document.querySelector(".burritoScreen");
+            popup.style.display = 'flex';
+            item.style.display = 'flex';
+        }
+        function friesPopup() {
+            const popup = document.querySelector(".popup");
+            const item = document.querySelector(".friesScreen");
+            popup.style.display = 'flex';
+            item.style.display = 'flex';
+        }
+        function saladPopup() {
+            const popup = document.querySelector(".popup");
+            const item = document.querySelector(".saladScreen");
+            popup.style.display = 'flex';
+            item.style.display = 'flex';
+        }
+        function bobaPopup() {
+            const popup = document.querySelector(".popup");
+            const item = document.querySelector(".bobaScreen");
+            popup.style.display = 'flex';
+            item.style.display = 'flex';
+        }
+        function sodaPopup() {
+            const popup = document.querySelector(".popup");
+            const item = document.querySelector(".sodaScreen");
+            popup.style.display = 'flex';
+            item.style.display = 'flex';
+        }
+       
+        // CODE FOR SELECTING ADD ONS ON THE CUSTOMIZE SECTION
+        function select(event) { /* everything but ribs */
+            const clickedSpan = event.target;
 
+            // Handle exclusive options 
+            if (clickedSpan.classList.contains('exclusive')) {
+                const exclusives = document.querySelectorAll('.customOptions .exclusive');
+                exclusives.forEach(span => span.classList.remove('active'));
+                clickedSpan.classList.add('active');
+            } else if (clickedSpan.classList.contains('exclusive2')) {
+                const exclusives = document.querySelectorAll('.customOptions .exclusive2');
+                exclusives.forEach(span => span.classList.remove('active'));
+                clickedSpan.classList.add('active');
+            } else {
+                // Handle non-exclusive options 
+                clickedSpan.classList.toggle('active');
+            }
+        }
+        function selectSize(event) {  /* function for size selections: fries, boba, soda */
+            const sizeOptions = document.querySelectorAll('.sizeOptions span'); // all the size options 
+            sizeOptions.forEach(span => span.classList.remove('active')); // when function is run it unclicks the other sizes
+            event.target.classList.add('active');  // the item clicked changes color 
+        }
+        // event.target.classList.toggle('active');
+      
+
+
+
+       
     </script>  
 
 
