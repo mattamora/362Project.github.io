@@ -2,12 +2,12 @@
 <html>
 
 <head>
-    <title>Sign_In</title>
+    <title>Sign_Up</title>
     <meta name="viewport" content="width=device-width, inital-scale=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="CSS files/sign_inSTYLE.css">
+    <link rel="stylesheet" href="CSS files/sign_upSTYLE.css">
 </head>
 
 <body>
@@ -19,22 +19,36 @@
             <span class="locations"><a href="location.html">Location</a></span>
             <span class="sign_in"><a href="sign_in.html">My 362 Account</a></span>
         </div>
-        <span><a class="order" href="menu.html">Order Now</a></span>
+        <span><a class="order" href="order.html">Order Now</a></span>
     </header>
 
-
     <main>
-        <h1><a class="h1" href="account.html">MY 362 ACCOUNT</a></h1>
-        <h2>LOG IN</h2>
+        <h1><a class="h1" href="362PROJECT.html">MY 362 ACCOUNT</a></h1>
+        <h2>SIGN UP</h2>
+        <input type="text" placeholder="First Name" class="firstName">
+        <input type="text" placeholder="Last Name" class="LastName">
         <input id="username" type="text" placeholder="Email" class="email">
         <input id="password" type="password" placeholder="Password">
         <img src="pics/eye.jpg" class ="eye" id="showEye">
         <img src="pics/closeEye.jpg" class ="closeEye" id="hideEye">
-        <button id="signInBtn">LOG IN</button>
-        <span id="sign_up">Don't have an account? <a href="sign_up.html" class="signUpp">Sign Up</a></span>
+        <input type="text" placeholder="Phone Number" class="number">
+
+        <h5>Payment Details</h5>
+        <input type="text" placeholder="Card Number" class="cardNumber">
+        <input type="text" placeholder="Name On Card" class="cardName">
+        <div class="cardInfo">
+            <input type="text" placeholder="MM / YY" class="expiration">
+            <input type="text" placeholder="CVV" class="CVV">
+         </div>
+         <h4>Billing Address</h4>
+         <input type="text" placeholder="Address" class="address">
+        <input type="text" placeholder="City" class="city">
+        <input type="text" placeholder="State" class="state">
+        <input type="text" placeholder="ZIP Code" class="zip">
+        <button>Sign Up</button>
     </main>
 
-
+    
     <footer class="footer">
         <div class="bottomLeft">
             <a href="location.html"><h5>Contact Us</h5></a>
@@ -52,7 +66,6 @@
             <a href="home.html"><img src="pics/logo2.png" class="logo2"></a>
         </div>
     </footer>
-
 
 
     <!---  ==========      JAVASCIPT CODE      ========= -->
