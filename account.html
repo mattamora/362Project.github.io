@@ -38,32 +38,32 @@
             <!-- UPDATE ACCOUNT INFO SECTION -->
             <h3 class="infoHeader">Update Account Info</h3>
             <div class="infoUpdate">
-                <input type="text" placeholder="First Name" class="firstName">
-                <input type="text" placeholder="Last Name" class="LastName">
+                <input id="firstName" type="text" placeholder="First Name" class="firstName">
+                <input id="lastName" type="text" placeholder="Last Name" class="LastName">
                 <input id="username" type="text" placeholder="Email" class="email">
                 <input id="password" type="password" placeholder="Password">
                 <img src="pics/eye.jpg" class ="eye" id="showEye">
                 <img src="pics/closeEye.jpg" class ="closeEye" id="hideEye">
-                <input type="text" placeholder="Phone Number" class="number">
-                <button>UPDATE INFO</button>
+                <input id="phoneNumber" type="text" placeholder="Phone Number" class="number">
+                <button id="updateInfoButton">UPDATE INFO</button>
              </div>
 
              <!-- UPDATE PAYMENT METHOD SECTION -->
              <h3 class="paymentHeader">Update Payment Info</h3>
              <div class="paymentUpdate">
                 <h2>Card Details</h2>
-                <input type="text" placeholder="Card Number" class="cardNumber">
-                <input type="text" placeholder="Name On Card" class="cardName">
+                <input id="cardNumber" type="text" placeholder="Card Number" class="cardNumber">
+                <input id="cardName" type="text" placeholder="Name On Card" class="cardName">
                 <div class="cardInfo">
-                    <input type="text" placeholder="MM / YY" class="expiration">
-                    <input type="text" placeholder="CVV" class="CVV">
+                    <input id="mmYY" type="text" placeholder="MM / YY" class="expiration">
+                    <input id="cVV" type="text" placeholder="CVV" class="CVV">
                 </div>
                 <h2>Billing Address</h2>
-                <input type="text" placeholder="Address" class="address">
-                <input type="text" placeholder="City" class="city">
-                <input type="text" placeholder="State" class="state">
-                <input type="text" placeholder="ZIP Code" class="zip">
-                <button>UPDATE PAYMENT</button>
+                <input id="address" type="text" placeholder="Address" class="address">
+                <input id="city" type="text" placeholder="City" class="city">
+                <input id="state" type="text" placeholder="State" class="state">
+                <input id="zipCode" type="text" placeholder="ZIP Code" class="zip">
+                <button id="updatePaymentButton">UPDATE PAYMENT</button>
              </div>
 
              <!-- DELETE ACCOUNT SECTION-->
@@ -255,5 +255,17 @@
 
 
 </body>
+
+<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+
+<!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+
+<!-- Add Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+<script type = "module" src = "javascript/updateInfo.js"></script>
 
 </html>

@@ -41,10 +41,14 @@ signInForm.addEventListener('click', (e) => {
     // Signed in
     const user = userCredential.user;
     console.log('User Signed in: ', user);
+    alert('Successfully Signed In');
+
   })
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
     console.log('Error: ', errorCode, errorMessage);
+    alert('Error: '+ errorMessage);
+
   })
 });
