@@ -59,8 +59,8 @@ signUpForm.addEventListener('click', (e) => {
 
       // Add user details to the database
       database.ref('Users/' + user.uid).set({
-        firstname: firstNameValue,
-        lastname: lastNameValue,
+        firstName: firstNameValue,
+        lastName: lastNameValue,
         phoneNumber: phoneNumberValue,
         Payment: {
           cardNumber: cardNumberValue,

@@ -73,7 +73,7 @@
              </div>
              <div class="sure">
                 <h6>ARE YOU SURE?</h6>
-                <h4>YES</h4>
+                <h4 onclick="deleteAccount()">YES</h4>
                 <h5 onclick="showDelete()">NO</h5>
             </div>
              
@@ -249,6 +249,18 @@
         function removeItem(event) {
             const item = event.target.closest('.item');
             item.style.display = 'none';
+        }
+
+        //Delete Account Function
+        function deleteAccount(){
+            var user = firebase.auth().currentUser;
+
+            user.delete().then(function(){
+                alert("Account Deleted Successfully.");
+            }).catch(function(error){
+                console.error("Error Deleting Account:", error);
+                alert("Failed To Delete Account.");
+            });
         }
 
     </script>  

@@ -33,6 +33,30 @@ const firebaseConfig = {
   const updateInfo = document.getElementById('updateInfoButton');
   const updatePayment = document.getElementById('updatePaymentButton');
 
+  //Fill in Blank Fields
+  auth.onAuthStateChanged((user)=>{
+  database.ref('Users/' + user.uid).once('value').then((snapshot) =>{
+    const data = snapshot.val();
+    if(data){
+    emailInput.value = data.email || '';
+    passwordInput.value = data.password || '';
+    firstName.value = data.firstName || '';
+    lastName.value = data.lastName || '';
+    phoneNumber.value = data.phoneNumber || '';
+    cardNumber.value = data.Payment.cardNumber || '';
+    cardName.value = data.Payment.cardName || '';
+    mmYY.value = data.Payment.mmYY || '';
+    cVV.value = data.Payment.cVV || '';
+    address.value = data.Address.address || '';
+    city.value = data.Address.city || '';
+    state.value = data.Address.state || '';
+    zipCode.value = data.Address.zipCode || '';
+    }
+  }).catch((error)=>{
+    console.error('Error retrieving data', error, error.code);
+  })
+  });
+
   //Update User Info
   updateInfo.addEventListener('click', (e) => {
     e.preventDefault();
@@ -51,8 +75,8 @@ const firebaseConfig = {
         user.updateEmail(email).then(() => {
           user.updatePassword(password).then(() => {
             database.ref('Users/' + user.uid).update({
-                        firstname: firstNameValue,
-                        lastname: lastNameValue,
+                        firstName: firstNameValue,
+                        lastName: lastNameValue,
                         phoneNumber: phoneNumberValue,
                         
             }).then(() => {
