@@ -136,13 +136,13 @@
                         <img src="pics/doubledouble.jpg" class="burgerPic"> 
                     </div>
                     <div class="customOptions">
-                        <span onclick="select(event)" class="active">Onions<span class="calories">+0 Cal</span></span>
+                        <span id="onions" onclick="select(event)" class="active">Onions<span class="calories">+0 Cal</span></span>
                         <span onclick="select(event)" class="active">Tomatoes<span class="calories">+5 Cal</span></span>
                         <span onclick="select(event)" class="active">Lettuce<span class="calories">+0 Cal</span></span>
                         <span onclick="select(event)" class="active">Pickles<span class="calories">+5 Cal</span></span>
                         <span onclick="select(event)">Ketchup<span class="calories">+5 Cal</span></span>
                         <span onclick="select(event)">Mayo<span class="calories">+5 Cal</span></span>
-                        <span onclick="select(event)">Jalapenos<span class="calories">+5 Cal</span></span>
+                        <span id="jalapenos" onclick="select(event)">Jalapenos<span class="calories">+5 Cal</span></span>
                         <span onclick="select(event)" class="active">Cheese<span class="calories">+15 Cal</span></span>
                         <span onclick="select(event)">Bacon<span class="calories">+$1.99</span></span>
                         <span onclick="select(event)">Extra patty<span class="calories">+$1.99</span></span>
@@ -151,7 +151,7 @@
                         <h3>Special Requests (Optional)</h3>
                         <input placeholder="Any Additonal Requests...">
                     </div>
-                    <button class="addCart" onclick="addToCart(); closePopup();">ADD TO CART - $<span class="price">6.99</span></button>
+                    <button id="addCartButton" class="addCart" onclick="addToCart(); closePopup();">ADD TO CART - $<span class="price">6.99</span></button>
                 </div>
     
                 <div class="ribsScreen">
@@ -477,7 +477,19 @@
         });
 
         // CODE FOR ADDING ITEM TO FAVORITES
-        function toggleStar() {   //  changes color of star when clicked   
+        function toggleStar(item, imageURL) {   //  changes color of star when clicked   
+
+            //Adding user account check
+            const auth = firebase.auth();
+            auth.onAuthStateChanged((user)=>{
+                if(user){
+                    console.log('User Is Signed In');
+                } else{
+                    console.log('User Is Not Signed In');
+                    alert('User Is Not Signed In.\nItem Will Not Be Added To Favorites');
+                }
+            });
+
             const openStar = document.querySelector(".open");
             const closeStar = document.querySelector(".close");
 
@@ -594,5 +606,11 @@
 
 <!-- Add Firebase products that you want to use -->
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+<script type="module" src="javascript/firebaseInit.js"></script>
+<script type="module" src="javascript/orderDetails.js"></script>
+
 
 </html>
