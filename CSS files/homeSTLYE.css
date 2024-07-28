@@ -13,93 +13,95 @@ html, body {
    font-family: lexend, sans-serif;
 }
   /*  =================================    TOP BAR START    =============================== */
+  
   .top_bar {
-    position: fixed;
-    top: 0;
-    display: flex;
-    justify-content: space-between; 
-    align-items: center;
-    width: 100%;
-    height: 65px;
-    z-index: 10;
-    padding: 10px 0;
-    border-bottom: 1px solid rgb(158, 158, 158);
-    box-shadow: 0 6px 6px -3px rgba(0, 0, 0, 0.2); 
-    background-color: white;
+   display: flex;
+   justify-content: space-between; 
+   align-items: center;
+   width: 100%;
+   height: 65px;
+   z-index: 10;
+   padding: 10px 0px;
+   border-bottom: 1px solid rgb(158, 158, 158);
+   box-shadow: 0 6px 6px -3px rgba(0, 0, 0, 0.2); 
+   background-color: white;
+   position: fixed;
 }
 
 .logo {
-    transform: scale(.4);
-    position: relative;
-    left: -18px;
-    top: 1px;
+  width: 45px;
+  height: 45px;
+  position: relative;
+  left: 5px;
+  top: 10px;
 }
 
 a:link, a:visited {
-    text-decoration: none;
-    color: inherit;
+   text-decoration: none;
+   color: inherit;
 }
 
 .name {
-    position: relative;
-    left: -32.5%;
-    font-size: 36px;             
-    font-weight: 700;
-    cursor: pointer;
-    white-space: nowrap;         
+   cursor: pointer;
+   white-space: nowrap;
+   font-weight: bold;
+   font-size: 35px;
+   position: relative;
+   bottom: 5px;
+   left: 1vh;
 }
 
 .navTop {
     position: fixed;
-    right: 12%;
+    right: 14%;
     height: 45px;
-    width: 330px;
-    margin-right: 50px;
-    display: inline-flex;
+    width: 25%;
+    display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 18px;
+    flex-wrap: wrap;
+    font-size: 20px;
     font-weight: 600;
     color: rgb(0, 58, 93);
 }
 
 .menu:hover {
-    transform: scale(1.1);
+   transform: scale(1.1);
 }
 
 .locations:hover {
-    transform: scale(1.1); 
+   transform: scale(1.1); 
 }
 
 .sign_in:hover {
-    transform: scale(1.1); 
+   transform: scale(1.1); 
 }
 
 .order {
-    display: flex;
-    height: 45px;
-    width: 180px;
-    margin-right: 20px;
-    border: 3px solid rgb(213, 27, 27);
-    border-radius: 20px;
-    color: rgb(213, 27, 27) !important;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    font-size: 21px;
-    font-weight: 700;
+   display: flex;
+   height: 45px;
+   width: 180px;
+   margin-right: 20px;
+   border: 3px solid rgb(213, 27, 27);
+   border-radius: 20px;
+   color: rgb(213, 27, 27) !important;
+   justify-content: center;
+   align-items: center;
+   cursor: pointer;
+   font-size: 21px;
+   font-weight: 700;
 }
 
 .order:hover {
-    background-color: rgb(213, 27, 27);
-    box-shadow: 0 0 0 2px rgb(223, 1, 1);
-    color: white !important;
+   background-color: rgb(213, 27, 27);
+   box-shadow: 0 0 0 2px rgb(223, 1, 1);
+   color: white !important;
 }
 
 .order:active {
-    border: 1px outset rgb(213, 27, 27);
-    background-color: rgb(173, 26, 26);
-    box-shadow: 0 0 0 2px rgb(223, 1, 1);
+   border: 1px outset rgb(213, 27, 27);
+   background-color: rgb(173, 26, 26);
+   box-shadow: 0 0 0 2px rgb(223, 1, 1);
 }
 
 /*      =================     TOP BAR END    ==============   */
@@ -107,15 +109,14 @@ a:link, a:visited {
 .hp_container {
    display: flex;
    position: relative;
-   top: 5vh;
-   height: 70vh;
+   height: 80vh;
 }
 
 .hp_food {
    /*width: 500px;
    height: 600px;*/
    width: 30%;
-   height: 120%;
+   height: 100%;
 }
 
 .hp_food img {
@@ -128,21 +129,22 @@ a:link, a:visited {
    /*width: 900px;
    height: 600px;*/
    width: 55%;
-   height: 120%;
+   height: 100%;
    box-sizing: border-box;
    padding: 5px 50px 0px 30px;
 }
 
 h1 {
-   padding-top: 4%;
+   padding-top: 10%;
    font-size: 50px;
 }
 
 h3 {
-   padding-top: 5%;
+   padding-top: 2%;
+   padding-bottom: 5%;
    font-size: larger;
    font-weight: 350;
-   line-height: 1.5;
+   line-height: 3;
 }
 
 .hp_buttons {
@@ -159,6 +161,10 @@ h3 {
    border: 2px solid  #ffef76;
 }
 
+.left:hover {
+    border:2px solid rgb(173, 26, 26);
+}
+
 .right {
    background-color: #fff397ff;
    width: 20vh;
@@ -166,6 +172,10 @@ h3 {
    margin-left: 5vh;
    border-radius: 25px;
    border: 2px solid  #ffef76;
+}
+
+.right:hover {
+    border:2px solid rgb(173, 26, 26);
 }
 
 #button_text {
@@ -183,7 +193,7 @@ h3 {
    /*width: 1000px;
    height: 600px;*/
    width: 100vh;
-   height: 120%;
+   height: 100%;
 }
 
 .hp_people img {
@@ -192,11 +202,9 @@ h3 {
    object-fit: cover;
 }
 
-
 /*      =================     FOOTER START    ==============   */
 .footer {
    position: relative;
-   top: 16.4%;
    width: 100%;
    display: inline-flex;
    align-items: flex-start;
@@ -208,9 +216,9 @@ h3 {
    border-top: 40px solid rgb(213, 27, 27);
    padding-left: 15px;
 }
-       .bottomLeft h5 {
+       .bottomLeft a {
            font-size: 20px;
-           font-weight: 600;   
+           font-weight: 600;
        }
        .bottomLeft h6 {
            margin-top: 45px;
@@ -225,16 +233,16 @@ h3 {
            font-size: 12px;
            font-weight: 500;
        }
-        .bottomRight {
-        border-top: 40px solid rgb(213, 27, 27);
-        width: 50%;
-        height: 193px;
-        display: flex;
-        width: 50%;
-        justify-content: end;
-        color: rgb(0, 58, 93);
-        padding-top: 12.5%;
-        }
+.bottomRight {
+   border-top: 40px solid rgb(213, 27, 27);
+   width: 50%;
+   height: 193px;
+   display: flex;
+   width: 50%;
+   justify-content: end;
+   color: rgb(0, 58, 93);
+   padding-top: 12.5%;
+}
        .family{
            transform: scale(.3);
            position: absolute;
@@ -242,9 +250,10 @@ h3 {
            right: -70px;
            
        }
-       .bottomLeft h5:hover {
-            text-decoration: underline;
-        }
+
+       .bottomRight a:hover {
+           text-decoration: underline;
+       }
 
        .logo2 {
            position: absolute;
