@@ -3,7 +3,7 @@ const auth = firebase.auth();
 
 let currentMenu = null;
 
-const burgerMenu = document.getElementById('bsurgerPopup')
+const burgerMenu = document.getElementById('burgerPopup')
 const ribMenu = document.getElementById('ribsPopup')
 const ramenMenu = document.getElementById('ramenPopup')
 const phoMenu = document.getElementById('phoPopup')
