@@ -39,13 +39,13 @@
                 <img src="pics/doubledouble.jpg" >
                 <span >Burger</span>
                 <p>Juicy beef patty topped with melted cheddar cheese, our signature sauce, and your choice of toppings, served on a toasted brioche bun</p>
-                <h5 class="popupOrder" onclick="burgerPopup()">ORDER</h5>
+                <h5 id="burgerPopup" class="popupOrder" onclick="burgerPopup()">ORDER</h5>
             </div>
             <div class="ribsOrder">
                 <img src="pics/ribs.jpg">
                 <span>Ribs</span>
                 <p>Tender, slow-cooked ribs slathered in our signature smoky barbecue sauce</p>
-                <h5 class="popupOrder" onclick="ribsPopup()">ORDER</h5>
+                <h5 id="ribsPopup" class="popupOrder" onclick="ribsPopup()">ORDER</h5>
             </div>
         </div>
 
@@ -56,13 +56,13 @@
                 <img src="pics/ramen.jpg">
                 <span>Ramen</span>
                 <p>Our signature tonkotsu ramen with a creamy, umami-rich broth, tender noodles, and your choice of meat and toppings</p>
-                <h5 class="popupOrder" onclick="ramenPopup()">ORDER</h5>
+                <h5 id="ramenPopup" class="popupOrder" onclick="ramenPopup()">ORDER</h5>
             </div>
             <div class="phoOrder">
                 <img src="pics/pho.jpg">
                 <span>Pho</span>
                 <p>Authentic pho with a rich, aromatic broth, served with delicate rice noodles, customizable meat options, and an assortment of fresh herbs and vegetables</p>
-                <h5 class="popupOrder" onclick="phoPopup()">ORDER</h5>
+                <h5 id="phoPopup" class="popupOrder" onclick="phoPopup()">ORDER</h5>
             </div>
         </div>
 
@@ -73,13 +73,13 @@
                 <img src="pics/tacos.jpg">
                 <span>Tacos</span>
                 <p>Three flavorful tacos with your choice of meat and toppings, nestled in warm tortillas</p>
-                <h5 class="popupOrder" onclick="tacosPopup()">ORDER</h5>
+                <h5 id="tacosPopup" class="popupOrder" onclick="tacosPopup()">ORDER</h5>
             </div>
             <div class="burritoOrder">
                 <img src="pics/burrito3.png">
                 <span>Burrito</span>
                 <p>Savory burritos filled with your selected meats, fries, and beans, topped with fresh guacamole and shredded cheese</p>
-                <h5 class="popupOrder" onclick="burritoPopup()">ORDER</h5>
+                <h5 id="burritoPopup" class="popupOrder" onclick="burritoPopup()">ORDER</h5>
             </div>
         </div>
 
@@ -90,13 +90,13 @@
                 <img src="pics/french.jpg">
                 <span>Fries</span>
                 <p>Crispy, golden fries with your choice of seasoning and toppings, such as melted cheese or bacon bits</p>
-                <h5 class="popupOrder" onclick="friesPopup()">ORDER</h5>
+                <h5 id="friesPopup" class="popupOrder" onclick="friesPopup()">ORDER</h5>
             </div>
             <div class="saladOrder">
                 <img src="pics/salad.jpg">
                 <span>Salad</span>
                 <p>Caesar salad featuring crunchy romaine, rich Caesar dressing, and Parmesan cheese, with customizable toppings</p>
-                <h5 class="popupOrder" onclick="saladPopup()">ORDER</h5>
+                <h5 id="saladPopup" class="popupOrder" onclick="saladPopup()">ORDER</h5>
             </div>  
         </div>
 
@@ -107,13 +107,13 @@
                 <img src="pics/bobas.jpg">
                 <span>Boba</span>
                 <p>Our homemade milk teas</p>
-                <h5 class="popupOrder" onclick="bobaPopup()">ORDER</h5>
+                <h5 id="bobaPopup" class="popupOrder" onclick="bobaPopup()">ORDER</h5>
             </div>
             <div class="sodaOrder">
                 <img src="pics/soda.jpg">
                 <span>Soda</span>
                 <p>Sodas, Juices, and Other Drinks</p>
-                <h5 class="popupOrder" onclick="sodaPopup()">ORDER</h5>
+                <h5 id="sodaPopup" class="popupOrder" onclick="sodaPopup()">ORDER</h5>
             </div>
         </div>
 
@@ -121,8 +121,8 @@
         <div class="popup">
             <div class="popupBase">
                 <button class="closePop" onclick="closePopup()">✕</button>
-                <img class="open" src="pics/openStar.png" onclick="toggleStar()">
-                <img class="close" src="pics/closeStar.png" onclick="toggleStar()">
+                <img id="addFavorite" class="open" src="pics/openStar.png" onclick="toggleStar()">
+                <img id="removeFavorite" class="close" src="pics/closeStar.png" onclick="toggleStar()">
                 <h6 class="redLine">Red line</h6>
                 <h3 class="customizeHeader">Customize</h3>
 
@@ -496,9 +496,12 @@
             if (openStar.style.display === 'none') {
                 openStar.style.display = 'block';
                 closeStar.style.display = 'none';
+                //remove favorite
+
             } else {
                 openStar.style.display = 'none';
                 closeStar.style.display = 'block';
+                //add favorite
             }
         }
 
@@ -613,6 +616,6 @@
 
 <script type="module" src="javascript/firebaseInit.js"></script>
 <script type="module" src="javascript/orderDetails.js"></script>
-
+<script type="module" src="javascript/manageFavorites.js"></script>
 
 </html>
