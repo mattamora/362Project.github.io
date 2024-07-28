@@ -254,7 +254,7 @@ iframe {
  /*      =================     FOOTER ONLY    ==============   */
 .footer {
     position: relative;
-    top: 140%;
+    top: 150%;
     width: 100%;
     display: inline-flex;
     align-items: flex-start;
