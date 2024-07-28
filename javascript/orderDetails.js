@@ -1,6 +1,7 @@
   const database = firebase.database();
   const auth = firebase.auth();
 
+
   let currentOrderId = null;
 
   //Order Count
@@ -249,7 +250,18 @@
     };
 
     database.ref('Orders/' + currentOrderId).update(updateObj);
-    
+
+
+    const user = auth.currentUser;
+    if(user){
+      database.ref('Users/' + user.uid + '/Orders/' + currentOrderId).update(updateObj).then(() => {
+        console.log('Update successful');
+      })
+      .catch((error) => {
+        console.error('Update failed: ', error);
+      });
+    }
+
   })
 
   //Add Ribs To Cart
@@ -284,6 +296,12 @@
     };
 
     database.ref('Orders/'+ currentOrderId).update(updateObj);
+
+    const user = auth.currentUser;
+    if(user){
+      database.ref('Users/' + user.uid + '/Orders/' + currentOrderId).update(updateObj);
+      }
+
   })
   
   //Add Ramen To Cart
@@ -331,6 +349,11 @@
     }
 
     database.ref('Orders/'+ currentOrderId).update(updateObj);
+    
+    const user = auth.currentUser;
+    if(user){
+      database.ref('Users/' + user.uid + '/Orders/' + currentOrderId).update(updateObj);
+      }
 
   })
 
@@ -382,6 +405,11 @@
 
     database.ref('Orders/' + currentOrderId).update(updateObj);
 
+    const user = auth.currentUser;
+    if(user){
+      database.ref('Users/' + user.uid + '/Orders/' + currentOrderId).update(updateObj);
+      }
+
   })
 
   addTacosToCart.addEventListener('click', (e)=>{
@@ -417,6 +445,11 @@
 
     database.ref('Orders/' + currentOrderId).update(updateObj);
 
+    const user = auth.currentUser;
+    if(user){
+      database.ref('Users/' + user.uid + '/Orders/' + currentOrderId).update(updateObj);
+      }
+
   })
 
   addBurritoToCart.addEventListener('click', (e)=>{
@@ -448,6 +481,11 @@
     }
 
     database.ref('Orders/' + currentOrderId).update(updateObj);
+
+    const user = auth.currentUser;
+    if(user){
+      database.ref('Users/' + user.uid + '/Orders/' + currentOrderId).update(updateObj);
+      }
 
   })
 
@@ -498,6 +536,12 @@
     }
 
     database.ref('Orders/' + currentOrderId).update(updateObj);
+
+    const user = auth.currentUser;
+    if(user){
+      database.ref('Users/' + user.uid + '/Orders/' + currentOrderId).update(updateObj);
+      }
+
   })
 
   addSaladToCart.addEventListener('click', (e)=>{
@@ -528,6 +572,11 @@
       }
       
     database.ref('Orders/' + currentOrderId).update(updateObj);
+
+    const user = auth.currentUser;
+    if(user){
+      database.ref('Users/' + user.uid + '/Orders/' + currentOrderId).update(updateObj);
+      }
       
   })
 
@@ -564,6 +613,11 @@
 
     database.ref('Orders/' + currentOrderId).update(updateObj);
 
+    const user = auth.currentUser;
+    if(user){
+      database.ref('Users/' + user.uid + '/Orders/' + currentOrderId).update(updateObj);
+      }
+
   })
 
   addSodaToCart.addEventListener('click', (e)=>{
@@ -598,5 +652,10 @@
     }
 
     database.ref('Orders/' + currentOrderId).update(updateObj);
+
+    const user = auth.currentUser;
+    if(user){
+    database.ref('Users/' + user.uid + '/Orders/' + currentOrderId).update(updateObj);
+    }
 
   })
