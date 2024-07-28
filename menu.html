@@ -479,17 +479,6 @@
         // CODE FOR ADDING ITEM TO FAVORITES
         function toggleStar() {   //  changes color of star when clicked   
 
-            //Adding user account check
-            const auth = firebase.auth();
-            auth.onAuthStateChanged((user)=>{
-                if(user){
-                    console.log('User Is Signed In');
-                } else{
-                    console.log('User Is Not Signed In');
-                    alert('User Is Not Signed In.\nItem Will Not Be Added To Favorites');
-                }
-            });
-
             const openStar = document.querySelector(".open");
             const closeStar = document.querySelector(".close");
 
