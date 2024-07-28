@@ -25,8 +25,8 @@
   database.ref('Users/' + user.uid).once('value').then((snapshot) =>{
     const data = snapshot.val();
     if(data){
-    emailInput.value = data.email || '';
-    passwordInput.value = data.password || '';
+    emailInput.value = user.email || '';
+    passwordInput.value = user.password || '';
     firstName.value = data.firstName || '';
     lastName.value = data.lastName || '';
     phoneNumber.value = data.phoneNumber || '';
@@ -97,7 +97,6 @@
         const cityValue = city.value;
         const stateValue = state.value;
         const zipCodeValue = zipCode.value;
-        
 
         const user = auth.currentUser;
 
