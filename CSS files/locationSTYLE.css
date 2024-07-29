@@ -67,9 +67,8 @@ a:link, a:visited {
     transform: scale(1.1);
 }
 
-.locations {
+.locations:hover {
     transform: scale(1.1);
-    text-decoration: underline; 
 }
 
 .sign_in:hover {
