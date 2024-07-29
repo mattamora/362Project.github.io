@@ -33,12 +33,12 @@
     }
   }
 
-  window.onbeforeunload = function(){
-    localStorage.removeItem('currentOrderID');
+  // window.onbeforeunload = function(){
+  //   localStorage.removeItem('currentOrderID');
 
-    //Might use it
-    //localStorage.removeItem('orderCreationTime');
-  }
+  //   //Might use it
+  //   //localStorage.removeItem('orderCreationTime');
+  // }
 
   //Burger Elements
   const burgerAddOns ={
@@ -70,147 +70,147 @@
 
   //Ramen Elements
   const ramenAddOns = {
-    ramenChashu: document.getElementById('ramenChashu'),
-    ramenChicken: document.getElementById('ramenChicken'),
-    ramenTofu: document.getElementById('ramenTofu'),
-    ramenNoMeat: document.getElementById('ramenNoMeat'),
-    ramenEgg: document.getElementById('ramenEgg'),
-    ramenShiitakeMushroom: document.getElementById('ramenShiitakeMushroom'),
-    ramenBeanSprouts: document.getElementById('ramenBeanSprouts'),
-    ramenSeaweed: document.getElementById('ramenSeaweed'),
-    ramenBambooShoots: document.getElementById('ramenBambooShoots'),
-    ramenGreenOnions: document.getElementById('ramenGreenOnions'),
-    ramenRedGinger: document.getElementById('ramenRedGinger'),
-    ramenRequests: document.getElementById('ramenRequests')
+  chashu: document.getElementById('ramenChashu'),
+  chicken: document.getElementById('ramenChicken'),
+  tofu: document.getElementById('ramenTofu'),
+  noMeat: document.getElementById('ramenNoMeat'),
+  egg: document.getElementById('ramenEgg'),
+  shiitakeMushroom: document.getElementById('ramenShiitakeMushroom'),
+  beanSprouts: document.getElementById('ramenBeanSprouts'),
+  seaweed: document.getElementById('ramenSeaweed'),
+  bambooShoots: document.getElementById('ramenBambooShoots'),
+  greenOnions: document.getElementById('ramenGreenOnions'),
+  redGinger: document.getElementById('ramenRedGinger'),
+  requests: document.getElementById('ramenRequests')
   }
   
   const ramenSizeOptions = {
-    ramenRegular: document.getElementById('ramenRegular'),
-    ramenLarge: document.getElementById('ramenLarge')
+    regular: document.getElementById('ramenRegular'),
+    large: document.getElementById('ramenLarge')
   }
   const addRamenToCart = document.getElementById('addRamenToCart');
 
   //Pho Elements
   const phoAddOns = {
-    phoRibeye: document.getElementById('phoRibeye'),
-    phoBrisket: document.getElementById('phoBrisket'),
-    phoChicken: document.getElementById('phoChicken'),
-    phoRareSteak: document.getElementById('phoRareSteak'),
-    phoOxtail: document.getElementById('phoOxtail'),
-    phoCilantro: document.getElementById('phoCilantro'),
-    phoJalapenos: document.getElementById('phoJalapenos'),
-    phoBeanSprouts: document.getElementById('phoBeanSprouts'),
-    phoBasil: document.getElementById('phoBasil'),
-    phoGreenOnions: document.getElementById('phoGreenOnions'),
-    phoWhiteOnions: document.getElementById('phoWhiteOnions'),
-    phoRequests: document.getElementById('phoRequests')
+    ribeye: document.getElementById('phoRibeye'),
+    brisket: document.getElementById('phoBrisket'),
+    chicken: document.getElementById('phoChicken'),
+    rareSteak: document.getElementById('phoRareSteak'),
+    oxtail: document.getElementById('phoOxtail'),
+    cilantro: document.getElementById('phoCilantro'),
+    jalapenos: document.getElementById('phoJalapenos'),
+    beanSprouts: document.getElementById('phoBeanSprouts'),
+    basil: document.getElementById('phoBasil'),
+    greenOnions: document.getElementById('phoGreenOnions'),
+    whiteOnions: document.getElementById('phoWhiteOnions'),
+    requests: document.getElementById('phoRequests')
   }
   
   const phoSizeOptions = {
-    phoRegular: document.getElementById('phoRegular'),
-    phoLarge: document.getElementById('phoLarge')
+    regular: document.getElementById('phoRegular'),
+    large: document.getElementById('phoLarge')
   }
   const addPhoToCart = document.getElementById('addPhoToCart');
 
   //Tacos Elements
   const tacosAddOns = {
-    tacosAsada: document.getElementById('tacosAsada'),
-    tacosPastor: document.getElementById('tacosPastor'),
-    tacosPollo: document.getElementById('tacosPollo'),
-    tacosBirria: document.getElementById('tacosBirria'),
-    tacosChorizo: document.getElementById('tacosChorizo'),
-    tacosPescado: document.getElementById('tacosPescado'),
-    tacosGuacamole: document.getElementById('tacosGuacamole'),
-    tacosCilantro: document.getElementById('tacosCilantro'),
-    tacosOnions: document.getElementById('tacosOnions'),
-    tacosSalsaVerde: document.getElementById('tacosSalsaVerde'),
-    tacosSalsaRojo: document.getElementById('tacosSalsaRojo'),
-    tacosRequests: document.getElementById('tacosRequests')
+    asada: document.getElementById('tacosAsada'),
+    pastor: document.getElementById('tacosPastor'),
+    pollo: document.getElementById('tacosPollo'),
+    birria: document.getElementById('tacosBirria'),
+    chorizo: document.getElementById('tacosChorizo'),
+    pescado: document.getElementById('tacosPescado'),
+    guacamole: document.getElementById('tacosGuacamole'),
+    cilantro: document.getElementById('tacosCilantro'),
+    onions: document.getElementById('tacosOnions'),
+    salsaVerde: document.getElementById('tacosSalsaVerde'),
+    salsaRojo: document.getElementById('tacosSalsaRojo'),
+    requests: document.getElementById('tacosRequests')
   }
   const addTacosToCart = document.getElementById('addTacosToCart');
 
   //Burrito Elements
   const burritoAddOns = {
-    burritoAsada: document.getElementById('burritoAsada'),
-    burritoPastor: document.getElementById('burritoPastor'),
-    burritoCalifornia: document.getElementById('burritoCalifornia'),
-    burritoGuacamole: document.getElementById('burritoGuacamole'),
-    burritoSourCream: document.getElementById('burritoSourCream'),
-    burritoRice: document.getElementById('burritoRice'),
-    burritoBeans: document.getElementById('burritoBeans'),
-    burritoCheese: document.getElementById('burritoCheese'),
-    burritoSalsaVerde: document.getElementById('burritoSalsaVerde'),
-    burritoSalsaRojo: document.getElementById('burritoSalsaRojo'),
-    burritoRequests: document.getElementById('burritoRequests')
+    asada: document.getElementById('burritoAsada'),
+    pastor: document.getElementById('burritoPastor'),
+    california: document.getElementById('burritoCalifornia'),
+    guacamole: document.getElementById('burritoGuacamole'),
+    sourCream: document.getElementById('burritoSourCream'),
+    rice: document.getElementById('burritoRice'),
+    beans: document.getElementById('burritoBeans'),
+    cheese: document.getElementById('burritoCheese'),
+    salsaVerde: document.getElementById('burritoSalsaVerde'),
+    salsaRojo: document.getElementById('burritoSalsaRojo'),
+    requests: document.getElementById('burritoRequests')
   }
   const addBurritoToCart = document.getElementById('addBurritoToCart');
 
   //Fries Elements
   const friesAddOns = {
-    friesCheese: document.getElementById('friesCheese'),
-    friesBaconBits: document.getElementById('friesBaconBits'),
-    friesTruffleFries: document.getElementById('friesTruffleFries'),
-    friesSweetPotatoFries: document.getElementById('friesSweetPotatoFries'),
-    friesRegularFries: document.getElementById('friesRegularFries'),
-    friesRequests: document.getElementById('friesRequests')
+    cheese: document.getElementById('friesCheese'),
+    baconBits: document.getElementById('friesBaconBits'),
+    truffleFries: document.getElementById('friesTruffleFries'),
+    sweetPotatoFries: document.getElementById('friesSweetPotatoFries'),
+    regularFries: document.getElementById('friesRegularFries'),
+    requests: document.getElementById('friesRequests')
   }
   
   const friesSizeOptions = {
-    friesSmall: document.getElementById('friesSmall'),
-    friesMedium: document.getElementById('friesMedium'),
-    friesLarge: document.getElementById('friesLarge')
+    small: document.getElementById('friesSmall'),
+    medium: document.getElementById('friesMedium'),
+    large: document.getElementById('friesLarge')
   }
   const addFriesToCart = document.getElementById('addFriesToCart');
 
   //Salad Elements
   const saladAddOns = {
-    saladCroutons: document.getElementById('saladCroutons'),
-    saladChicken: document.getElementById('saladChicken'),
-    saladParmesan: document.getElementById('saladParmesan'),
-    saladBleuCheese: document.getElementById('saladBleuCheese'),
-    saladVinaigrette: document.getElementById('saladVinaigrette'),
-    saladDressingOnSide: document.getElementById('saladDressingOnSide'),
-    saladRequests: document.getElementById('saladRequests')
+    croutons: document.getElementById('saladCroutons'),
+    chicken: document.getElementById('saladChicken'),
+    parmesan: document.getElementById('saladParmesan'),
+    bleuCheese: document.getElementById('saladBleuCheese'),
+    vinaigrette: document.getElementById('saladVinaigrette'),
+    dressingOnSide: document.getElementById('saladDressingOnSide'),
+    requests: document.getElementById('saladRequests')
   }
   const addSaladToCart = document.getElementById('addSaladToCart');
 
   //Boba Elements
   const bobaAddOns = {
-    bobaTaro: document.getElementById('bobaTaro'),
-    bobaThaiTea: document.getElementById('bobaThaiTea'),
-    bobaMatcha: document.getElementById('bobaMatcha'),
-    bobaTiger: document.getElementById('bobaTiger'),
-    bobaAlmond: document.getElementById('bobaAlmond'),
-    bobaHorchata: document.getElementById('bobaHorchata'),
-    bobaStrawberry: document.getElementById('bobaStrawberry'),
-    bobaNoBoba: document.getElementById('bobaNoBoba'),
-    bobaRequests: document.getElementById('bobaRequests')
+    taro: document.getElementById('bobaTaro'),
+    thaiTea: document.getElementById('bobaThaiTea'),
+    matcha: document.getElementById('bobaMatcha'),
+    tiger: document.getElementById('bobaTiger'),
+    almond: document.getElementById('bobaAlmond'),
+    horchata: document.getElementById('bobaHorchata'),
+    strawberry: document.getElementById('bobaStrawberry'),
+    noBoba: document.getElementById('bobaNoBoba'),
+    requests: document.getElementById('bobaRequests')
   }
   
   const bobaSizeOptions = {
-    bobaSmall: document.getElementById('bobaSmall'),
-    bobaMedium: document.getElementById('bobaMedium'),
-    bobaLarge: document.getElementById('bobaLarge')
+    small: document.getElementById('bobaSmall'),
+    medium: document.getElementById('bobaMedium'),
+    large: document.getElementById('bobaLarge')
   }
   const addBobaToCart = document.getElementById('addBobaToCart');
 
   //Soda Elements
   const sodaAddOns = {
-    sodaCoke: document.getElementById('sodaCoke'),
-    sodaSprite: document.getElementById('sodaSprite'),
-    sodaFanta: document.getElementById('sodaFanta'),
-    sodaMugRootBeer: document.getElementById('sodaMugRootBeer'),
-    sodaDrPepper: document.getElementById('sodaDrPepper'),
-    sodaIcedTea: document.getElementById('sodaIcedTea'),
-    sodaLemonade: document.getElementById('sodaLemonade'),
-    sodaOrangeJuice: document.getElementById('sodaOrangeJuice'),
-    sodaRequests: document.getElementById('sodaRequests')
+    coke: document.getElementById('sodaCoke'),
+    sprite: document.getElementById('sodaSprite'),
+    fanta: document.getElementById('sodaFanta'),
+    mugRootBeer: document.getElementById('sodaMugRootBeer'),
+    drPepper: document.getElementById('sodaDrPepper'),
+    icedTea: document.getElementById('sodaIcedTea'),
+    lemonade: document.getElementById('sodaLemonade'),
+    orangeJuice: document.getElementById('sodaOrangeJuice'),
+    requests: document.getElementById('sodaRequests')
   }
   
   const sodaSizeOptions = {
-    sodaSmall: document.getElementById('sodaSmall'),
-    sodaMedium: document.getElementById('sodaMedium'),
-    sodaLarge: document.getElementById('sodaLarge')
+    small: document.getElementById('sodaSmall'),
+    medium: document.getElementById('sodaMedium'),
+    large: document.getElementById('sodaLarge')
   }
   const addSodaToCart = document.getElementById('addSodaToCart');
 
@@ -567,7 +567,7 @@
       updateObj[saladKey] = {
         saladAddOns: isActive,
         cost: 6.99,
-        addonCharges: additionalFees,
+        addOnCharges: additionalFees,
         requests: request
       }
       

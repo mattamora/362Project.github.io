@@ -82,10 +82,10 @@
                 </div>
                 <div class="content_container">
                     <div class="item">
-                        <h3>Food Item #1</h3>
-                        <p class="item_price">$0.00</p>
+                        <h3 id="foodItemCart1">Food Item #1</h3>
+                        <p id="foodPriceCart1" class="item_price">$0.00</p>
                     </div>
-                    <p class="desc">
+                    <p id="foodDescCart1" class="desc">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     </p>
@@ -97,10 +97,25 @@
                 </div>
                 <div class="content_container">
                     <div class="item">
-                        <h3>Food Item #1</h3>
-                        <p class="item_price">$0.00</p>
+                        <h3 id="foodItemCart2" >Food Item #1</h3>
+                        <p id="foodPriceCart2" class="item_price">$0.00</p>
                     </div>
-                    <p class="desc">
+                    <p id="foodDescCart2" class="desc">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+                </div>
+            </div>
+            <div class="cart_item">
+                <div class="img_container">
+                    <img id="co_img" src="pics/burger_i.png" alt="Food Item">
+                </div>
+                <div class="content_container">
+                    <div class="item">
+                        <h3 id="foodItemCart3">Food Item #1</h3>
+                        <p id="foodPriceCart3" class="item_price">$0.00</p>
+                    </div>
+                    <p id="foodDescCart3" class="desc">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     </p>
@@ -111,15 +126,15 @@
                     <h3>Cart Total</h3>
                     <div class="order_content">
                         <p>Subtotal:</p>
-                        <p>$</p>
+                        <p id="subTotalCart" >$</p>
                     </div>
                     <div class="order_content">
                         <p>(Tax)%:</p>
-                        <p>$</p>
+                        <p id="taxCart" >$</p>
                     </div>
                     <div class="order_content">
                         <p>Total:</p>
-                        <p>$</p>
+                        <p id="totalCart" >$</p>
                     </div>
                 </div>
             </div>
@@ -168,4 +183,19 @@
 </footer>
 
 </body>
+
+<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+
+<!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+
+<!-- Add Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+<script type="module" src="javascript/firebaseInit.js"></script>
+<script type="module" src="javascript/cartDetails.js"></script>
+
 </html>
