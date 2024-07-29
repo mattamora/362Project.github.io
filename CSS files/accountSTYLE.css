@@ -75,6 +75,11 @@ a:link, a:visited {
     transform: scale(1.1); 
 }
 
+.sign_out:hover {
+    transform: scale(1.1); 
+    font-weight: bold;
+}
+
 .order {
     display: flex;
     height: 45px;
