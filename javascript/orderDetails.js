@@ -226,12 +226,12 @@
       isActive[item] = burgerAddOns[item].classList.contains('active');
     }
 
-    if(isActive['burgerBacon']){
+    if(isActive['bacon']){
       additionalFees += 1.99;
       console.log('added bacon for additional charge');
     }
 
-    if(isActive['burgerExtraPatty']){
+    if(isActive['extraPatty']){
       additionalFees += 1.99;
       console.log('added extra patty for additional charge');
     }
@@ -321,16 +321,16 @@
     }
 
     //Ramen Additional Costs
-    if(isActive['RamenChashu'] || isActive['ramenChicken']){
+    if(isActive['chashu'] || isActive['ramenChicken']){
       ramenAdditionalCost += 1.99;
     }
-    if(isActive['ramenTofu']){
+    if(isActive['tofu']){
       ramenAdditionalCost += 0.99;
     }
-    if(isActive['ramenEgg']){
+    if(isActive['egg']){
       ramenAdditionalCost += 0.99;
     }
-    if(isActive['ramenLarge']){
+    if(isActive['large']){
       ramenAdditionalCost += 3.99;
     }
 
@@ -343,6 +343,7 @@
 
     updateObj[ramenKey] = {
       ramenAddOns: isActive,
+      ramenSizeOptions: isActive,
       cost: 8.99,
       addOnCharges: ramenAdditionalCost,
       request: request
@@ -371,22 +372,22 @@
       isActive[item] = phoSizeOptions[item].classList.contains('active');
     }
 
-    if(isActive['phoRibeye']){
+    if(isActive['ribeye']){
       additionalFees += 4.99;
     }
-    if(isActive['phoBrisket']){
+    if(isActive['brisket']){
       additionalFees += 3.99;
     }
-    if(isActive['phoChicken']){
+    if(isActive['chicken']){
       additionalFees += 2.99;
     }
-    if(isActive['phoRareSteak']){
+    if(isActive['rareSteak']){
       additionalFees += 2.99;
     }
-    if(isActive['phoOxtail']){
+    if(isActive['oxtail']){
       additionalFees += 1.99;
     }
-    if(isActive['phoLarge']){
+    if(isActive['large']){
       additionalFees += 3.99;
     }
 
@@ -398,6 +399,7 @@
 
     updateObj[phoKey] = {
       phoAddOns: isActive,
+      phoSizeOptions: isActive,
       cost: 9.99,
       addOnCharges: additionalFees,
       requests: request
@@ -423,10 +425,10 @@
       isActive[item] = tacosAddOns[item].classList.contains('active');
     }
     
-    if(isActive['tacosPescado']){
+    if(isActive['pescado']){
       additionalFees += 2.99;
     }
-    if(isActive['tacosGuacamole']){
+    if(isActive['guacamole']){
       additionalFees += 1.99;
     }
 
@@ -463,7 +465,7 @@
       isActive[item] = burritoAddOns[item].classList.contains('active');
     }
     
-    if(isActive['burritoGuacamole']){
+    if(isActive['guacamole']){
       additionalFees += 1.99;
     }
 
@@ -503,22 +505,22 @@
       isActive[item] = friesSizeOptions[item].classList.contains('active');
     }
 
-    if(isActive['friesCheese']){
+    if(isActive['cheese']){
       additionalFees += 1.99;
     }
-    if(isActive['friesBaconBits']){
+    if(isActive['baconBits']){
       additionalFees += 0.99;
     }
-    if(isActive['friesTruffleFries']){
+    if(isActive['truffleFries']){
       additionalFees += 2.99;
     }
-    if(isActive['friesSweetPotatoFries']){
+    if(isActive['sweetPotatoFries']){
       additionalFees += 0.99;
     }
-    if(isActive['friesMedium']){
+    if(isActive['medium']){
       additionalFees += 1.99;
     }
-    if(isActive['friesLarge']){
+    if(isActive['large']){
       additionalFees += 2.99
     }
 
@@ -530,6 +532,7 @@
 
     updateObj[friesKey] = {
       friesAddOns: isActive,
+      friesSizeOptions: isActive,
       cost: 2.99,
       addOnCharges: additionalFees,
       requests: request
@@ -555,7 +558,7 @@
       isActive[item] = saladAddOns[item].classList.contains('active');
     }
 
-    if(isActive['saladChicken']){
+    if(isActive['chicken']){
       additionalFees += 1.99;
     }
     saladCount++;
@@ -591,23 +594,28 @@
       isActive[item] = bobaAddOns[item].classList.contains('active');
     }
 
-    if(isActive['bobaMedium']){
+    for (const item in bobaSizeOptions){
+      isActive[item] = bobaSizeOptions[item].classList.contains('active');
+    }
+
+    if(isActive['medium']){
       additionalFees += 1.99;
     }
-    if(isActive['bobaLarge']){
+    if(isActive['large']){
       additionalFees += 2.99;
     }
 
     bobaCount++;
 
-    bobaKey = 'Boba' + bobaCount;
+    let bobaKey = 'Boba' + bobaCount;
 
     let updateObj = {}
 
     updateObj[bobaKey] = {
       bobaAddOns: isActive,
+      bobaSizeOptions: isActive,
       cost: 4.99,
-      addonCharges: additionalFees,
+      addOnCharges: additionalFees,
       requests: request
     }
 
@@ -631,23 +639,28 @@
       isActive[item] = sodaAddOns[item].classList.contains('active');
     }
 
-    if(isActive['sodaMedium']){
+    for (const item in sodaSizeOptions){
+      isActive[item] = sodaSizeOptions[item].classList.contains('active');
+    }
+
+    if(isActive['medium']){
       additionalFees += 1.00;
     }
-    if(isActive['sodaLarge']){
+    if(isActive['large']){
       additionalFees += 2.00;
     }
 
     sodaCount++;
 
-    sodaKey= 'Soda' + sodaCount;
+    let sodaKey= 'Soda' + sodaCount;
 
     let updateObj = {};
 
     updateObj[sodaKey] = {
       sodaAddOns: isActive,
+      sodaSizeOptions: isActive,
       cost: 1.99,
-      addonCharges: additionalFees,
+      addOnCharges: additionalFees,
       requests: request
     }
 

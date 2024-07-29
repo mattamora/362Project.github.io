@@ -14,10 +14,9 @@ window.onload = function(){
       currentOrderId = storedOrderID
     }
 
-    database.ref('Orders/' + currentOrderId).on('value', (snapshot) =>{
+    database.ref('Orders/' + currentOrderId).limitToFirst(3).on('value', (snapshot) =>{
         const data = snapshot.val();
     
-        let maxCount = 3
         let count = 1
     
         let calcSubTotal = 0;
@@ -37,7 +36,7 @@ window.onload = function(){
                 tempCost = order.cost + order.addOnCharges;
     
                 itemName.textContent = 'Burger';
-                itemPrice.textContent = '$ ' + order.cost + order.addOnCharges;
+                itemPrice.textContent = '$ ' + tempCost.toFixed(2);
                 itemDesc.textContent = 'Burger with: ' + Object.keys(order.burgerAddOns).filter(addOn => order.burgerAddOns[addOn]).join(', ');
     
                 if(order.requests){
@@ -58,7 +57,7 @@ window.onload = function(){
                 tempCost = order.cost + order.addOnCharges;
                 
                 itemName.textContent = 'Ribs';
-                itemPrice.textContent = '$ ' + order.cost + order.addOn;
+                itemPrice.textContent = '$ ' + tempCost.toFixed(2);
                 itemDesc.textContent = 'Ribs with: ' + Object.keys(order.ribAddOns).filter(addOn => order.ribAddOns[addOn]).join(', ');
     
                 if(order.requests){
@@ -206,7 +205,7 @@ window.onload = function(){
 
                 itemName.textContent = 'Boba';
                 itemPrice.textContent = '$ ' + tempCost.toFixed(2);
-                itemDesc.textContent = 'Boba with: ' + Object.keys(order.bobaAddOns).filter(addOn => order.bobaAddOns[addOn]).join(', ');
+                itemDesc.textContent = 'Boba: ' + Object.keys(order.bobaAddOns).filter(addOn => order.bobaAddOns[addOn]).join(', ');
     
                 if(order.requests){
                     itemDesc.textContent += '. Special requests: ' + order.requests;
@@ -227,7 +226,7 @@ window.onload = function(){
 
                 itemName.textContent = 'Soda';
                 itemPrice.textContent = '$ ' + tempCost.toFixed(2);
-                itemDesc.textContent = 'Soda with: ' + Object.keys(order.sodaAddOns).filter(addOn => order.sodaAddOns[addOn]).join(', ');
+                itemDesc.textContent = 'Soda: ' + Object.keys(order.sodaAddOns).filter(addOn => order.sodaAddOns[addOn]).join(', ');
     
                 if(order.requests){
                     itemDesc.textContent += '. Special requests: ' + order.requests;
