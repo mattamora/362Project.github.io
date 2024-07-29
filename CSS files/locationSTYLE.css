@@ -12,71 +12,70 @@ html, body {
     font-family: lexend, sans-serif;
 }
 
-/*      =================     TOP BAR ONLY    ==============   */
-
-.top_bar {
+  /*  =================================    TOP BAR START    =============================== */
+  .top_bar {
+    position: fixed;
+    top: 0;
     display: flex;
     justify-content: space-between; 
     align-items: center;
     width: 100%;
     height: 65px;
     z-index: 10;
-    padding: 10px 0px;
+    padding: 10px 0;
     border-bottom: 1px solid rgb(158, 158, 158);
     box-shadow: 0 6px 6px -3px rgba(0, 0, 0, 0.2); 
     background-color: white;
-    position: fixed;
 }
- 
+
 .logo {
-   width: 45px;
-   height: 45px;
-   position: relative;
-   left: 5px;
-   top: 10px;
+    transform: scale(.4);
+    position: relative;
+    left: -18px;
+    top: 1px;
 }
- 
+
 a:link, a:visited {
     text-decoration: none;
     color: inherit;
 }
- 
+
 .name {
-    cursor: pointer;
-    white-space: nowrap;
-    font-weight: bold;
-    font-size: 35px;
     position: relative;
-    bottom: 5px;
-    left: 1vh;
+    left: -32.5%;
+    font-size: 36px;             
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;         
 }
- 
+
 .navTop {
-     position: fixed;
-     right: 14%;
-     height: 45px;
-     width: 25%;
-     display: flex;
-     justify-content: space-between;
-     align-items: center;
-     flex-wrap: wrap;
-     font-size: 20px;
-     font-weight: 600;
-     color: rgb(0, 58, 93);
+    position: fixed;
+    right: 12%;
+    height: 45px;
+    width: 330px;
+    margin-right: 50px;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: rgb(0, 58, 93);
 }
- 
+
 .menu:hover {
     transform: scale(1.1);
 }
- 
-.locations:hover {
-    transform: scale(1.1); 
+
+.locations {
+    transform: scale(1.1);
+    text-decoration: underline; 
 }
- 
+
 .sign_in:hover {
     transform: scale(1.1); 
 }
- 
+
 .order {
     display: flex;
     height: 45px;
@@ -88,24 +87,23 @@ a:link, a:visited {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 21px;
     font-weight: 700;
 }
- 
+
 .order:hover {
     background-color: rgb(213, 27, 27);
     box-shadow: 0 0 0 2px rgb(223, 1, 1);
     color: white !important;
 }
- 
+
 .order:active {
     border: 1px outset rgb(213, 27, 27);
     background-color: rgb(173, 26, 26);
     box-shadow: 0 0 0 2px rgb(223, 1, 1);
 }
- 
- 
- /*      =================     TOP BAR ONLY    ==============   */
+
+/*      =================     TOP BAR END    ==============   */
 
 
 
