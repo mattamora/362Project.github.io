@@ -23,9 +23,9 @@
         <span class="cartAmount">0</span>
     </header>
 
-    <h1 id="linkTop">MENU</h1>
+    <h1>MENU</h1>
     <div class="itemTabs">
-        <a href="linkTop"><span>AMERICAN</span></a>
+        <a href="american"><span>AMERICAN</span></a>
         <a href="#asian"><span>ASIAN</span></a>
         <a href="#mexican"><span>MEXICAN</span></a>
         <a href="#sides"><span>SIDES</span></a>
@@ -144,14 +144,14 @@
                         <span id="burgerMayo" onclick="select(event)">Mayo<span class="calories">+5 Cal</span></span>
                         <span id="burgerJalapenos" onclick="select(event)">Jalapenos<span class="calories">+5 Cal</span></span>
                         <span id="burgerCheese" onclick="select(event)" class="active">Cheese<span class="calories">+15 Cal</span></span>
-                        <span id="burgerBacon" onclick="select(event)">Bacon<span class="calories">+$1.99</span></span>
-                        <span id="burgerExtraPatty" onclick="select(event)">Extra patty<span class="calories">+$1.99</span></span>
+                        <span id="burgerBacon" onclick="select(event)" class="bacon">Bacon<span class="calories">+$1.99</span></span>
+                        <span id="burgerExtraPatty" onclick="select(event)" class="patty">Extra patty<span class="calories">+$1.99</span></span>
                     </div>
                     <div class="requests">
                         <h3>Special Requests (Optional)</h3>
                         <input id="burgerRequests" placeholder="Any Additonal Requests...">
                     </div>
-                    <button id="addBurgerToCart" class="addCart" onclick="addToCart(); closePopup();">ADD TO CART - $<span class="price">6.99</span></button>
+                    <button id="addBurgerToCart" class="addCart" onclick="addToCart(); closePopup();">ADD TO CART - $<span class="price" id="burgerPrice">6.99</span></button>
                 </div>
     
                 <div class="ribsScreen">
@@ -164,8 +164,8 @@
                         <img src="pics/ribs.jpg" class="ribsPic"> 
                     </div>
                     <div class="customOptions">
-                        <span id="halfRack" onclick="select(event)" class="exclusive active">Half Rack<span class="calories">$12.99</span></span>
-                        <span id="fullRack" onclick="select(event)" class="exclusive">Full Rack<span class="calories">$24.99</span></span>
+                        <span id="halfRack" onclick="select(event)" class="exclusive active half">Half Rack<span class="calories">$12.99</span></span>
+                        <span id="fullRack" onclick="select(event)" class="exclusive full">Full Rack<span class="calories">$24.99</span></span>
                         <span id="originalBBQ" onclick="select(event)" class="exclusive2 active">Original Barbecue Sauce <span class="calories">+120 Cal</span></span>
                         <span id="spicyBBQ" onclick="select(event)" class="exclusive2">Spicy Barbecue Sauce<span class="calories">+130 Cal</span></span>
                         <span id="sweetBBQ" onclick="select(event)" class="exclusive2">Sweet Barbecue Sauce <span class="calories">+150 Cal</span></span>
@@ -175,7 +175,7 @@
                         <h3>Special Requests (Optional)</h3>
                         <input id="ribRequests" placeholder="Any Additonal Requests...">
                     </div>
-                    <button id="addRibsToCart" class="addCart" onclick="addToCart(); closePopup();">ADD TO CART - $<span class="price">12.99</span></button>
+                    <button id="addRibsToCart" class="addCart" onclick="addToCart(); closePopup();">ADD TO CART - $<span class="price" id="ribsPrice">12.99</span></button>
                 </div>
 
                 <div class="ramenScreen">
@@ -188,11 +188,10 @@
                         <img src="pics/ramen.jpg" class="ramenPic"> 
                     </div>
                     <div class="customOptions">
-                        <span id="ramenChashu" onclick="select(event)" class="exclusive active">Chashu<span class="calories">+$1.99</span></span>
-                        <span id="ramenChicken" onclick="select(event)" class="exclusive">Chicken<span class="calories">+$1.99</span></span>
-                        <span id="ramenTofu" onclick="select(event)" class="exclusive">Tofu<span class="calories">+$0.99</span></span>
-                        <span id="ramenNoMeat" onclick="select(event)" class="exclusive">No Meat</span>
-                        <span id="ramenEgg" onclick="select(event)">Egg<span class="calories">+$0.99</span></span>
+                        <span id="ramenChashu" onclick="select(event)" class="chasu">Chashu<span class="calories">+$1.99</span></span>
+                        <span id="ramenChicken" onclick="select(event)" class="chicken">Chicken<span class="calories">+$1.99</span></span>
+                        <span id="ramenTofu" onclick="select(event)" class="tofu">Tofu<span class="calories">+$0.99</span></span>
+                        <span id="ramenEgg" onclick="select(event)" class="egg">Egg<span class="calories">+$0.99</span></span>
                         <span id="ramenShiitakeMushroom" onclick="select(event)">Shiitake Mushrooms<span class="calories">+5 Cal</span></span>
                         <span id="ramenBeanSprouts" onclick="select(event)">Bean Sprouts<span class="calories">+0 Cal</span></span>
                         <span id="ramenSeaweed" onclick="select(event)">Seaweed<span class="calories">+0 Cal</span></span>
@@ -209,7 +208,7 @@
                         <h3>Special Requests (Optional)</h3>
                         <input id="ramenRequests" placeholder="Any Additonal Requests...">
                     </div>
-                    <button id="addRamenToCart" class="addCart" onclick="addToCart(); closePopup();">ADD TO CART - $<span class="price">8.99</span></button>
+                    <button id="addRamenToCart" class="addCart" onclick="addToCart(); closePopup();">ADD TO CART - $<span class="price" id="ramenPrice">8.99</span></button>
                 </div>
     
 
@@ -223,11 +222,11 @@
                         <img src="pics/pho.jpg" class="phoPic"> 
                     </div>
                     <div class="customOptions">
-                        <span id="phoRibeye" onclick="select(event)" class="exclusive">Ribeye<span class="calories">+$4.99</span></span>
-                        <span id="phoBrisket" onclick="select(event)" class="exclusive">Brisket<span class="calories">+$3.99</span></span>
-                        <span id="phoChicken" onclick="select(event)" class="exclusive">Chicken<span class="calories">+$2.99</span></span>
-                        <span id="phoRareSteak" onclick="select(event)" class="exclusive active">Rare Steak<span class="calories">+$2.99</span></span>
-                        <span id="phoOxtail" onclick="select(event)" class="exclusive">Oxtail<span class="calories">+$1.99</span></span>
+                        <span id="phoRibeye" onclick="select(event)" class="ribeye">Ribeye<span class="calories">+$4.99</span></span>
+                        <span id="phoBrisket" onclick="select(event)" class="brisket">Brisket<span class="calories">+$3.99</span></span>
+                        <span id="phoChicken" onclick="select(event)" class="chickenPho">Chicken<span class="calories">+$2.99</span></span>
+                        <span id="phoRareSteak" onclick="select(event)" class="rare">Rare Steak<span class="calories">+$2.99</span></span>
+                        <span id="phoOxtail" onclick="select(event)" class="oxtail">Oxtail<span class="calories">+$1.99</span></span>
                         <span id="phoCilantro" onclick="select(event)">Cilantro<span class="calories">+0 Cal</span></span>
                         <span id="phoJalapenos" onclick="select(event)">Jalapenos<span class="calories">+0 Cal</span></span>
                         <span id="phoBeanSprouts" onclick="select(event)">Bean Sprouts<span class="calories">+0 Cal</span></span>
@@ -244,7 +243,7 @@
                         <h3>Special Requests (Optional)</h3>
                         <input id="phoRequests" placeholder="Any Additonal Requests...">
                     </div>
-                    <button id="addPhoToCart" class="addCart" onclick="addToCart(); closePopup();">ADD TO CART - $<span class="price">9.99</span></button>
+                    <button id="addPhoToCart" class="addCart" onclick="addToCart(); closePopup();">ADD TO CART - $<span class="price" id="phoPrice">9.99</span></button>
                 </div>
 
                 <div class="tacosScreen">
@@ -273,7 +272,7 @@
                         <h3>Special Requests (Optional)</h3>
                         <input id="tacosRequests" placeholder="Any Additonal Requests...">
                     </div>
-                    <button id="addTacosToCart" class="addCart" onclick="addToCart(); closePopup();">ADD TO CART - $<span class="price">5.99</span></button>
+                    <button id="addTacosToCart" class="addCart" onclick="addToCart(); closePopup();">ADD TO CART - $<span class="price" id="tacosPrice">5.99</span></button>
                 </div>
 
                 <div class="burritoScreen">
@@ -301,7 +300,7 @@
                         <h3>Special Requests (Optional)</h3>
                         <input id="burritoRequests" placeholder="Any Additonal Requests...">
                     </div>
-                    <button id="addBurritoToCart" class="addCart" onclick="addToCart(); closePopup();">ADD TO CART - $<span class="price">7.99</span></button>
+                    <button id="addBurritoToCart" class="addCart" onclick="addToCart(); closePopup();">ADD TO CART - $<span class="price" id="burritoPrice">7.99</span></button>
                 </div>
 
                 <div class="friesScreen">
@@ -314,11 +313,11 @@
                         <img src="pics/french.jpg" class="friesPic"> 
                     </div>
                     <div class="customOptions">
-                        <span id="friesCheese" onclick="select(event)">Cheese<span class="calories">+$1.99</span></span>
-                        <span id="friesBaconBits" onclick="select(event)">Bacon Bits<span class="calories">+$0.99</span></span>
-                        <span id="friesTruffleFries" onclick="select(event)" class="exclusive">Truffle Fries<span class="calories">+$2.99</span></span>
-                        <span id="friesSweetPotatoFries" onclick="select(event)" class="exclusive">Sweet Potato Fries<span class="calories">+$.099</span></span>
-                        <span id="friesRegularFries" onclick="select(event)" class="exclusive active">Regular Fries</span>
+                        <span id="friesCheese" onclick="select(event)">Cheese<span class="calories">+210 Cal</span></span>
+                        <span id="friesBaconBits" onclick="select(event)">Bacon Bits<span class="calories">+150 Cal</span></span>
+                        <span id="friesTruffleFries" onclick="select(event)" class="exclusive">Truffle Fries<span class="calories">420 Cal</span></span>
+                        <span id="friesSweetPotatoFries" onclick="select(event)" class="exclusive">Sweet Potato Fries<span class="calories">330 Cal</span></span>
+                        <span id="friesRegularFries" onclick="select(event)" class="exclusive active">Regular Fries<span class="calories">390 Cal</span></span>
                     </div>
                     <h6>Size</h6>
                     <div class="sizeOptions">
@@ -330,7 +329,7 @@
                         <h3>Special Requests (Optional)</h3>
                         <input id="friesRequests" placeholder="Any Additonal Requests...">
                     </div>
-                    <button id="addFriesToCart" class="addCart" onclick="addToCart(); closePopup();">ADD TO CART - $<span class="price">2.99</span></button>
+                    <button id="addFriesToCart" class="addCart" onclick="addToCart(); closePopup();">ADD TO CART - $<span class="price" id="friesPrice">2.99</span></button>
                 </div>
 
                 <div class="saladScreen">
@@ -344,7 +343,7 @@
                     </div>
                     <div class="customOptions">
                         <span id="saladCroutons" onclick="select(event)" class="active">Croutons<span class="calories">+60 Cal</span></span>
-                        <span id="saladChicken" onclick="select(event)">Chicken<span class="calories">+$1.99</span></span>
+                        <span id="saladChicken" onclick="select(event)" class="chickenSalad">Chicken<span class="calories">+$1.99</span></span>
                         <span id="saladParmesan" onclick="select(event)" class="active">Parmesan Cheese<span class="calories">+120 Cal</span></span>
                         <span id="saladBleuCheese" onclick="select(event)">Bleu Cheese<span class="calories">+270 Cal</span></span>
                         <span id="saladVinaigrette" onclick="select(event)">Vinaigrette<span class="calories">+300 Cal</span></span>
@@ -354,7 +353,7 @@
                         <h3>Special Requests (Optional)</h3>
                         <input id="saladRequests" placeholder="Any Additonal Requests...">
                     </div>
-                    <button id="addSaladToCart" class="addCart" onclick="addToCart(); closePopup();">ADD TO CART - $<span class="price">6.99</span></button>
+                    <button id="addSaladToCart" class="addCart" onclick="addToCart(); closePopup();">ADD TO CART - $<span class="price" id="saladPrice">6.99</span></button>
                 </div>
 
                 <div class="bobaScreen">
@@ -386,7 +385,7 @@
                         <h3>Special Requests (Optional)</h3>
                         <input id="bobaRequests" placeholder="Any Additonal Requests...">
                     </div>
-                    <button id="addBobaToCart" class="addCart" onclick="addToCart(); closePopup();">ADD TO CART - $<span class="price">4.99</span></button>
+                    <button id="addBobaToCart" class="addCart" onclick="addToCart(); closePopup();">ADD TO CART - $<span class="price" id="bobaPrice">4.99</span></button>
                 </div>
 
                 <div class="sodaScreen">
@@ -411,14 +410,14 @@
                     <h6>Size</h6>
                     <div class="sizeOptions">
                         <span id="sodaSmall" onclick="selectSize(event)" class="active">Small</span>
-                        <span id="sodaMedium" onclick="selectSize(event)">Medium<span class="calories">+$1</span></span>
-                        <span id="sodaLarge" onclick="selectSize(event)">Large<span class="calories">+$2</span></span>
+                        <span id="sodaMedium" onclick="selectSize(event)">Medium<span class="calories">+$1.99</span></span>
+                        <span id="sodaLarge" onclick="selectSize(event)">Large<span class="calories">+$2.99</span></span>
                     </div>
                     <div class="requests">
                         <h3>Special Requests (Optional)</h3>
                         <input id="sodaRequests" placeholder="Any Additonal Requests...">
                     </div>
-                    <button id="addSodaToCart" class="addCart" onclick="addToCart(); closePopup();">ADD TO CART - $<span class="price">1.99</span></button>
+                    <button id="addSodaToCart" class="addCart" onclick="addToCart(); closePopup();">ADD TO CART - $<span class="price" id="sodaPrice">1.99</span></button>
                 </div>
 
                 <p>__________________</p>
@@ -464,11 +463,6 @@
                 screen.style.display = 'none'; // Set all popup screens display to none when closing the popup
             });
             popup.style.display = 'none'; // Hide the popup container
-            /*
-            screens.forEach(screen => {   // loop/function to unclick any add ons upon closing
-                const spans = screen.querySelectorAll('.customOptions span');
-                spans.forEach(span => span.classList.remove('active'));
-            });  */
         } 
         popup.addEventListener('click', (event) => { // close the popup when clicking on the background
             if (event.target === popup) { // when the background is clicked
@@ -478,19 +472,15 @@
 
         // CODE FOR ADDING ITEM TO FAVORITES
         function toggleStar() {   //  changes color of star when clicked   
-
             const openStar = document.querySelector(".open");
             const closeStar = document.querySelector(".close");
 
             if (openStar.style.display === 'none') {
                 openStar.style.display = 'block';
                 closeStar.style.display = 'none';
-                //remove favorite
-
             } else {
                 openStar.style.display = 'none';
                 closeStar.style.display = 'block';
-                //add favorite
             }
         }
 
@@ -557,7 +547,7 @@
         }
        
         // CODE FOR SELECTING ADD ONS ON THE CUSTOMIZE SECTION
-        function select(event) { /* everything but ribs */
+        function select(event) {
             const clickedSpan = event.target;
 
             // Handle exclusive options 
@@ -565,6 +555,14 @@
                 const exclusives = document.querySelectorAll('.customOptions .exclusive');
                 exclusives.forEach(span => span.classList.remove('active'));
                 clickedSpan.classList.add('active');
+
+                // Handles ribs price
+                if (clickedSpan.classList.contains('full')) {
+                    document.getElementById('ribsPrice').textContent = 24.99;
+                } else if (clickedSpan.classList.contains('half')) {
+                    document.getElementById('ribsPrice').textContent = 12.99;
+                }
+
             } else if (clickedSpan.classList.contains('exclusive2')) {
                 const exclusives = document.querySelectorAll('.customOptions .exclusive2');
                 exclusives.forEach(span => span.classList.remove('active'));
@@ -572,22 +570,176 @@
             } else {
                 // Handle non-exclusive options 
                 clickedSpan.classList.toggle('active');
+
+                // Handles burger price 
+                if (clickedSpan.classList.contains('bacon') || clickedSpan.classList.contains('patty')) {
+                    updateBurgerPrice();
+                }
+
+                // Handles ramen price
+                if (clickedSpan.classList.contains('egg') || clickedSpan.classList.contains('chasu') || clickedSpan.classList.contains('chicken') || clickedSpan.classList.contains('tofu')) {
+                    updateRamenPrice();
+                }
+
+                // Handles pho price
+                if (clickedSpan.classList.contains('ribeye') || clickedSpan.classList.contains('brisket') || clickedSpan.classList.contains('chickenPho') || clickedSpan.classList.contains('rare') || clickedSpan.classList.contains('oxtail')) {
+                    updatePhoPrice();
+                }
+
+                // Handles salad price
+                if (clickedSpan.classList.contains('chickenSalad')) {
+                    updateSaladPrice();
+                }
+
             }
         }
+
         function selectSize(event) {  /* function for size selections: fries, boba, soda */
             const sizeOptions = document.querySelectorAll('.sizeOptions span'); // all the size options 
             sizeOptions.forEach(span => span.classList.remove('active')); // when function is run it unclicks the other sizes
             event.target.classList.add('active');  // the item clicked changes color 
+
+            sizeRamenPrice(); // updates ramen price based on size
+            sizeFriesPrice();
+            sizePhoPrice(); // updates pho price based on size
+            sizeBobaPrice(); // updates boba price based on size
+            sizeSodaPrice(); // updates soda price based on size
         }
         // event.target.classList.toggle('active');
 
+    
+    function updateBurgerPrice() {
+        const basePrice = 6.99;
+        let additionalPrice = 0;
+        if (document.querySelector('.bacon.active')) {
+            additionalPrice += 1.99;
+        }
+        if (document.querySelector('.patty.active')) {
+            additionalPrice += 1.99;
+        }
+        const newPrice = (basePrice + additionalPrice).toFixed(2);
+        document.getElementById('burgerPrice').textContent = newPrice;
+    }
+
+    function updateRamenPrice() {
+        const basePrice = 8.99;
+        let additionalPrice = 0;
+        if (document.querySelector('.egg.active')) {
+            additionalPrice += 0.99;
+        }
+        if (document.querySelector('.chasu.active')) {
+            additionalPrice += 1.99;
+        }
+        if (document.querySelector('.chicken.active')) {
+            additionalPrice += 1.99;
+        }
+        if (document.querySelector('.tofu.active')) {
+            additionalPrice += 0.99;
+        }
+        const newPrice = (basePrice + additionalPrice).toFixed(2);
+        document.getElementById('ramenPrice').textContent = newPrice;
+    }
+    function sizeRamenPrice() {
+        let priceElement = document.getElementById('ramenPrice');
+        let oldPrice = parseFloat(priceElement.textContent);
+        if (event.target.classList.contains('ramenLarge')) {
+                oldPrice += 3.99; // Add 3.99
+        }
+        if (event.target.classList.contains('ramenRegular')) {
+            oldPrice -= 3.99; // Subtract 3.99 
+        }
+        priceElement.textContent = oldPrice.toFixed(2); // updates ramen price depnding if large or not
+    }
+   
+    function updatePhoPrice() {
+        const basePrice = 9.99;
+        let additionalPrice = 0;
+        if (document.querySelector('.ribeye.active')) {
+            additionalPrice += 4.99;
+        }
+        if (document.querySelector('.brisket.active')) {
+            additionalPrice += 3.99;
+        }
+        if (document.querySelector('.chickenPho.active')) {
+            additionalPrice += 2.99;
+        }
+        if (document.querySelector('.rare.active')) {
+            additionalPrice += 2.99;
+        }
+        if (document.querySelector('.oxtail.active')) {
+            additionalPrice += 1.99;
+        }
+        const newPrice = (basePrice + additionalPrice).toFixed(2);
+        document.getElementById('phoPrice').textContent = newPrice;
+    }
+    function sizePhoPrice() {
+        let priceElement = document.getElementById('phoPrice');
+        let oldPrice = parseFloat(priceElement.textContent);
+        if (event.target.classList.contains('phoLarge')) {
+                oldPrice += 3.99; // Add 3.99
+        }
+        if (event.target.classList.contains('phoRegular')) {
+            oldPrice -= 3.99; // Subtract 3.99 
+        }
+        priceElement.textContent = oldPrice.toFixed(2); // updates ramen price depnding if large or not
+    }
+    
+    function sizeFriesPrice() {
+        let priceElement = document.getElementById('friesPrice');
+        let oldPrice = parseFloat(priceElement.textContent);
+        if (event.target.classList.contains('friesLarge')) {
+            oldPrice = 5.98;
+        }
+        if (event.target.classList.contains('friesMedium')) {
+            oldPrice = 4.98;
+        }
+        if (event.target.classList.contains('friesSmall')) {
+            oldPrice = 2.99;
+        }
+        priceElement.textContent = oldPrice.toFixed(2); // updates fries price depnding on size
+    }
+
+    function updateSaladPrice() {
+        const basePrice = 6.99;
+        let additionalPrice = 0;
+        if (document.querySelector('.chickenSalad.active')) {
+            additionalPrice += 1.99;
+        }
+        const newPrice = (basePrice + additionalPrice).toFixed(2);
+        document.getElementById('saladPrice').textContent = newPrice;
+    }
         
-      
+    function sizeBobaPrice() {
+        let priceElement = document.getElementById('bobaPrice');
+        let oldPrice = parseFloat(priceElement.textContent);
+        if (event.target.classList.contains('bobaLarge')) {
+            oldPrice = 7.98;
+        }
+        if (event.target.classList.contains('bobaMedium')) {
+            oldPrice = 6.98;
+        }
+        if (event.target.classList.contains('bobaSmall')) {
+            oldPrice = 4.99;
+        }
+        priceElement.textContent = oldPrice.toFixed(2); // updates boba price depnding on size
+    }
 
-
-
-       
-    </script>  
+    function sizeSodaPrice() {
+        let priceElement = document.getElementById('sodaPrice');
+        let oldPrice = parseFloat(priceElement.textContent);
+        if (event.target.classList.contains('sodaLarge')) {
+            oldPrice = 4.98;
+        }
+        if (event.target.classList.contains('sodaMedium')) {
+            oldPrice = 3.98;
+        }
+        if (event.target.classList.contains('sodaSmall')) {
+            oldPrice = 1.99;
+        }
+        priceElement.textContent = oldPrice.toFixed(2); // updates boba price depnding on size
+    }
+        
+    </script>    
 
 
 </body>
