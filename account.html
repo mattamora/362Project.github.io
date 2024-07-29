@@ -18,7 +18,7 @@
             <span class="menu"><a href="menu.html">Menu</a></span>
             <span class="locations"><a href="location.html">Location</a></span>
             <span class="sign_in"><a href="sign_in.html">My 362 Account</a></span>
-            <span class="sign_out">Sign Out</span>
+            <a href="#" onclick="signOut()">Sign Out</span>
         </div>
         <span><a class="order" href="menu.html">Order Now</a></span>
     </header>
@@ -264,6 +264,18 @@
             });
         }
 
+        function signOut(){
+            const auth = firebase.auth();
+            
+            auth.signOut().then(() => {
+                console.log('User signed out');
+                alert('Sign Out Successful');
+                window.location.href = 'sign_in.html'; // Redirect to sign-in page
+                }).catch((error) => {
+                console.log('Error signing out: ', error);
+         });
+        }
+
     </script>  
 
 
@@ -282,5 +294,6 @@
 <script type="module" src="javascript/firebaseInit.js"></script>
 <script type="module" src="javascript/updateInfo.js"></script>
 <script type="module" src="javascript/addFavorites.js"></script>
+<script type="module" src="javascript/orderHistory.js"></script>
 
 </html>
