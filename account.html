@@ -86,43 +86,43 @@
             <!-- GRID TO POSITION ANY FAVORITED ITEMS -->
             <div class="faveItems"> 
                 <div class="item">
-                    <img src="pics/pho.jpg">
-                    <h4>Sample Item 1</h4>
+                    <img id="favoriteItemImage1" src="pics/pho.jpg">
+                    <h4 id="favoriteItem1">Sample Item 1</h4>
                     <div class="buttons">
-                        <span><a href="menu.html#asian">Order</a></span>
-                        <span onclick="removeItem(event)">Remove</span>
+                        <span><a id="orderFavorite1" href="menu.html#asian">Order</a></span>
+                        <span id="removeFavorite1" onclick="removeItem(event)">Remove</span>
                     </div>
                 </div>
                 <div class="item">
-                    <img src="pics/pho.jpg">
-                    <h4>Sample Item 2</h4>
+                    <img id="favoriteItemImage2" src="pics/pho.jpg">
+                    <h4 id="favoriteItem2">Sample Item 2</h4>
                     <div class="buttons">
-                        <span><a href="menu.html#asian">Order</a></span>
-                        <span onclick="removeItem(event)">Remove</span>
+                        <span><a id="orderFavorite2" href="menu.html#asian">Order</a></span>
+                        <span id="removeFavorite2" onclick="removeItem(event)">Remove</span>
                     </div>
                 </div>
                 <div class="item">
-                    <img src="pics/pho.jpg">
-                    <h4>Sample Item 3</h4>
+                    <img id="favoriteItemImage3" src="pics/pho.jpg">
+                    <h4 id="favoriteItem3">Sample Item 3</h4>
                     <div class="buttons">
-                        <span><a href="menu.html#asian">Order</a></span>
-                        <span onclick="removeItem(event)">Remove</span>
+                        <span><a id="orderFavorite3" href="menu.html#asian">Order</a></span>
+                        <span id="removeFavorite3" onclick="removeItem(event)">Remove</span>
                     </div>
                 </div>
                 <div class="item">
-                    <img src="pics/pho.jpg">
-                    <h4>Sample Item 4 </h4>
+                    <img id="favoriteItemImage4" src="pics/pho.jpg">
+                    <h4 id="favoriteItem4">Sample Item 4 </h4>
                     <div class="buttons">
-                        <span><a href="menu.html#asian">Order</a></span>
-                        <span onclick="removeItem(event)">Remove</span>
+                        <span><a id="orderFavorite4" href="menu.html#asian">Order</a></span>
+                        <span id="removeFavorite4" onclick="removeItem(event)">Remove</span>
                     </div>
                 </div>
                 <div class="item">
-                    <img src="pics/pho.jpg">
-                    <h4>Sample Item 5</h4>
+                    <img id="favoriteItemImage5" src="pics/pho.jpg">
+                    <h4 id="favoriteItem5">Sample Item 5</h4>
                     <div class="buttons">
-                        <span><a href="menu.html#asian">Order</a></span>
-                        <span onclick="removeItem(event)">Remove</span>
+                        <span><a id="orderFavorite5" href="menu.html#asian">Order</a></span>
+                        <span id="removeFavorite5" onclick="removeItem(event)">Remove</span>
                     </div>
                 </div>
                
@@ -279,6 +279,7 @@
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
 
 <script type="module" src="javascript/firebaseInit.js"></script>
-<script type = "module" src = "javascript/updateInfo.js"></script>
+<script type="module" src="javascript/updateInfo.js"></script>
+<script type="module" src="javascript/addFavorites.js"></script>
 
 </html>
