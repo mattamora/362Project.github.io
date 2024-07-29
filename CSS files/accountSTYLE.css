@@ -53,7 +53,7 @@ a:link, a:visited {
     position: fixed;
     right: 12%;
     height: 45px;
-    width: 330px;
+    width: 50%;
     margin-right: 50px;
     display: inline-flex;
     justify-content: space-between;
@@ -73,6 +73,11 @@ a:link, a:visited {
 
 .sign_in:hover {
     transform: scale(1.1); 
+}
+
+.sign_out:hover {
+    transform: scale(1.1); 
+    font-weight: bold;
 }
 
 .order {
