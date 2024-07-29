@@ -21,7 +21,7 @@
             <span class="locations"><a href="#">Location</a></span>
             <span class="sign_in"><a href="sign_in.html">Sign In</a></span>
         </div>
-        <span><a href="checkout.html"><img src="pics/cart.jpg" alt="cart" class="cart"></a></span>
+        <span><a href="guestcheckout.html"><img src="pics/cart.jpg" alt="cart" class="cart"></a></span>
     </nav>
 
     
@@ -31,50 +31,48 @@
             
             <div class="cart_info">
                 <h1>YOUR CART</h1>
-                <div class="cart_item">
+
+                <div class="cart_item"> 
                     <div class="img_container">
-                        <img id="co_img" src="pics/burger_i.png" alt="Food Item">
+                        <img id="co_img" src="pics/doubledouble.jpg" alt="Food Item">
                     </div>
                     <div class="content_container">
                         <div class="item">
-                            <h3 id="foodItemCart1">Food Item #1</h3>
-                            <p id="foodPriceCart1" class="item_price">$0.00</p>
+                            <h3>Burger</h3>
+                            <p class="item_price">$6.99</p>
                         </div>
-                        <p id="foodDescCart1" class="desc">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        <p class="desc">
+                            Onions, Tomatoes, Lettuce, Pickles, Cheese, Bacon
                         </p>
                     </div>
                 </div>
 
                 <div class="cart_item">
                     <div class="img_container">
-                        <img id="co_img" src="pics/burger_i.png" alt="Food Item">
+                        <img id="co_img" src="pics/tacos.jpg" alt="Food Item">
                     </div>
                     <div class="content_container">
                         <div class="item">
-                            <h3 id="foodItemCart2">Food Item #2</h3>
-                            <p id="foodPriceCart2" class="item_price">$0.00</p>
+                            <h3>Tacos</h3>
+                            <p class="item_price">$5.99</p>
                         </div>
-                        <p id="foodDescCart2" class="desc">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        <p class="desc">
+                            Pastor Tacos
                         </p>
                     </div>
                 </div>
 
                 <div class="cart_item">
                     <div class="img_container">
-                        <img id="co_img" src="pics/burger_i.png" alt="Food Item">
+                        <img id="co_img" src="pics/ramen.jpg" alt="Food Item">
                     </div>
                     <div class="content_container">
                         <div class="item">
-                            <h3 id="foodItemCart3">Food Item #3</h3>
-                            <p id="foodPriceCart3" class="item_price">$0.00</p>
+                            <h3>Ramen</h3>
+                            <p class="item_price">$8.99</p>
                         </div>
-                        <p id="foodDescCart3" class="desc">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        <p class="desc">
+                            Regular Chasu Ramen
                         </p>
                     </div>
                 </div>
@@ -84,39 +82,54 @@
             <!-- Add more w/ JavaScript? -->
             
             <div class="order_details">
-            <div class="order_top">
-                <h2>ORDER DETAILS</h2>
-                <div class="order_info">
-                    <p>Pickup at:</p>
-                    <p>(Address)</p>
+                <div class="order_top">
+                    <h2>ORDER DETAILS</h2>
+                    <div class="order_info">
+                        <p>Pickup at:</p>
+                        <p><a target="_blank" href="https://www.google.com/maps/dir//csuf/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x80dcd5ce8cc61391:0x2b9810bbb94af355?sa=X&ved=1t:3061&ictx=111">800 N State College Blvd, Fullerton</a></p>
+                    </div>
+                    <div class="order_info">
+                        <p>Date:</p>
+                        <p id="order-date">(Date)</p>
+                    </div>
+                    <div class="order_info">
+                        <p>Estimated Pickup Time:</p>
+                        <p id="order-time">(Time)</p>
+                    </div>
                 </div>
-                <div class="order_info">
-                    <p>Date:</p>
-                    <p>(Date)</p>
-                </div>
-                <div class="order_info">
-                    <p>Estimated Pickup Time:</p>
-                    <p>(Time)</p>
+                <div class="order_bottom">
+                    <h3>Cart Total</h3>
+                    <div class="order_info">
+                        <p>Subtotal:</p>
+                        <p id="subtotal">$</p>
+                    </div>
+                    <div class="order_info">
+                        <p>Tax 7.25%: </p>
+                        <p id="tax">$</p>
+                    </div>
+                    <div class="order_info">
+                        <p>Total:</p>
+                        <p id="total">$</p>
+                    </div>
+                    <span><a class="checkout" >CHECK OUT</a></span>
                 </div>
             </div>
-            <div class="order_bottom">
-                <h3>Cart Total</h3>
-                <div class="order_info">
-                    <p>Subtotal:</p>
-                    <p id="subTotalCart">$</p>
+             
+        </div>
+
+        <!--  Confirmation Pop up -->
+        <div class="confirmation">  
+            <div class="confirmationPop">
+                <button class="closePop" onclick="closePopup()">✕</button>
+                <h2>ORDER CONFIRMED!</h2>
+                <div class="redBorder">
+                    <h3>Pick Up At: <a target="_blank" href="https://www.google.com/maps/dir//csuf/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x80dcd5ce8cc61391:0x2b9810bbb94af355?sa=X&ved=1t:3061&ictx=111"><span>800 N State College Blvd, Fullerton, CA 9283</span></a></h3>
+                    <h3>Date: <span id="pop-date">dateVariable</span></h3>
+                    <h3>Ready By: <span id="pop-time">timeVariable</span></h3>
                 </div>
-                <div class="order_info">
-                    <p>(Tax)%:</p>
-                    <p id="taxCart">$</p>
-                </div>
-                <div class="order_info">
-                    <p>Total:</p>
-                    <p id="totalCart">$</p>
-                </div>
-                <span><a class="checkout" >CHECK OUT</a></span>
             </div>
         </div>
-        </div>
+
     </main>
   
     <!--  footer, bottom of the page  -->
@@ -134,10 +147,64 @@
         </div>
         <div class="bottomRight">
             
-            <a href="../sign_up.html"><img src="pics/bottomLeft.jpg" class="family"></a>
-            <a href="../home.html"><img src="pics/logo2.png" class="logo2"></a>
+            <a href="sign_up.html"><img src="pics/bottomLeft.jpg" class="family"></a>
+            <a href="home.html"><img src="pics/logo2.png" class="logo2"></a>
         </div>
     </footer>
+
+    <script>
+
+        // CODE FOR GETTING DATE AND TIME
+            const today = new Date();
+            const fullDate = `${String(today.getMonth() + 1).padStart(2, '0')}/${String(today.getDate()).padStart(2, '0')}/${today.getFullYear()}`;
+            // Extract hours, minutes, and seconds
+            today.setMinutes(today.getMinutes() + 30); // add 30 minutes to the current time for pickup time
+            let hours = today.getHours();
+            const minutes = String(today.getMinutes()).padStart(2, '0');
+            const amPm = hours >= 12 ? 'PM' : 'AM'; // Determine AM or PM suffix
+            // Convert 24-hour format to 12-hour format
+            hours = hours % 12;
+            hours = hours ? hours : 12; // If hours is 0, set it to 12
+            const time = `${hours}:${minutes} ${amPm}`; // time variable
+            // Update the <p> elements with the date and time
+            document.getElementById('order-date').textContent = fullDate;
+            document.getElementById('pop-date').textContent = fullDate;
+            document.getElementById('order-time').textContent = time;
+            document.getElementById('pop-time').textContent = time;
+
+        // CODE FOR CALCULATING PRICES
+            // SUBTOTAL
+                let subtotal = 0;
+                document.querySelectorAll('.item_price').forEach(item => {
+                    subtotal += parseFloat(item.textContent.replace('$', ''));
+                });
+                document.getElementById('subtotal').textContent = `$${subtotal.toFixed(2)}`;
+            // TAX
+                const taxRate = 0.0725;
+                const tax = subtotal * taxRate;
+                document.getElementById('tax').textContent = `$${tax.toFixed(2)}`;
+            // TOTAL
+                const total = subtotal + tax;
+                document.getElementById('total').textContent = `$${total.toFixed(2)}`;
+
+        // CODE FOR SHOWING POPUP (CONFIRMING THE ORDER)
+            document.querySelector('.checkout').addEventListener('click', (event) => { // OPEN THE POPUP
+                document.querySelector('.confirmation').style.display = 'flex';
+            }); 
+
+        // CODE FOR CLOSING ORDER POPUP
+            const popup = document.querySelector('.confirmation'); // popup screen
+            function closePopup() { // function to close popup screen
+                popup.style.display = 'none'; // Hide the popup container
+            } 
+            popup.addEventListener('click', (event) => { // close the popup when clicking on the background
+                if (event.target === popup) { // when the background is clicked
+                    closePopup(); // Hide the popup screen
+                }
+            }); 
+
+    </script>
+
 </body>
 
 <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
