@@ -73,7 +73,6 @@
   chashu: document.getElementById('ramenChashu'),
   chicken: document.getElementById('ramenChicken'),
   tofu: document.getElementById('ramenTofu'),
-  noMeat: document.getElementById('ramenNoMeat'),
   egg: document.getElementById('ramenEgg'),
   shiitakeMushroom: document.getElementById('ramenShiitakeMushroom'),
   beanSprouts: document.getElementById('ramenBeanSprouts'),
@@ -82,7 +81,7 @@
   greenOnions: document.getElementById('ramenGreenOnions'),
   redGinger: document.getElementById('ramenRedGinger'),
   requests: document.getElementById('ramenRequests')
-  }
+  };
   
   const ramenSizeOptions = {
     regular: document.getElementById('ramenRegular'),

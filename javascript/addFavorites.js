@@ -107,7 +107,7 @@ ramenMenu.addEventListener('click', (e)=>{
     }
 })
 phoMenu.addEventListener('click', (e)=>{
-    currentMenu = 'pho';
+    currentMenu = 'Pho';
     console.log('User Is On The Pho Menu');
     const user = auth.currentUser;
 
