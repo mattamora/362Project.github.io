@@ -8,7 +8,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
-    <script src="javascript/guestcheckoutSCRIPT.js"></script>
 </head>
 
 <body>
@@ -77,9 +76,6 @@
     <div class="order_info">
         <div class="order_food">
             <div class="cart_item">
-                <div class="img_container">
-                    <img id="co_img" src="pics/burger_i.png" alt="Food Item">
-                </div>
                 <div class="content_container">
                     <div class="item">
                         <h3 id="foodItemCart1">Food Item #1</h3>
@@ -92,9 +88,6 @@
                 </div>
             </div>
             <div class="cart_item">
-                <div class="img_container">
-                    <img id="co_img" src="pics/burger_i.png" alt="Food Item">
-                </div>
                 <div class="content_container">
                     <div class="item">
                         <h3 id="foodItemCart2" >Food Item #1</h3>
@@ -107,9 +100,6 @@
                 </div>
             </div>
             <div class="cart_item">
-                <div class="img_container">
-                    <img id="co_img" src="pics/burger_i.png" alt="Food Item">
-                </div>
                 <div class="content_container">
                     <div class="item">
                         <h3 id="foodItemCart3">Food Item #1</h3>
@@ -121,35 +111,21 @@
                     </p>
                 </div>
             </div>
-            <div class="cart_item">
-                <div class="img_container">
-                    <img id="co_img" src="pics/burger_i.png" alt="Food Item">
-                </div>
-                <div class="content_container">
-                    <div class="item">
-                        <h3>Food Item #1</h3>
-                        <p class="item_price">$0.00</p>
-                    </div>
-                    <p class="desc">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    </p>
-                </div>
-            </div>
+            
             <div class="bottom">
                 <div class="order_bottom">
                     <h3>Cart Total</h3>
                     <div class="order_content">
                         <p>Subtotal:</p>
-                        <p id="subTotalCart" >$</p>
+                        <p id="subtotal">$</p>
                     </div>
                     <div class="order_content">
-                        <p>(Tax)%:</p>
-                        <p id="taxCart" >$</p>
+                        <p>Tax 7.25%:</p>
+                        <p id="tax">$</p>
                     </div>
                     <div class="order_content">
                         <p>Total:</p>
-                        <p id="totalCart" >$</p>
+                        <p id="total">$</p>
                     </div>
                 </div>
             </div>
@@ -160,21 +136,37 @@
                 <h2>ORDER DETAILS</h2>
                 <div class="order_content">
                     <p>Pickup at:</p>
-                    <p>(Address)</p>
+                    <p><a target="_blank" href="https://www.google.com/maps/dir//csuf/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x80dcd5ce8cc61391:0x2b9810bbb94af355?sa=X&ved=1t:3061&ictx=111">800 N State College Blvd, Fullerton</a></p>
                 </div>
                 <div class="order_content">
                     <p>Date:</p>
-                    <p>(Date)</p>
+                    <p id="order-date">(Date)</p>
                 </div>
                 <div class="order_content">
                     <p>Estimated Pickup Time:</p>
-                    <p>(Time)</p>
+                    <p id="order-time">(Time)</p>
                 </div>
             </div>
         </div>
+        
+        <span><a class="checkout" onclick="confirm()">CHECK OUT</a></span>
+   
 
     </div>
 
+</div>
+
+<!--  Confirmation Pop up -->
+<div class="confirmation">  
+    <div class="confirmationPop">
+        <button class="closePop" onclick="closePopup()">✕</button>
+        <h2>ORDER CONFIRMED!</h2>
+        <div class="redBorder">
+            <h3>Pick Up At: <a target="_blank" href="https://www.google.com/maps/dir//csuf/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x80dcd5ce8cc61391:0x2b9810bbb94af355?sa=X&ved=1t:3061&ictx=111"><span>800 N State College Blvd, Fullerton, CA 9283</span></a></h3>
+            <h3>Date: <span id="pop-date">dateVariable</span></h3>
+            <h3>Ready By: <span id="pop-time">timeVariable</span></h3>
+        </div>
+    </div>
 </div>
 
 <!--  footer, bottom of the page  -->
@@ -192,10 +184,97 @@
     </div>
     <div class="bottomRight">
         
-        <a href="../sign_up.html"><img src="pics/bottomLeft.jpg" class="family"></a>
-        <a href="../home.html"><img src="pics/logo2.png" class="logo2"></a>
+        <a href="sign_up.html"><img src="pics/bottomLeft.jpg" class="family"></a>
+        <a href="home.html"><img src="pics/logo2.png" class="logo2"></a>
     </div>
 </footer>
+
+
+<!--    JAVASCRIPT CODE    -->
+<script>
+    function toggleSection(sectionId) {
+        const section = document.getElementById(sectionId);
+        const content = section.querySelector('.content');
+        const caret = section.querySelector('.caret');
+
+        if (content.style.display === 'block') {
+            content.style.display = 'none';
+            caret.classList.remove('up');
+        } else {
+            content.style.display = 'block';
+            caret.classList.add('up');
+        }
+    }
+
+    function toggleSection(sectionId) {
+        const section = document.getElementById(sectionId);
+        const content = section.querySelector('.content');
+        const header = section.querySelector('.header');
+        const caret = section.querySelector('.caret');
+
+        // Toggle content visibility
+        if (content.classList.contains('active')) {
+            content.classList.remove('active');
+            header.classList.remove('active');
+            caret.classList.remove('up');
+        } else {
+            content.classList.add('active');
+            header.classList.add('active');
+            caret.classList.add('up');
+        }
+    }
+
+    // CODE FOR GETTING DATE AND TIME
+    const today = new Date();
+    const fullDate = `${String(today.getMonth() + 1).padStart(2, '0')}/${String(today.getDate()).padStart(2, '0')}/${today.getFullYear()}`;
+    // Extract hours, minutes, and seconds
+    today.setMinutes(today.getMinutes() + 30); // add 30 minutes to the current time for pickup time
+    let hours = today.getHours();
+    const minutes = String(today.getMinutes()).padStart(2, '0');
+    const amPm = hours >= 12 ? 'PM' : 'AM'; // Determine AM or PM suffix
+    // Convert 24-hour format to 12-hour format
+    hours = hours % 12;
+    hours = hours ? hours : 12; // If hours is 0, set it to 12
+    const time = `${hours}:${minutes} ${amPm}`; // time variable
+    // Update the <p> elements with the date and time
+    document.getElementById('order-date').textContent = fullDate;
+    document.getElementById('pop-date').textContent = fullDate;
+    document.getElementById('order-time').textContent = time;
+    document.getElementById('pop-time').textContent = time;
+
+    // CODE FOR CALCULATING PRICES
+        // SUBTOTAL
+            let subtotal = 0;
+            document.querySelectorAll('.item_price').forEach(item => {
+                subtotal += parseFloat(item.textContent.replace('$', ''));
+            });
+            document.getElementById('subtotal').textContent = `$${subtotal.toFixed(2)}`;
+        // TAX
+            const taxRate = 0.0725;
+            const tax = subtotal * taxRate;
+            document.getElementById('tax').textContent = `$${tax.toFixed(2)}`;
+        // TOTAL
+            const total = subtotal + tax;
+            document.getElementById('total').textContent = `$${total.toFixed(2)}`;
+
+    // CODE FOR SHOWING POPUP (CONFIRMING THE ORDER)
+        function confirm() { // OPEN THE POPUP
+            document.querySelector('.confirmation').style.display = 'flex';
+        } 
+
+    // CODE FOR CLOSING ORDER POPUP
+        
+        function closePopup() { // function to close popup screen
+            document.querySelector('.confirmation').style.display = 'none';// Hide the popup container
+        } 
+        document.querySelector('.confirmation').addEventListener('click', (event) => { // close the popup when clicking on the background
+            if (event.target === document.querySelector('.confirmation')) { // when the background is clicked
+                closePopup(); // Hide the popup screen
+            }
+        }); 
+
+</script>
+
 
 </body>
 
