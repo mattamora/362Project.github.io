@@ -37,6 +37,11 @@ signUpForm.addEventListener('click', (e) => {
   const stateValue = state.value;
   const zipCodeValue = zipCode.value;
 
+  if (!email || !password || !firstNameValue || !lastNameValue || !phoneNumberValue || !cardNumberValue || !cardNameValue || !mmYYValue || !cVVValue || !addressValue || !cityValue || !stateValue || !zipCodeValue) {
+    alert('Please! Fill in all the fields.');
+    return;
+  }
+
   
   auth.createUserWithEmailAndPassword(email, password)
     .then((userCredential) => {
@@ -64,11 +69,19 @@ signUpForm.addEventListener('click', (e) => {
         
       });
       console.log('Information stored in database');
+      alert('User: '+ firstName.value + ' has successfully signed up!');
+
+      auth.signInWithEmailAndPassword(emailInput.value, passwordInput.value).then((userCredential)=>{
+        const newUser = userCredential.newUser;
+        console.log('Signed Up user has signed in');
+        window.location.href = 'account.html';
+      })
 
     })
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
       console.log('Error:', errorCode, errorMessage);
+      alert('Error. One or more fields incorrect.');
     });
 });
