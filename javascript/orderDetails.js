@@ -639,8 +639,6 @@
       isActive[item] = sodaAddOns[item].classList.contains('active');
     }
 
-    for (const item in sodaSizeOptions){
-      isActive[item] = sodaSizeOptions[item].classList.contains('active');
     }
 
     if(isActive['medium']){
