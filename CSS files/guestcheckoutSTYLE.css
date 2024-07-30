@@ -204,12 +204,12 @@ button {
    background-color: rgb(213, 27, 27);
    border: 1px solid rgb(213, 27, 27);
    color: white;
-   width: 75%;
+   width: 80%;
    height: 50px;
    margin: 10px auto;
    display: block;
    border-radius: 6px;
-   font-size: 24px;
+   font-size: 21px;
    font-weight: 600;
    font-family: lexend, sans-serif;
    cursor: pointer;
