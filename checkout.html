@@ -35,10 +35,10 @@
                 <div class="cart_item"> 
                     <div class="content_container">
                         <div class="item">
-                            <h3>Item Name</h3>
-                            <p class="item_price">$price</p>
+                            <h3 id="foodItemCart1">Item Name</h3>
+                            <p id="foodPriceCart1" class="item_price">$price</p>
                         </div>
-                        <p class="desc">
+                        <p id="foodDescCart1" class="desc">
                             food description 
                         </p>
                     </div>
@@ -47,10 +47,10 @@
                 <div class="cart_item">
                     <div class="content_container">
                         <div class="item">
-                            <h3>Item Name</h3>
-                            <p class="item_price">$price</p>
+                            <h3 id="foodItemCart2">Item Name</h3>
+                            <p id="foodPriceCart2" class="item_price">$price</p>
                         </div>
-                        <p class="desc">
+                        <p id="foodDescCart2" class="desc">
                             food description
                         </p>
                     </div>
@@ -58,11 +58,11 @@
 
                 <div class="cart_item">
                     <div class="content_container">
-                        <div class="item">
-                            <h3>Item Name</h3>
-                            <p class="item_price">$price</p>
+                        <div  class="item">
+                            <h3 id="foodItemCart3">Item Name</h3>
+                            <p id="foodPriceCart3" class="item_price">$price</p>
                         </div>
-                        <p class="desc">
+                        <p id="foodDescCart3" class="desc">
                             food description
                         </p>
                     </div>
@@ -92,15 +92,15 @@
                     <h3>Cart Total</h3>
                     <div class="order_info">
                         <p>Subtotal:</p>
-                        <p id="subtotal">$</p>
+                        <p id="subTotalCart">$</p>
                     </div>
                     <div class="order_info">
                         <p>Tax 7.25%: </p>
-                        <p id="tax">$</p>
+                        <p id="taxCart">$</p>
                     </div>
                     <div class="order_info">
                         <p>Total:</p>
-                        <p id="total">$</p>
+                        <p id="totalCart">$</p>
                     </div>
                     <span><a class="checkout" >CHECK OUT</a></span>
                 </div>
@@ -164,19 +164,19 @@
             document.getElementById('pop-time').textContent = time;
 
         // CODE FOR CALCULATING PRICES
-            // SUBTOTAL
-                let subtotal = 0;
-                document.querySelectorAll('.item_price').forEach(item => {
-                    subtotal += parseFloat(item.textContent.replace('$', ''));
-                });
-                document.getElementById('subtotal').textContent = `$${subtotal.toFixed(2)}`;
-            // TAX
-                const taxRate = 0.0725;
-                const tax = subtotal * taxRate;
-                document.getElementById('tax').textContent = `$${tax.toFixed(2)}`;
-            // TOTAL
-                const total = subtotal + tax;
-                document.getElementById('total').textContent = `$${total.toFixed(2)}`;
+            // // SUBTOTAL
+            //     let subtotal = 0;
+            //     document.querySelectorAll('.item_price').forEach(item => {
+            //         subtotal += parseFloat(item.textContent.replace('$', ''));
+            //     });
+            //     document.getElementById('subtotal').textContent = `$${subtotal.toFixed(2)}`;
+            // // TAX
+            //     const taxRate = 0.0725;
+            //     const tax = subtotal * taxRate;
+            //     document.getElementById('tax').textContent = `$${tax.toFixed(2)}`;
+            // // TOTAL
+            //     const total = subtotal + tax;
+            //     document.getElementById('total').textContent = `$${total.toFixed(2)}`;
 
         // CODE FOR SHOWING POPUP (CONFIRMING THE ORDER)
             document.querySelector('.checkout').addEventListener('click', (event) => { // OPEN THE POPUP
@@ -211,5 +211,6 @@
 
 <script type="module" src="javascript/firebaseInit.js"></script>
 <script type="module" src="javascript/cartDetails.js"></script>
+<script type="module" src="javascript/checkoutAuth.js"></script>
 
 </html>

@@ -117,15 +117,15 @@
                     <h3>Cart Total</h3>
                     <div class="order_content">
                         <p>Subtotal:</p>
-                        <p id="subtotal">$</p>
+                        <p id="subTotalCart">$</p>
                     </div>
                     <div class="order_content">
                         <p>Tax 7.25%:</p>
-                        <p id="tax">$</p>
+                        <p id="taxCart">$</p>
                     </div>
                     <div class="order_content">
                         <p>Total:</p>
-                        <p id="total">$</p>
+                        <p id="totalCart">$</p>
                     </div>
                 </div>
             </div>
@@ -244,18 +244,18 @@
 
     // CODE FOR CALCULATING PRICES
         // SUBTOTAL
-            let subtotal = 0;
-            document.querySelectorAll('.item_price').forEach(item => {
-                subtotal += parseFloat(item.textContent.replace('$', ''));
-            });
-            document.getElementById('subtotal').textContent = `$${subtotal.toFixed(2)}`;
-        // TAX
-            const taxRate = 0.0725;
-            const tax = subtotal * taxRate;
-            document.getElementById('tax').textContent = `$${tax.toFixed(2)}`;
-        // TOTAL
-            const total = subtotal + tax;
-            document.getElementById('total').textContent = `$${total.toFixed(2)}`;
+        //     let subtotal = 0;
+        //     document.querySelectorAll('.item_price').forEach(item => {
+        //         subtotal += parseFloat(item.textContent.replace('$', ''));
+        //     });
+        //     document.getElementById('subtotal').textContent = `$${subtotal.toFixed(2)}`;
+        // // TAX
+        //     const taxRate = 0.0725;
+        //     const tax = subtotal * taxRate;
+        //     document.getElementById('tax').textContent = `$${tax.toFixed(2)}`;
+        // // TOTAL
+        //     const total = subtotal + tax;
+        //     document.getElementById('total').textContent = `$${total.toFixed(2)}`;
 
     // CODE FOR SHOWING POPUP (CONFIRMING THE ORDER)
         function confirm() { // OPEN THE POPUP
